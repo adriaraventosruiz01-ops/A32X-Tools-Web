@@ -220,12 +220,6 @@
       position:relative;
       overflow:hidden;
     }
-    .kpi::before{
-      content: attr(data-icon);
-      display:block;
-      font-size:24px;
-      margin-bottom:8px;
-    }
     .kpi:nth-child(1){ border-color: rgba(0, 210, 255, 0.3); }
     .kpi:nth-child(1)::after{
       content:"";
@@ -354,20 +348,14 @@
             <a class="btn ghost" href="#">App Store (coming soon)</a>
           </div>
 
-          <div class="badges">
-            <span class="badge">🔒 No tracking</span>
-            <span class="badge">🔐 Local storage</span>
-            <span class="badge">⚡ Offline-first</span>
-          </div>
-
           <div class="small">
             Need help? <a href="mailto:info@a320xtools.com" style="color:white;font-weight:900;text-decoration:underline;">Email us</a>
           </div>
 
           <div class="kpis">
-            <div class="kpi" data-icon="⚡"><b>Fast</b><span>Quick access during line operations.</span></div>
-            <div class="kpi" data-icon="✓"><b>Structured</b><span>AMM-style, step-by-step flow.</span></div>
-            <div class="kpi" data-icon="📱"><b>Offline-first</b><span>Local-only user content.</span></div>
+            <div class="kpi"><b>Fast</b><span>Quick access during line operations.</span></div>
+            <div class="kpi"><b>Structured</b><span>AMM-style, step-by-step flow.</span></div>
+            <div class="kpi"><b>Offline-first</b><span>Local-only user content.</span></div>
           </div>
         </section>
 
