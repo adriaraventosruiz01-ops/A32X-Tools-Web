@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A32X Tools</title>
+  <meta name="description" content="ECAM Resets & Aircraft Tech Tools. One-time purchase." />
+
+  <link rel="icon" href="favicon.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+
+  <style>
+    :root{
+      --bg0:#041326;
+      --panel: rgba(6,26,51,0.88);
+      --panel2: rgba(0,0,0,0.18);
+      --border: rgba(255,255,255,0.14);
+      --border2: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.78);
+      --shadow: 0 18px 60px rgba(0,0,0,0.40);
+      --r: 26px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background: var(--bg0);
+    }
+
+    .wrap{ max-width:1100px; margin:0 auto; padding:56px 18px; }
+
+    /* HERO */
+    .hero{
+      min-height: 92vh;
+      display:flex;
+      align-items:center;
+      padding-bottom: 56px;
+      background: url("hero.png");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 35% 40%, rgba(0, 210, 255, 0.16), rgba(0,0,0,0) 55%),
+        radial-gradient(circle at 75% 35%, rgba(60, 255, 170, 0.14), rgba(0,0,0,0) 55%),
+        radial-gradient(circle at 92% 42%, rgba(255, 230, 0, 0.12), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(4,19,38,0.22), rgba(4,19,38,0.34));
+    }
+
+    /* Fade inferior para eliminar el “corte”/línea */
+    .hero::after{
+      content:"";
+      position:absolute;
+      left:0; right:0; bottom:0;
+      height: 120px;
+      background: linear-gradient(to bottom, rgba(4,19,38,0), var(--bg0));
+      pointer-events:none;
+    }
+
+    .hero > .wrap{ position:relative; z-index:1; }
+
+    .grid{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:stretch;
+    }
+
+    .card{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .card.pad-lg{ padding: 26px 24px; }
+    .card.pad-md{ padding: 18px 16px; }
+
+    .titleRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width: 320px;
+    }
+
+    /* ICONO DOBLE */
+    .icon{
+      width:88px; height:88px;
+      border-radius: 18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+      flex: 0 0 auto;
+    }
+
+    h1{
+      margin:0;
+      font-size:42px;
+      font-weight:900;
+      letter-spacing:0.2px;
+      line-height:1.05;
+    }
+
+    .subtitle{
+      margin-top:6px;
+      font-size:18px;
+      color:var(--muted);
+    }
+
+    .pill{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(0,0,0,0.22);
+      border: 1px solid var(--border);
+      font-weight:850;
+      font-size:13px;
+      white-space:nowrap;
+    }
+
+    .btnRow{ margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:16px;
+      text-decoration:none;
+      font-weight:900;
+      border: 1px solid transparent;
+    }
+    .btn.primary{
+      background: rgba(255,255,255,0.92);
+      color: #061a33;
+    }
+    .btn.ghost{
+      background: rgba(0,0,0,0.22);
+      border-color: var(--border);
+      color: white;
+    }
+
+    .small{
+      margin-top:16px;
+      font-size:14px;
+      color: var(--muted);
+    }
+
+    .kpis{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+    }
+    .kpi{
+      border-radius:18px;
+      padding:12px;
+      background: var(--panel2);
+      border: 1px solid var(--border2);
+    }
+    .kpi b{ display:block; font-weight:900; }
+    .kpi span{ display:block; margin-top:4px; font-size:13px; color:var(--muted); line-height:1.45; }
+
+    .links .link{
+      display:block;
+      padding:12px 12px;
+      border-radius:16px;
+      background: var(--panel2);
+      border: 1px solid var(--border2);
+      color:white;
+      text-decoration:none;
+      font-weight:900;
+    }
+    .links .link + .link{ margin-top:10px; }
+
+    .footer{
+      margin-top:18px;
+      opacity:0.75;
+      font-size:12px;
+    }
+
+    /* Layout widths */
+    .mainCard{
+      flex: 1;
+      min-width: 280px;
+    }
+    .sideCard{
+      width: 340px;
+      max-width: 100%;
+    }
+
+    /* Mobile: apila en vertical y que "Links" ocupe 100% */
+    @media (max-width: 820px){
+      h1{ font-size:36px; }
+      .kpis{ grid-template-columns:1fr; }
+
+      .grid{ flex-direction: column; }
+      .sideCard{ width: 100%; }
+
+      /* En móvil el icono grande sigue bien, pero reducimos un poco el gap */
+      .brand{ gap:12px; min-width: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="grid">
+
+        <section class="card pad-lg mainCard">
+          <div class="titleRow">
+            <div class="brand">
+              <img class="icon" src="icon.png" alt="A32X Tools icon" />
+              <div>
+                <h1>A32X Tools</h1>
+                <div class="subtitle">ECAM Resets &amp; Aircraft Tech Tools</div>
+              </div>
+            </div>
+            <div class="pill">One-time purchase</div>
+          </div>
+
+          <div class="btnRow">
+            <a class="btn primary" href="#">Get it on Google Play</a>
+            <a class="btn ghost" href="#">App Store (coming soon)</a>
+          </div>
+
+          <div class="small">
+            Support:
+            <a href="mailto:info@a320xtools.com"
+               style="color:white;font-weight:900;text-decoration:none;">info@a320xtools.com</a>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi"><b>Fast</b><span>Quick access during line operations.</span></div>
+            <div class="kpi"><b>Structured</b><span>AMM-style, step-by-step flow.</span></div>
+            <div class="kpi"><b>Offline-first</b><span>Local-only user content.</span></div>
+          </div>
+        </section>
+
+        <aside class="card pad-md links sideCard">
+          <div style="font-weight:900; margin-bottom:10px;">Links</div>
+
+          <a class="link" href="/privacy.html">Privacy Policy</a>
+          <a class="link" href="support.html">Support / FAQ</a>
+
+          <div style="margin-top:14px; font-size:13px; line-height:1.5; color:var(--muted);">
+            No ads. No tracking.<br>
+            Camera used only when you add photos to custom items or damage reports.
+          </div>
+        </aside>
+
+      </div>
+
+      <div class="footer">© 2026 A32X Tools</div>
+    </div>
+  </header>
+</body>
+</html>
