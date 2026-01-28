@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>A32X Tools</title>
   <meta name="description" content="ECAM Resets & Aircraft Tech Tools. One-time purchase." />
+  <meta property="og:title" content="A32X Tools" />
+  <meta property="og:description" content="ECAM Resets & Aircraft Tech Tools. One-time purchase." />
+  <meta property="og:image" content="hero.png" />
+  <meta property="og:type" content="website" />
 
   <link rel="icon" href="favicon.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="icon.png" />
@@ -209,12 +213,46 @@
     }
     .kpi{
       border-radius:18px;
-      padding:12px;
+      padding:16px;
       background: var(--panel2);
       border: 1px solid var(--border2);
+      transition: all 0.3s ease;
+      position:relative;
+      overflow:hidden;
     }
-    .kpi b{ display:block; font-weight:900; }
-    .kpi span{ display:block; margin-top:4px; font-size:13px; color:var(--muted); line-height:1.45; }
+    .kpi::before{
+      content: attr(data-icon);
+      display:block;
+      font-size:24px;
+      margin-bottom:8px;
+    }
+    .kpi:nth-child(1){ border-color: rgba(0, 210, 255, 0.3); }
+    .kpi:nth-child(1)::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(circle at 0% 0%, rgba(0, 210, 255, 0.08), transparent);
+      pointer-events:none;
+    }
+    .kpi:nth-child(2){ border-color: rgba(60, 255, 170, 0.3); }
+    .kpi:nth-child(2)::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(circle at 100% 0%, rgba(60, 255, 170, 0.08), transparent);
+      pointer-events:none;
+    }
+    .kpi:nth-child(3){ border-color: rgba(255, 230, 0, 0.3); }
+    .kpi:nth-child(3)::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(circle at 100% 100%, rgba(255, 230, 0, 0.08), transparent);
+      pointer-events:none;
+    }
+    .kpi:hover{ border-color: rgba(255,255,255,0.25); }
+    .kpi b{ display:block; font-weight:900; position:relative; z-index:1; }
+    .kpi span{ display:block; margin-top:4px; font-size:13px; color:var(--muted); line-height:1.45; position:relative; z-index:1; }
 
     .links .link{
       display:block;
@@ -235,10 +273,25 @@
     }
     .links .link + .link{ margin-top:10px; }
 
-    .footer{
-      margin-top:18px;
-      opacity:0.75;
-      font-size:12px;
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 12px;
+      border-radius:12px;
+      background: var(--panel2);
+      border: 1px solid var(--border2);
+      font-size:13px;
+      font-weight:700;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:14px;
     }
 
     /* Layout widths */
@@ -301,16 +354,20 @@
             <a class="btn ghost" href="#">App Store (coming soon)</a>
           </div>
 
+          <div class="badges">
+            <span class="badge">🔒 No tracking</span>
+            <span class="badge">🔐 Local storage</span>
+            <span class="badge">⚡ Offline-first</span>
+          </div>
+
           <div class="small">
-            Support:
-            <a href="mailto:info@a320xtools.com"
-               style="color:white;font-weight:900;text-decoration:none;">info@a320xtools.com</a>
+            Need help? <a href="mailto:info@a320xtools.com" style="color:white;font-weight:900;text-decoration:underline;">Email us</a>
           </div>
 
           <div class="kpis">
-            <div class="kpi"><b>Fast</b><span>Quick access during line operations.</span></div>
-            <div class="kpi"><b>Structured</b><span>AMM-style, step-by-step flow.</span></div>
-            <div class="kpi"><b>Offline-first</b><span>Local-only user content.</span></div>
+            <div class="kpi" data-icon="⚡"><b>Fast</b><span>Quick access during line operations.</span></div>
+            <div class="kpi" data-icon="✓"><b>Structured</b><span>AMM-style, step-by-step flow.</span></div>
+            <div class="kpi" data-icon="📱"><b>Offline-first</b><span>Local-only user content.</span></div>
           </div>
         </section>
 
@@ -319,16 +376,17 @@
 
           <a class="link" href="/privacy.html">Privacy Policy</a>
           <a class="link" href="support.html">Support / FAQ</a>
-
-          <div style="margin-top:14px; font-size:13px; line-height:1.5; color:var(--muted);">
-            No ads. No tracking.<br>
-            Camera used only when you add photos to custom items or damage reports.
-          </div>
         </aside>
 
       </div>
 
-      <div class="footer">© 2026 A32X Tools</div>
+      <div style="margin-top:56px; padding-top:18px; border-top:1px solid var(--border2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
+        <div class="footer">© 2026 A32X Tools. All rights reserved.</div>
+        <div style="display:flex; gap:18px; font-size:12px; font-weight:900;">
+          <a href="/privacy.html" style="color:var(--muted); text-decoration:none; transition:color 0.3s;">Privacy</a>
+          <a href="support.html" style="color:var(--muted); text-decoration:none; transition:color 0.3s;">Support</a>
+        </div>
+      </div>
     </div>
   </header>
 </body>
