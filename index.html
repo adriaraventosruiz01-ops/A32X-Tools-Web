@@ -84,6 +84,11 @@
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .card:hover{
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
     }
 
     .card.pad-lg{ padding: 26px 24px; }
@@ -148,15 +153,33 @@
       text-decoration:none;
       font-weight:900;
       border: 1px solid transparent;
+      cursor:pointer;
+      transition: all 0.3s ease;
     }
     .btn.primary{
       background: rgba(255,255,255,0.92);
       color: #061a33;
     }
+    .btn.primary:hover{
+      background: rgba(255,255,255,1);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .btn.primary:active{
+      transform: translateY(0);
+    }
     .btn.ghost{
       background: rgba(0,0,0,0.22);
       border-color: var(--border);
       color: white;
+    }
+    .btn.ghost:hover{
+      background: rgba(0,0,0,0.35);
+      border-color: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+    }
+    .btn.ghost:active{
+      transform: translateY(0);
     }
 
     .small{
@@ -189,6 +212,13 @@
       color:white;
       text-decoration:none;
       font-weight:900;
+      cursor:pointer;
+      transition: all 0.3s ease;
+    }
+    .links .link:hover{
+      background: var(--panel);
+      border-color: var(--border);
+      transform: translateX(4px);
     }
     .links .link + .link{ margin-top:10px; }
 
@@ -208,6 +238,11 @@
       max-width: 100%;
     }
 
+    /* Tablet */
+    @media (max-width: 1024px){
+      .sideCard{ width: 100%; }
+    }
+
     /* Mobile: apila en vertical y que "Links" ocupe 100% */
     @media (max-width: 820px){
       h1{ font-size:36px; }
@@ -218,6 +253,15 @@
 
       /* En móvil el icono grande sigue bien, pero reducimos un poco el gap */
       .brand{ gap:12px; min-width: 0; }
+    }
+
+    /* Extra small */
+    @media (max-width: 480px){
+      h1{ font-size:28px; }
+      .subtitle{ font-size:16px; }
+      .wrap{ padding:36px 12px; }
+      .brand{ flex-direction: column; align-items: flex-start; }
+      .icon{ width:64px; height:64px; }
     }
   </style>
 </head>

@@ -4,40 +4,226 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Privacy Policy – A32X Tools</title>
+  <link rel="icon" href="favicon.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <style>
+    :root{
+      --bg0:#041326;
+      --panel: rgba(6,26,51,0.88);
+      --panel2: rgba(0,0,0,0.18);
+      --border: rgba(255,255,255,0.14);
+      --border2: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.78);
+      --shadow: 0 18px 60px rgba(0,0,0,0.40);
+      --r: 26px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background: var(--bg0);
+      line-height:1.6;
+    }
+
+    header{
+      background: rgba(4,19,38,0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content{
+      max-width:1100px;
+      margin:0 auto;
+      padding:16px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .header-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      font-weight:900;
+      color:white;
+      transition: opacity 0.3s ease;
+    }
+
+    .header-brand:hover{
+      opacity:0.8;
+    }
+
+    .header-brand img{
+      width:32px;
+      height:32px;
+      border-radius:8px;
+    }
+
+    nav{
+      display:flex;
+      gap:8px;
+    }
+
+    nav a{
+      display:inline-block;
+      padding:8px 14px;
+      text-decoration:none;
+      color:white;
+      font-weight:700;
+      border-radius:12px;
+      background: transparent;
+      transition: all 0.3s ease;
+      font-size:14px;
+    }
+
+    nav a:hover{
+      background: rgba(255,255,255,0.1);
+    }
+
+    nav a.active{
+      background: rgba(255,255,255,0.15);
+      border-bottom: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .wrap{
+      max-width:900px;
+      margin:0 auto;
+      padding:56px 18px;
+    }
+
+    h1{
+      font-size:36px;
+      font-weight:900;
+      margin-top:0;
+      letter-spacing:0.2px;
+    }
+
+    h2{
+      font-size:20px;
+      font-weight:900;
+      margin-top:32px;
+      margin-bottom:12px;
+    }
+
+    p{
+      margin-bottom:12px;
+      color:var(--text);
+    }
+
+    strong{
+      font-weight:900;
+      color:white;
+    }
+
+    a{
+      color:rgba(255,255,255,0.95);
+      text-decoration:underline;
+      transition: opacity 0.3s ease;
+    }
+
+    a:hover{
+      opacity:0.8;
+    }
+
+    footer{
+      text-align:center;
+      padding:32px 18px;
+      font-size:12px;
+      color:var(--muted);
+      border-top: 1px solid var(--border2);
+      margin-top:56px;
+    }
+
+    @media (max-width: 640px){
+      .header-content{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      nav{
+        width:100%;
+        flex-direction:column;
+      }
+
+      nav a{
+        display:block;
+        padding:12px 14px;
+      }
+
+      h1{
+        font-size:28px;
+      }
+
+      .wrap{
+        padding:36px 12px;
+      }
+    }
+  </style>
 </head>
-<body style="max-width:900px;margin:40px auto;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.6;padding:0 16px;">
-  <h1>Privacy Policy – A32X Tools</h1>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="header-brand">
+        <img src="icon.png" alt="A32X Tools" />
+        A32X Tools
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html" class="active">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
 
-  <p><strong>Effective date:</strong> 2026-01-27</p>
+  <main class="wrap">
+    <h1>Privacy Policy</h1>
 
-  <p>A32X Tools respects your privacy. This app is designed to work without collecting personal information from users.</p>
+    <p><strong>Effective date:</strong> 2026-01-27</p>
 
-  <h2>1) Personal data</h2>
-  <p>A32X Tools does not collect, store, sell, or share personal data such as names, email addresses, phone numbers, or advertising identifiers.</p>
-  <p>The app does not require user accounts or registration.</p>
+    <p>A32X Tools respects your privacy. This app is designed to work without collecting personal information from users.</p>
 
-  <h2>2) Camera and photos</h2>
-  <p>The camera is used only when the user chooses to add a photo to a custom part number or damage report.</p>
-  <p>Photos are stored locally on the device. Photos are not uploaded, shared, or transmitted by the app.</p>
+    <h2>1) Personal data</h2>
+    <p>A32X Tools does not collect, store, sell, or share personal data such as names, email addresses, phone numbers, or advertising identifiers.</p>
+    <p>The app does not require user accounts or registration.</p>
 
-  <h2>3) Internet access</h2>
-  <p>Internet access is used only to download updates for the internal part number database.</p>
-  <p>The app does not send personal data as part of these updates.<br>
-  Note: like most internet services, standard server logs may temporarily process technical information (such as IP address) for security and delivery purposes.</p>
+    <h2>2) Camera and photos</h2>
+    <p>The camera is used only when the user chooses to add a photo to a custom part number or damage report.</p>
+    <p>Photos are stored locally on the device. Photos are not uploaded, shared, or transmitted by the app.</p>
 
-  <h2>4) Local storage</h2>
-  <p>All user-created data (custom part numbers, damage reports and related photos) is stored locally on the device.</p>
-  <p>A32X Tools does not use cloud storage for user content.</p>
+    <h2>3) Internet access</h2>
+    <p>Internet access is used only to download updates for the internal part number database.</p>
+    <p>The app does not send personal data as part of these updates.<br>
+    Note: like most internet services, standard server logs may temporarily process technical information (such as IP address) for security and delivery purposes.</p>
 
-  <h2>5) Third-party services</h2>
-  <p>A32X Tools does not use advertising SDKs.</p>
-  <p>A32X Tools does not use analytics or tracking services.</p>
+    <h2>4) Local storage</h2>
+    <p>All user-created data (custom part numbers, damage reports and related photos) is stored locally on the device.</p>
+    <p>A32X Tools does not use cloud storage for user content.</p>
 
-  <h2>6) Changes to this policy</h2>
-  <p>This privacy policy may be updated if the app functionality changes. The latest version will be made available at this page.</p>
+    <h2>5) Third-party services</h2>
+    <p>A32X Tools does not use advertising SDKs.</p>
+    <p>A32X Tools does not use analytics or tracking services.</p>
 
-  <h2>7) Contact</h2>
-  <p>If you have any questions about this privacy policy, contact the developer at:<br>
-  <strong>info@a320xtools.com</strong></p>
+    <h2>6) Changes to this policy</h2>
+    <p>This privacy policy may be updated if the app functionality changes. The latest version will be made available at this page.</p>
+
+    <h2>7) Contact</h2>
+    <p>If you have any questions about this privacy policy, contact the developer at:<br>
+    <strong>info@a320xtools.com</strong></p>
+  </main>
+
+  <footer>
+    © 2026 A32X Tools
+  </footer>
 </body>
 </html>
