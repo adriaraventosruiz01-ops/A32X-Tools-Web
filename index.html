@@ -352,29 +352,27 @@
       .screen-thumb{ aspect-ratio: 16 / 9; }
     }
 
-    @media (orientation: portrait){
-      .grid{ grid-template-columns:1fr; }
-      .screens-grid{
-        display:flex;
-        gap:14px;
-        overflow-x:auto;
-        scroll-snap-type:x mandatory;
-        padding-bottom:10px;
-        -webkit-overflow-scrolling: touch;
-      }
-      .screens-grid::-webkit-scrollbar{ display:none; }
-      .screen-card{
-        min-width:72%;
-        max-width:320px;
-        padding:12px;
-        scroll-snap-align:start;
-      }
-      .screen-thumb{
-        aspect-ratio: 9 / 16;
-      }
-      .screen-card h3{ font-size:15px; }
-      .screen-card p{ font-size:13px; }
+    body.portrait .grid{ grid-template-columns:1fr; }
+    body.portrait .screens-grid{
+      display:flex;
+      gap:14px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      padding-bottom:10px;
+      -webkit-overflow-scrolling: touch;
     }
+    body.portrait .screens-grid::-webkit-scrollbar{ display:none; }
+    body.portrait .screen-card{
+      min-width:72%;
+      max-width:320px;
+      padding:12px;
+      scroll-snap-align:start;
+    }
+    body.portrait .screen-thumb{
+      aspect-ratio: 9 / 16;
+    }
+    body.portrait .screen-card h3{ font-size:15px; }
+    body.portrait .screen-card p{ font-size:13px; }
 
     .lightbox{
       position: fixed;
@@ -518,6 +516,14 @@
   </div>
 
   <script>
+    const setOrientationClass = () => {
+      const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+      document.body.classList.toggle("portrait", isPortrait);
+    };
+    setOrientationClass();
+    window.addEventListener("orientationchange", setOrientationClass);
+    window.addEventListener("resize", setOrientationClass);
+
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightboxImage");
     const thumbs = document.querySelectorAll(".screen-thumb");
