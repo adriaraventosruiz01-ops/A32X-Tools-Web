@@ -4,29 +4,38 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>A32X Tools</title>
-  <meta name="description" content="ECAM Resets & Aircraft Tech Tools. One-time purchase." />
+  <meta name="description" content="Professional A320 family maintenance reference app for ECAM troubleshooting, resets, and structured AMM-style guidance. One-time purchase." />
   <meta property="og:title" content="A32X Tools" />
-  <meta property="og:description" content="ECAM Resets & Aircraft Tech Tools. One-time purchase." />
+  <meta property="og:description" content="Professional A320 family maintenance reference app for ECAM troubleshooting, resets, and structured AMM-style guidance. One-time purchase." />
   <meta property="og:image" content="hero.png" />
   <meta property="og:type" content="website" />
 
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg0:#041326;
-      --panel: rgba(6,26,51,0.88);
-      --panel2: rgba(0,0,0,0.18);
+      --bg0:#061627;
+      --bg1:#0a1d33;
+      --panel: rgba(9,27,48,0.92);
+      --panel2: rgba(5,16,28,0.5);
       --border: rgba(255,255,255,0.14);
       --border2: rgba(255,255,255,0.10);
-      --text: rgba(255,255,255,0.95);
-      --muted: rgba(255,255,255,0.78);
-      --shadow: 0 18px 60px rgba(0,0,0,0.40);
-      --r: 26px;
+      --text: rgba(255,255,255,0.96);
+      --muted: rgba(255,255,255,0.72);
+      --shadow: 0 18px 60px rgba(0,0,0,0.45);
+      --r: 22px;
+      --accent: #4fe3b2;
+      --accent2: #52c1ff;
+      --accent3: #f7d56b;
     }
 
     *{ box-sizing:border-box; }
@@ -35,21 +44,35 @@
     body{
       margin:0;
       color:var(--text);
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background: var(--bg0);
+      font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(1200px 800px at 15% 10%, rgba(79,227,178,0.18), transparent 55%),
+                  radial-gradient(900px 600px at 85% 15%, rgba(82,193,255,0.18), transparent 60%),
+                  radial-gradient(700px 700px at 70% 80%, rgba(247,213,107,0.10), transparent 60%),
+                  linear-gradient(180deg, var(--bg0), var(--bg1));
     }
 
     .wrap{ max-width:1100px; margin:0 auto; padding:56px 18px; }
+    .section{ padding:36px 0; }
+    .section-title{
+      font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
+      font-size:24px;
+      font-weight:700;
+      margin:0 0 14px;
+      letter-spacing:0.2px;
+    }
+    .section-subtitle{
+      margin:0 0 22px;
+      color:var(--muted);
+      max-width:760px;
+      line-height:1.6;
+    }
 
-    /* HERO */
     .hero{
       min-height: 92vh;
       display:flex;
       align-items:center;
       padding-bottom: 56px;
-      background: url("hero.png");
-      background-size: cover;
-      background-position: center;
+      background: url("hero.png") center / cover no-repeat;
       position: relative;
       overflow:hidden;
     }
@@ -59,13 +82,12 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 35% 40%, rgba(0, 210, 255, 0.16), rgba(0,0,0,0) 55%),
-        radial-gradient(circle at 75% 35%, rgba(60, 255, 170, 0.14), rgba(0,0,0,0) 55%),
-        radial-gradient(circle at 92% 42%, rgba(255, 230, 0, 0.12), rgba(0,0,0,0) 60%),
-        linear-gradient(180deg, rgba(4,19,38,0.22), rgba(4,19,38,0.34));
+        radial-gradient(circle at 35% 40%, rgba(82, 193, 255, 0.18), rgba(0,0,0,0) 55%),
+        radial-gradient(circle at 75% 35%, rgba(79, 227, 178, 0.16), rgba(0,0,0,0) 55%),
+        radial-gradient(circle at 92% 42%, rgba(247, 213, 107, 0.12), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(4,19,38,0.22), rgba(4,19,38,0.38));
     }
 
-    /* Fade inferior para eliminar el “corte”/línea */
     .hero::after{
       content:"";
       position:absolute;
@@ -116,7 +138,6 @@
       min-width: 320px;
     }
 
-    /* ICONO DOBLE */
     .icon{
       width:88px; height:88px;
       border-radius: 18px;
@@ -126,8 +147,9 @@
 
     h1{
       margin:0;
-      font-size:42px;
-      font-weight:900;
+      font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
+      font-size:44px;
+      font-weight:700;
       letter-spacing:0.2px;
       line-height:1.05;
     }
@@ -144,21 +166,21 @@
       gap:6px;
       padding:10px 16px;
       border-radius:999px;
-      background: linear-gradient(135deg, rgba(0, 210, 255, 0.12), rgba(60, 255, 170, 0.08));
-      border: 1.5px solid rgba(0, 210, 255, 0.3);
+      background: linear-gradient(135deg, rgba(82, 193, 255, 0.14), rgba(79, 227, 178, 0.12));
+      border: 1.5px solid rgba(82, 193, 255, 0.3);
       font-weight:900;
       font-size:12px;
       white-space:nowrap;
       letter-spacing:0.5px;
       text-transform:uppercase;
-      color:rgba(100, 255, 200, 0.95);
-      box-shadow: 0 0 20px rgba(0, 210, 255, 0.15);
+      color:rgba(138, 255, 214, 0.98);
+      box-shadow: 0 0 20px rgba(82, 193, 255, 0.15);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
 
     .pill::before{
-      content:"✓";
+      content:"OK";
       font-weight:900;
     }
 
@@ -223,28 +245,28 @@
       position:relative;
       overflow:hidden;
     }
-    .kpi:nth-child(1){ border-color: rgba(0, 210, 255, 0.3); }
+    .kpi:nth-child(1){ border-color: rgba(82, 193, 255, 0.35); }
     .kpi:nth-child(1)::after{
       content:"";
       position:absolute;
       inset:0;
-      background: radial-gradient(circle at 0% 0%, rgba(0, 210, 255, 0.08), transparent);
+      background: radial-gradient(circle at 0% 0%, rgba(82, 193, 255, 0.1), transparent);
       pointer-events:none;
     }
-    .kpi:nth-child(2){ border-color: rgba(60, 255, 170, 0.3); }
+    .kpi:nth-child(2){ border-color: rgba(79, 227, 178, 0.35); }
     .kpi:nth-child(2)::after{
       content:"";
       position:absolute;
       inset:0;
-      background: radial-gradient(circle at 100% 0%, rgba(60, 255, 170, 0.08), transparent);
+      background: radial-gradient(circle at 100% 0%, rgba(79, 227, 178, 0.1), transparent);
       pointer-events:none;
     }
-    .kpi:nth-child(3){ border-color: rgba(255, 230, 0, 0.3); }
+    .kpi:nth-child(3){ border-color: rgba(247, 213, 107, 0.35); }
     .kpi:nth-child(3)::after{
       content:"";
       position:absolute;
       inset:0;
-      background: radial-gradient(circle at 100% 100%, rgba(255, 230, 0, 0.08), transparent);
+      background: radial-gradient(circle at 100% 100%, rgba(247, 213, 107, 0.12), transparent);
       pointer-events:none;
     }
     .kpi:hover{ border-color: rgba(255,255,255,0.25); }
@@ -270,28 +292,88 @@
     }
     .links .link + .link{ margin-top:10px; }
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:8px 12px;
-      border-radius:12px;
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:16px;
+    }
+
+    .feature-card{
+      padding:18px 16px;
+      border-radius:18px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      min-height:140px;
+    }
+
+    .feature-card h3{
+      margin:0 0 6px;
+      font-size:16px;
+      font-weight:700;
+      letter-spacing:0.2px;
+      font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
+    }
+
+    .feature-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .module-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+    }
+
+    .module{
       background: var(--panel2);
       border: 1px solid var(--border2);
-      font-size:13px;
-      font-weight:700;
+      border-radius:18px;
+      padding:16px;
+    }
+
+    .module b{
+      display:block;
+      margin-bottom:6px;
+      font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
+      font-weight:600;
+    }
+
+    .module ul{
+      margin:0;
+      padding-left:18px;
       color:var(--muted);
-      white-space:nowrap;
+      line-height:1.6;
+      font-size:14px;
     }
 
-    .badges{
+    .disclaimer{
+      background: rgba(9,27,48,0.8);
+      border: 1px solid rgba(247, 213, 107, 0.25);
+      border-radius:18px;
+      padding:18px 16px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .strip{
       display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:14px;
+      align-items:center;
+      gap:16px;
+      padding:16px;
+      border-radius:18px;
+      background: linear-gradient(120deg, rgba(79,227,178,0.12), rgba(82,193,255,0.1));
+      border: 1px solid rgba(82,193,255,0.2);
     }
 
-    /* Layout widths */
+    .strip b{
+      font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
+    }
+
     .mainCard{
       flex: 1;
       min-width: 280px;
@@ -301,12 +383,12 @@
       max-width: 100%;
     }
 
-    /* Tablet */
     @media (max-width: 1024px){
       .sideCard{ width: 100%; }
+      .feature-grid{ grid-template-columns:1fr 1fr; }
+      .module-grid{ grid-template-columns:1fr; }
     }
 
-    /* Mobile: apila en vertical y que "Links" ocupe 100% */
     @media (max-width: 820px){
       h1{ font-size:36px; }
       .kpis{ grid-template-columns:1fr; }
@@ -314,11 +396,11 @@
       .grid{ flex-direction: column; }
       .sideCard{ width: 100%; }
 
-      /* En móvil el icono grande sigue bien, pero reducimos un poco el gap */
       .brand{ gap:12px; min-width: 0; }
+      .feature-grid{ grid-template-columns:1fr; }
+      .strip{ flex-direction:column; align-items:flex-start; }
     }
 
-    /* Extra small */
     @media (max-width: 480px){
       h1{ font-size:28px; }
       .subtitle{ font-size:16px; }
@@ -340,11 +422,16 @@
               <img class="icon" src="icon.png" alt="A32X Tools icon" />
               <div>
                 <h1>A32X Tools</h1>
-                <div class="subtitle">ECAM Resets &amp; Aircraft Tech Tools</div>
+                <div class="subtitle">A320 family maintenance reference for fast ECAM troubleshooting</div>
               </div>
             </div>
             <div class="pill">One-time purchase</div>
           </div>
+
+          <p class="section-subtitle" style="margin-top:16px;">
+            Professional reference app for A318/A319/A320/A321 technicians. Get structured ECAM reset steps,
+            AMM-style guidance, and maintenance libraries in one fast, offline-first toolkit.
+          </p>
 
           <div class="btnRow">
             <a class="btn primary" href="#">Get it on Google Play</a>
@@ -370,15 +457,93 @@
         </aside>
 
       </div>
-
-      <div style="margin-top:56px; padding-top:18px; border-top:1px solid var(--border2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
-        <div class="footer">© 2026 A32X Tools. All rights reserved.</div>
-        <div style="display:flex; gap:18px; font-size:12px; font-weight:900;">
-          <a href="/privacy.html" style="color:var(--muted); text-decoration:none; transition:color 0.3s;">Privacy</a>
-          <a href="support.html" style="color:var(--muted); text-decoration:none; transition:color 0.3s;">Support</a>
-        </div>
-      </div>
     </div>
   </header>
+
+  <main class="wrap">
+    <section class="section">
+      <div class="strip">
+        <b>Built for line and base maintenance</b>
+        <span class="section-subtitle" style="margin:0;">
+          Fast, structured access to ECAM fault messages, reset procedures, and maintenance references.
+        </span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">What you get</h2>
+      <p class="section-subtitle">
+        A32X Tools condenses everyday troubleshooting into a single workflow: find the ECAM message, follow the
+        step-by-step reset, then jump to the right AMM/MEL/ESPM reference without losing time.
+      </p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>ECAM Fault Messages</h3>
+          <p>Exact CBs for each reset, tap-to-follow actions, live reset timer, and direct AMM/MEL links.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Quick Search</h3>
+          <p>Keyword search or ATA chapter browsing for instant access to the right ECAM message.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Structural Reports</h3>
+          <p>Interactive damage forms with photos, multiple entries, and PDF/ZIP export.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Modules</h2>
+      <div class="module-grid">
+        <div class="module">
+          <b>Alpha Callups</b>
+          <ul>
+            <li>Complete list with engine model filters</li>
+            <li>Built-in search for fast access</li>
+          </ul>
+        </div>
+        <div class="module">
+          <b>Electrical Contacts</b>
+          <ul>
+            <li>Terminals, splices, and part numbers with ESPM figures</li>
+            <li>Crimping and extraction references included</li>
+          </ul>
+        </div>
+        <div class="module">
+          <b>Common Part Numbers</b>
+          <ul>
+            <li>Organized by category and aircraft zone</li>
+            <li>Add your own with photos and share with colleagues</li>
+          </ul>
+        </div>
+        <div class="module">
+          <b>AMM References</b>
+          <ul>
+            <li>Structured AMM index with fast search</li>
+            <li>Reference only, supports official documentation flow</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Disclaimer</h2>
+      <div class="disclaimer">
+        A32X Tools is designed for training and reference use only. It does not replace official Airbus
+        documentation. ECAM messages, reset procedures, structural damage reports, and AMM/MEL/ESPM references
+        are provided as learning aids. Always consult the latest official Airbus manuals before performing any
+        maintenance or operational task. Airbus and A320 are trademarks of their respective owners and are not
+        affiliated with this app.
+      </div>
+    </section>
+
+    <div style="margin-top:28px; padding-top:18px; border-top:1px solid var(--border2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
+      <div class="footer">&copy; 2026 A32X Tools. All rights reserved.</div>
+      <div style="display:flex; gap:18px; font-size:12px; font-weight:900;">
+        <a href="/privacy.html" style="color:var(--muted); text-decoration:none; transition:color 0.3s;">Privacy</a>
+        <a href="support.html" style="color:var(--muted); text-decoration:none; transition:color 0.3s;">Support</a>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
