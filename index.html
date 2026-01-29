@@ -48,6 +48,7 @@
       background:
         linear-gradient(rgba(5,10,18,0.5), rgba(5,10,18,0.5)),
         url("hero.png") center / cover fixed no-repeat;
+      overflow-x: hidden;
     }
 
     .wrap{ max-width:1100px; margin:0 auto; padding:56px 18px; }
@@ -90,6 +91,8 @@
       grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
     }
 
+    .grid > *{ min-width:0; }
+
     .card{
       background: var(--panel);
       border: 1px solid var(--border);
@@ -114,13 +117,16 @@
       gap:12px;
       flex-wrap:wrap;
     }
+    .titleRow > *{ min-width:0; }
 
     .brand{
       display:flex;
       align-items:center;
       gap:14px;
-      min-width: 320px;
+      width:100%;
+      min-width: 0;
     }
+    .brand > *{ min-width:0; }
 
     .icon{
       width:88px; height:88px;
@@ -168,6 +174,7 @@
     }
 
     .btnRow{ margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+    .btnRow > *{ min-width:0; }
 
     .btn{
       display:inline-flex;
@@ -247,6 +254,7 @@
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:18px;
     }
+    .screens-grid > *{ min-width:0; }
 
     .screen-card{
       border-radius:18px;
@@ -306,8 +314,8 @@
       line-height:1.55;
     }
 
-    .mainCard{ min-width:0; }
-    .sideCard{ min-width:0; }
+    .mainCard{ width:100%; min-width:0; }
+    .sideCard{ width:100%; min-width:0; }
 
     @media (max-width: 1024px){
       .screens-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -315,6 +323,7 @@
 
     @media (max-width: 820px){
       h1{ font-size:36px; }
+      .grid{ grid-template-columns:1fr; }
 
       .brand{ gap:12px; min-width: 0; }
       .screens-grid{
@@ -327,7 +336,7 @@
       }
       .screens-grid::-webkit-scrollbar{ display:none; }
       .screen-card{
-        min-width:70%;
+        flex: 0 0 80%;
         max-width:320px;
         padding:12px;
         scroll-snap-align:start;
@@ -351,28 +360,29 @@
       .screen-card{ min-width:60%; }
       .screen-thumb{ aspect-ratio: 16 / 9; }
     }
-
-    body.portrait .grid{ grid-template-columns:1fr; }
-    body.portrait .screens-grid{
-      display:flex;
-      gap:14px;
-      overflow-x:auto;
-      scroll-snap-type:x mandatory;
-      padding-bottom:10px;
-      -webkit-overflow-scrolling: touch;
+    @media (orientation: portrait){
+      .grid{ grid-template-columns:1fr; }
+      .screens-grid{
+        display:flex;
+        gap:14px;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+        padding-bottom:10px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .screens-grid::-webkit-scrollbar{ display:none; }
+      .screen-card{
+        flex: 0 0 80%;
+        max-width:320px;
+        padding:12px;
+        scroll-snap-align:start;
+      }
+      .screen-thumb{
+        aspect-ratio: 9 / 16;
+      }
+      .screen-card h3{ font-size:15px; }
+      .screen-card p{ font-size:13px; }
     }
-    body.portrait .screens-grid::-webkit-scrollbar{ display:none; }
-    body.portrait .screen-card{
-      min-width:72%;
-      max-width:320px;
-      padding:12px;
-      scroll-snap-align:start;
-    }
-    body.portrait .screen-thumb{
-      aspect-ratio: 9 / 16;
-    }
-    body.portrait .screen-card h3{ font-size:15px; }
-    body.portrait .screen-card p{ font-size:13px; }
 
     .lightbox{
       position: fixed;
@@ -516,14 +526,6 @@
   </div>
 
   <script>
-    const setOrientationClass = () => {
-      const isPortrait = window.matchMedia("(orientation: portrait)").matches;
-      document.body.classList.toggle("portrait", isPortrait);
-    };
-    setOrientationClass();
-    window.addEventListener("orientationchange", setOrientationClass);
-    window.addEventListener("resize", setOrientationClass);
-
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightboxImage");
     const thumbs = document.querySelectorAll(".screen-thumb");
