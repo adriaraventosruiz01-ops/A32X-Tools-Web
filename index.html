@@ -275,6 +275,20 @@
       font-size:13px;
       text-transform:uppercase;
       letter-spacing:0.6px;
+      cursor: pointer;
+      position: relative;
+    }
+    .screen-thumb::after{
+      content:"Tap to zoom";
+      position:absolute;
+      bottom:8px;
+      right:10px;
+      font-size:10px;
+      color:rgba(255,255,255,0.7);
+      background: rgba(0,0,0,0.35);
+      padding:3px 6px;
+      border-radius:8px;
+      letter-spacing:0.4px;
     }
 
     .screen-card h3{
@@ -318,22 +332,63 @@
         gap:14px;
         overflow-x:auto;
         scroll-snap-type:x mandatory;
-        padding-bottom:8px;
+        padding-bottom:10px;
         -webkit-overflow-scrolling: touch;
       }
       .screens-grid::-webkit-scrollbar{ display:none; }
       .screen-card{
-        min-width:82%;
+        min-width:70%;
+        max-width:320px;
+        padding:12px;
         scroll-snap-align:start;
       }
+      .screen-thumb{
+        aspect-ratio: 9 / 16;
+      }
+      .screen-card h3{ font-size:15px; }
+      .screen-card p{ font-size:13px; }
     }
 
     @media (max-width: 480px){
       h1{ font-size:28px; }
       .subtitle{ font-size:16px; }
-      .wrap{ padding:36px 12px; }
+      .wrap{ padding:28px 12px; }
       .brand{ flex-direction: column; align-items: flex-start; }
       .icon{ width:64px; height:64px; }
+    }
+
+    @media (max-width: 820px) and (orientation: landscape){
+      .screen-card{ min-width:60%; }
+      .screen-thumb{ aspect-ratio: 16 / 9; }
+    }
+
+    .lightbox{
+      position: fixed;
+      inset:0;
+      background: rgba(0,0,0,0.8);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+      z-index: 999;
+    }
+    .lightbox.open{ display:flex; }
+    .lightbox img{
+      max-width: 92vw;
+      max-height: 92vh;
+      border-radius:16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+    }
+    .lightbox .hint{
+      position:absolute;
+      top:16px;
+      right:16px;
+      color:rgba(255,255,255,0.8);
+      font-size:12px;
+      background: rgba(0,0,0,0.35);
+      padding:6px 10px;
+      border-radius:10px;
     }
   </style>
 </head>
@@ -382,37 +437,37 @@
         <p class="section-subtitle">Seven key screens with a quick summary of what each one does.</p>
         <div class="screens-grid">
           <div class="screen-card">
-            <div class="screen-thumb">Screenshot 1</div>
+          <div class="screen-thumb" data-full="">Screenshot 1</div>
             <h3>Home / ECAM</h3>
             <p>Fast ECAM resets for A32X technicians.</p>
           </div>
           <div class="screen-card">
-            <div class="screen-thumb">Screenshot 2</div>
+          <div class="screen-thumb" data-full="">Screenshot 2</div>
             <h3>ECAM Detail</h3>
             <p>Real ECAM messages with step-by-step actions.</p>
           </div>
           <div class="screen-card">
-            <div class="screen-thumb">Screenshot 3</div>
+          <div class="screen-thumb" data-full="">Screenshot 3</div>
             <h3>Damage Reports</h3>
             <p>Structural damage reporting with PDF export and real images.</p>
           </div>
           <div class="screen-card">
-            <div class="screen-thumb">Screenshot 4</div>
+          <div class="screen-thumb" data-full="">Screenshot 4</div>
             <h3>Electrical Contacts</h3>
             <p>Electrical contacts with crimp and insertion/extraction data.</p>
           </div>
           <div class="screen-card">
-            <div class="screen-thumb">Screenshot 5</div>
+          <div class="screen-thumb" data-full="">Screenshot 5</div>
             <h3>Alpha Callups</h3>
             <p>Alpha callups and AMM references in one place.</p>
           </div>
           <div class="screen-card">
-            <div class="screen-thumb">Screenshot 6</div>
+          <div class="screen-thumb" data-full="">Screenshot 6</div>
             <h3>Common Part Numbers</h3>
             <p>Find commonly used part numbers with real photos.</p>
           </div>
           <div class="screen-card">
-            <div class="screen-thumb">Screenshot 7</div>
+          <div class="screen-thumb" data-full="">Screenshot 7</div>
             <h3>Create Part Numbers</h3>
             <p>Create your own part numbers for fast sharing.</p>
           </div>
@@ -442,5 +497,41 @@
       </div>
     </div>
   </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="hint">Tap anywhere to close</div>
+    <img id="lightboxImage" alt="Screenshot preview" />
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const thumbs = document.querySelectorAll(".screen-thumb");
+
+    function openLightbox(src){
+      if (!src) return;
+      lightboxImage.src = src;
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden","false");
+    }
+
+    function closeLightbox(){
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden","true");
+      lightboxImage.removeAttribute("src");
+    }
+
+    thumbs.forEach(t => {
+      t.addEventListener("click", () => {
+        const src = t.dataset.full || "";
+        openLightbox(src);
+      });
+    });
+
+    lightbox.addEventListener("click", closeLightbox);
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
 </body>
 </html>
