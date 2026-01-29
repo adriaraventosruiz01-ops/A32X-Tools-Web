@@ -362,6 +362,29 @@
       .screen-thumb{ aspect-ratio: 16 / 9; }
     }
 
+    @media (max-width: 1024px) and (orientation: portrait){
+      .screens-grid{
+        display:flex;
+        gap:14px;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+        padding-bottom:10px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .screens-grid::-webkit-scrollbar{ display:none; }
+      .screen-card{
+        min-width:72%;
+        max-width:320px;
+        padding:12px;
+        scroll-snap-align:start;
+      }
+      .screen-thumb{
+        aspect-ratio: 9 / 16;
+      }
+      .screen-card h3{ font-size:15px; }
+      .screen-card p{ font-size:13px; }
+    }
+
     .lightbox{
       position: fixed;
       inset:0;
