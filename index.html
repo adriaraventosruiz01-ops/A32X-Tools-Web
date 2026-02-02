@@ -197,6 +197,18 @@
       .screen-card h3 { font-size: 12px; letter-spacing: 0.3px; }
     }
 
+    @media (min-width: 821px) {
+      .screens-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow: visible;
+        scroll-snap-type: none;
+        margin: 0;
+        padding-bottom: 0;
+      }
+      .screen-card { min-width: 0; flex: initial; }
+    }
+
     .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; z-index: 1000; }
     .lightbox.open { display: flex; }
     .lightbox img { max-width: 90%; max-height: 80%; border-radius: 12px; }
@@ -232,14 +244,6 @@
           </div>
 
         </section>
-
-        <aside class="card pad-md links sideCard">
-          <div style="font-weight:900; margin-bottom:10px;">Links</div>
-
-          <a class="link" href="/privacy.html">Privacy Policy</a>
-          <a class="link" href="support.html">Support / FAQ</a>
-          <a class="link" href="mailto:info@a320xtools.com">Need help? Email us</a>
-        </aside>
 
       </div>
       <section class="section" style="padding-top:18px; padding-bottom:24px;">
@@ -296,6 +300,15 @@
             <p>Create your own part numbers for fast sharing.</p>
           </div>
         </div>
+      </section>
+      <section class="section" style="padding-top:0;">
+        <aside class="card pad-md links sideCard">
+          <div style="font-weight:900; margin-bottom:10px;">Links</div>
+
+          <a class="link" href="/privacy.html">Privacy Policy</a>
+          <a class="link" href="support.html">Support / FAQ</a>
+          <a class="link" href="mailto:info@a320xtools.com">Need help? Email us</a>
+        </aside>
       </section>
     </div>
   </header>
