@@ -31,11 +31,18 @@
       --border2: rgba(255, 255, 255, 0.14);
       --text: rgba(255, 255, 255, 0.96);
       --muted: rgba(255, 255, 255, 0.72);
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
-      --r: 22px;
+      --shadow: 0 20px 58px rgba(0, 0, 0, 0.42);
+      --shadow-soft: 0 14px 36px rgba(0, 0, 0, 0.32);
+      --r: 20px;
+      --r-lg: var(--r);
+      --r-md: calc(var(--r) - 4px);
+      --r-sm: calc(var(--r) - 8px);
       --accent: #4fe3b2;
       --accent2: #52c1ff;
       --accent3: #f7d56b;
+      --focus-ring: 0 0 0 3px rgba(82, 193, 255, 0.22), 0 0 0 1px rgba(82, 193, 255, 0.55);
+      --edge: 1px solid rgba(255, 255, 255, 0.18);
+      --edge-soft: 1px solid rgba(255, 255, 255, 0.14);
     }
 
     * { box-sizing: border-box; }
@@ -44,10 +51,15 @@
     body {
       color: var(--text);
       font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
-      background:
-        linear-gradient(rgba(5, 10, 18, 0.5), rgba(5, 10, 18, 0.5)),
-        url("hero.png") center / cover fixed no-repeat;
+      background-image:
+        linear-gradient(rgba(4, 10, 18, 0.62), rgba(4, 10, 18, 0.64)),
+        url("hero.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
     }
+    body.no-scroll { overflow: hidden; touch-action: none; }
 
     .wrap { max-width: 1100px; margin: 0 auto; padding: 40px 18px; width: 100%; }
     .section { padding: 36px 0; }
@@ -84,14 +96,11 @@
       gap: 18px;
       grid-template-columns: minmax(0, 1fr);
     }
-    @media (min-width: 821px) {
-      .grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-    }
 
     .card {
       background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
+      border: var(--edge);
+      border-radius: var(--r-lg);
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -100,15 +109,17 @@
       overflow: hidden;
       transition: all 0.3s ease;
     }
-    .card:hover { border-color: rgba(255,255,255,0.2); box-shadow: 0 24px 80px rgba(0,0,0,0.5); }
+    .card:hover { border-color: rgba(255,255,255,0.2); box-shadow: 0 24px 72px rgba(0,0,0,0.45); }
     .card.pad-lg { padding: 26px 24px; }
     .card.pad-md { padding: 18px 16px; }
 
     .titleRow { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
 
     .brand { display:flex; align-items:center; gap:14px; width:100%; }
+    .hero-layout { align-items: start; }
+    .sideCard { height: fit-content; }
 
-    .icon { width: 80px; height: 80px; border-radius: 18px; flex: 0 0 auto; }
+    .icon { width: 80px; height: 80px; border-radius: var(--r-md); flex: 0 0 auto; }
 
     h1 {
       margin: 0;
@@ -124,41 +135,65 @@
       display:inline-flex;
       align-items:center;
       gap:6px;
-      padding:10px 16px;
+      padding:9px 15px;
       border-radius:999px;
-      background: linear-gradient(135deg, rgba(82, 193, 255, 0.14), rgba(79, 227, 178, 0.12));
-      border: 1.5px solid rgba(82, 193, 255, 0.3);
-      font-weight:900;
+      background: linear-gradient(135deg, rgba(82, 193, 255, 0.11), rgba(79, 227, 178, 0.09));
+      border: 1px solid rgba(82, 193, 255, 0.28);
+      font-weight:800;
       font-size:12px;
       white-space:nowrap;
-      letter-spacing:0.5px;
+      letter-spacing:0.45px;
       text-transform:uppercase;
-      color:rgba(138, 255, 214, 0.98);
-      box-shadow: 0 0 20px rgba(82, 193, 255, 0.15);
+      color:rgba(156, 245, 220, 0.96);
+      box-shadow: 0 8px 24px rgba(20, 80, 122, 0.2);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
 
     .btnRow { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:16px; text-decoration:none; font-weight:900; border: 1px solid transparent; cursor:pointer; transition: all 0.3s ease; }
-    .btn.primary { background: rgba(255,255,255,0.92); color: #061a33; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:var(--r-md); text-decoration:none; font-weight:900; border: 1px solid transparent; cursor:pointer; transition: all 0.3s ease; }
+    .btn.primary { background: rgba(255,255,255,0.94); color: #061a33; }
     .btn.primary:hover { background: rgba(255,255,255,1); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
-    .btn.ghost { background: rgba(0,0,0,0.22); border-color: var(--border); color: white; }
-    .btn.ghost:hover { background: rgba(0,0,0,0.35); border-color: rgba(255,255,255,0.25); transform: translateY(-2px); }
+    .btn.ghost { background: rgba(5, 14, 25, 0.56); border-color: rgba(255, 255, 255, 0.3); color: rgba(255,255,255,0.96); }
+    .btn.ghost:hover { background: rgba(5, 14, 25, 0.72); border-color: rgba(255,255,255,0.45); transform: translateY(-2px); }
+    .btn:focus-visible,
+    .links .link:focus-visible,
+    .screen-thumb:focus-visible,
+    .lightbox-close:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+    .btn[href="#"] {
+      background: rgba(15, 28, 42, 0.52);
+      border-color: rgba(255, 255, 255, 0.22);
+      color: rgba(255, 255, 255, 0.72);
+      cursor: not-allowed;
+      opacity: 0.82;
+      transform: none;
+      box-shadow: none;
+    }
+    .btn[href="#"]:hover { transform: none; box-shadow: none; }
+    .btn:active,
+    .links .link:active,
+    .screen-thumb:active,
+    .lightbox-close:active,
+    .lightbox-nav:active { transform: scale(0.98); }
 
     .links .link {
       display: block;
       padding: 12px;
       margin-bottom: 8px;
-      border-radius: 14px;
+      border-radius: var(--r-md);
       background: var(--panel2);
-      border: 1px solid var(--border2);
+      border: var(--edge-soft);
       color: white;
       text-decoration: none;
       font-weight: 700;
       overflow-wrap: anywhere;
       max-width: 100%;
+      transition: background 0.25s ease, border-color 0.25s ease;
     }
+    .links .link:hover { background: rgba(11, 24, 40, 0.78); border-color: rgba(255, 255, 255, 0.22); }
 
     .disclaimer { background: rgba(9,27,48,0.8); border: 1px solid rgba(247, 213, 107, 0.25); border-radius:18px; padding:18px 16px; color:var(--muted); font-size:14px; line-height:1.6; }
 
@@ -167,25 +202,143 @@
       gap: 14px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      padding-bottom: 15px;
-      margin: 0 -5px;
-    }
-
-    .screen-card { flex: 0 0 82%; min-width: 260px; scroll-snap-align: start; background: var(--panel); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); padding:16px; display:flex; flex-direction:column; gap:12px; }
-    .screen-thumb { width:100%; border-radius:14px; aspect-ratio: 9 / 16; border: 1px dashed rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:0.6px; cursor: pointer; position: relative; overflow: hidden; background: rgba(0,0,0,0.2); }
-    .screen-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .screen-thumb::after { content:"Tap to zoom"; position:absolute; bottom:8px; right:10px; font-size:10px; color:rgba(255,255,255,0.7); background: rgba(0,0,0,0.35); padding:3px 6px; border-radius:8px; letter-spacing:0.4px; }
-    .screen-card h3 {
+      scroll-padding-inline: 4px;
+      padding: 4px 4px 20px;
       margin: 0;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .screens-grid::-webkit-scrollbar { display: none; }
+
+    .screen-card { flex: 0 0 82%; min-width: 260px; scroll-snap-align: start; background: var(--panel); border: var(--edge-soft); border-radius: var(--r-md); box-shadow: var(--shadow-soft); padding:18px; display:flex; flex-direction:column; gap:14px; }
+    .video-filler { display: none; }
+    .screen-thumb { width:100%; border-radius:var(--r-sm); aspect-ratio: 9 / 16; border: 1px dashed rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:0.6px; cursor: pointer; position: relative; overflow: hidden; background: rgba(0,0,0,0.2); }
+    .screen-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .demoVideo { width:100%; height:100%; object-fit:cover; display:block; border-radius: inherit; }
+    .demoVideo.framed { object-fit: contain; background: #000; }
+    .demoPlayButton {
+      position: absolute;
+      inset: auto auto 12px 12px;
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.42);
+      background: rgba(5, 15, 26, 0.7);
+      color: rgba(255,255,255,0.95);
+      font-size: 20px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+      box-shadow: 0 0 0 0 rgba(82, 193, 255, 0.42);
+      animation: demoPulse 1.7s ease-out infinite;
+      z-index: 2;
+    }
+    .demoPlayButton:hover {
+      background: rgba(5, 15, 26, 0.84);
+      border-color: rgba(255,255,255,0.6);
+      transform: translateY(-1px);
+    }
+    .demoPlayButton.is-playing {
+      background: rgba(79, 227, 178, 0.22);
+      border-color: rgba(79, 227, 178, 0.5);
+      color: rgba(220, 255, 245, 0.98);
+      animation: none;
+      box-shadow: 0 0 0 1px rgba(79, 227, 178, 0.32), 0 0 24px rgba(79, 227, 178, 0.2);
+    }
+    .screen-thumb::after { content:"Tap to zoom"; position:absolute; bottom:8px; right:10px; font-size:10px; color:rgba(255,255,255,0.7); background: rgba(0,0,0,0.35); padding:3px 6px; border-radius:8px; letter-spacing:0.4px; }
+    .video-filler .screen-thumb::after { content:""; }
+    .video-filler .screen-thumb {
+      cursor: default;
+      border-style: solid;
+      border-color: rgba(82, 193, 255, 0.32);
+      box-shadow: inset 0 0 0 1px rgba(82, 193, 255, 0.2), 0 0 22px rgba(82, 193, 255, 0.12);
+    }
+    .video-filler .screen-thumb::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(130deg, rgba(82, 193, 255, 0.08), rgba(79, 227, 178, 0.06), rgba(82, 193, 255, 0.08));
+      opacity: 0.7;
+      pointer-events: none;
+      animation: demoSweep 6.5s ease-in-out infinite;
+    }
+    .video-filler.is-playing .screen-thumb::before {
+      animation: none;
+      opacity: 0.22;
+    }
+    .video-filler video { pointer-events: none; }
+    .demoProgress {
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      height: 3px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .demoProgressFill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(82, 193, 255, 0.95), rgba(79, 227, 178, 0.95));
+      transition: width 0.08s linear;
+    }
+    @keyframes demoPulse {
+      0% { box-shadow: 0 0 0 0 rgba(82, 193, 255, 0.42); }
+      70% { box-shadow: 0 0 0 12px rgba(82, 193, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(82, 193, 255, 0); }
+    }
+    @keyframes demoSweep {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .screen-card h3 {
+      margin: 2px 0 0;
       font-size: clamp(13px, 2.2vw, 15px);
       font-weight: 600;
       letter-spacing: 0.4px;
-      line-height: 1.25;
+      line-height: 1.35;
       font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
       text-transform: uppercase;
       text-wrap: balance;
     }
-    .screen-card p { margin:0; color:var(--muted); font-size:14px; line-height:1.55; }
+    .screen-card p { margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .screen-card {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+      .screen-card.reveal {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .btn,
+      .card,
+      .links .link,
+      .screen-thumb,
+      .lightbox img,
+      .lightbox-close,
+      .lightbox-nav {
+        transition: none !important;
+      }
+      .demoPlayButton,
+      .video-filler .screen-thumb::before {
+        animation: none !important;
+      }
+      .screen-card {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
 
     @media (max-width: 480px) {
       .wrap { padding: 20px 12px; }
@@ -198,6 +351,15 @@
     }
 
     @media (min-width: 821px) {
+      body { background-attachment: fixed; }
+      .hero-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-layout > .sideCard { display: none; }
+      .mainCard.pad-lg { padding: 22px 20px; }
+      .mainCard .section-subtitle { margin-bottom: 14px; line-height: 1.5; }
+      .mainCard .tagline { margin-top: 8px; }
+      .mainCard .btnRow { margin-top: 14px; }
       .screens-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -207,23 +369,87 @@
         padding-bottom: 0;
       }
       .screen-card { min-width: 0; flex: initial; }
+      .video-filler { display: flex; }
     }
 
-    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.84); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 24px; }
     .lightbox.open { display: flex; }
-    .lightbox img { max-width: 90%; max-height: 80%; border-radius: 12px; }
+    .lightbox .hint { position: absolute; top: 18px; left: 18px; font-size: 12px; color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.4); padding: 6px 10px; border-radius: 999px; letter-spacing: 0.3px; }
+    .lightbox img { max-width: 94vw; max-height: 88vh; border-radius: var(--r-sm); border: 1px solid rgba(255,255,255,0.24); box-shadow: 0 24px 64px rgba(0,0,0,0.45); object-fit: contain; cursor: default; transition: transform 0.2s ease; }
+    .lightbox img.zoomed { transform: scale(1.6); cursor: zoom-out; }
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(5, 15, 26, 0.62);
+      color: rgba(255,255,255,0.92);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .lightbox-close:hover { background: rgba(5, 15, 26, 0.84); border-color: rgba(255,255,255,0.45); }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(5, 15, 26, 0.62);
+      color: rgba(255,255,255,0.92);
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .lightbox-nav:hover { background: rgba(5, 15, 26, 0.84); border-color: rgba(255,255,255,0.45); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+    .lightbox-count {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.9);
+      background: rgba(0,0,0,0.46);
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 999px;
+      padding: 5px 10px;
+      letter-spacing: 0.2px;
+      min-width: 44px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    @media (min-width: 821px) {
+      .lightbox img { max-width: 75vw; max-height: 85vh; }
+      .lightbox img.zoomed { transform: scale(1.8); }
+      .lightbox img { cursor: zoom-in; }
+      .lightbox-nav { display: inline-flex; }
+    }
   </style>
 </head>
 
 <body>
   <header class="hero">
     <div class="wrap">
-      <div class="grid">
+      <div class="grid hero-layout">
 
         <section class="card pad-lg mainCard">
           <div class="titleRow">
             <div class="brand">
-              <img class="icon" src="icon.png" alt="A32X Tools icon" />
+              <img class="icon" src="icon.png" alt="A32X Tools icon" width="80" height="80" />
               <div>
                 <h1>A32X Tools</h1>
                 <div class="subtitle">A320 family maintenance reference for fast ECAM troubleshooting</div>
@@ -245,63 +471,6 @@
 
         </section>
 
-      </div>
-      <section class="section" style="padding-top:18px; padding-bottom:24px;">
-        <h2 class="section-title">App tour</h2>
-        <p class="section-subtitle">Seven key screens with a quick summary of what each one does.</p>
-        <div class="screens-grid">
-          <div class="screen-card">
-            <div class="screen-thumb" data-full="01.png">
-              <img src="01.png" alt="Screenshot 1" loading="lazy" />
-            </div>
-            <h3>HOME</h3>
-            <p>Central hub for Airbus A320 family maintenance.</p>
-          </div>
-          <div class="screen-card">
-            <div class="screen-thumb" data-full="02.png">
-              <img src="02.png" alt="Screenshot 2" loading="lazy" />
-            </div>
-            <h3>ECAM RESETS DETAIL</h3>
-            <p>Guided resets with exact CBs, clear steps, and a live timer.</p>
-          </div>
-          <div class="screen-card">
-            <div class="screen-thumb" data-full="03.png">
-              <img src="03.png" alt="Screenshot 3" loading="lazy" />
-            </div>
-            <h3>DAMAGE REPORTS</h3>
-            <p>Lightning strike damage? Log multiple findings in one report with photos, clear summaries, and PDF/ZIP share.</p>
-          </div>
-          <div class="screen-card">
-            <div class="screen-thumb" data-full="04.png">
-              <img src="04.png" alt="Screenshot 4" loading="lazy" />
-            </div>
-            <h3>CONTACTS, SPLICES &amp; TERMINALS</h3>
-            <p>Find the right P/N fast with exact ESPM references.</p>
-          </div>
-          <div class="screen-card">
-            <div class="screen-thumb" data-full="05.png">
-              <img src="05.png" alt="Screenshot 5" loading="lazy" />
-            </div>
-            <h3>ALPHA CALLUPS &amp; AMM REFERENCES</h3>
-            <p>Alpha callups and AMM references with instant search.</p>
-          </div>
-          <div class="screen-card">
-            <div class="screen-thumb" data-full="06.png">
-              <img src="06.png" alt="Screenshot 6" loading="lazy" />
-            </div>
-            <h3>COMMONLY USED PART NUMBERS</h3>
-            <p>Live catalog with real photos, organized by zone and category.</p>
-          </div>
-          <div class="screen-card">
-            <div class="screen-thumb" data-full="07.png">
-              <img src="07.png" alt="Screenshot 7" loading="lazy" />
-            </div>
-            <h3>CREATE YOUR OWN ITEMS</h3>
-            <p>Add and share your own items to grow the database faster.</p>
-          </div>
-        </div>
-      </section>
-      <section class="section" style="padding-top:0;">
         <aside class="card pad-md links sideCard">
           <div style="font-weight:900; margin-bottom:10px;">Links</div>
 
@@ -309,6 +478,89 @@
           <a class="link" href="support.html">Support / FAQ</a>
           <a class="link" href="mailto:info@a320xtools.com">Need help? Email us</a>
         </aside>
+
+      </div>
+      <section class="section" style="padding-top:18px; padding-bottom:24px;">
+        <h2 class="section-title">App tour</h2>
+        <p class="section-subtitle">Seven key screens with a quick summary of what each one does.</p>
+        <div class="screens-grid">
+          <div class="screen-card">
+            <div class="screen-thumb" data-full="01.png" tabindex="0" role="button" aria-label="Screenshot 1">
+              <img src="01.png" alt="Screenshot 1" loading="lazy" width="1080" height="1920" />
+            </div>
+            <h3>HOME</h3>
+            <p>Central hub for Airbus A320 family maintenance.</p>
+          </div>
+          <div class="screen-card">
+            <div class="screen-thumb" data-full="02.png" tabindex="0" role="button" aria-label="Screenshot 2">
+              <img src="02.png" alt="Screenshot 2" loading="lazy" width="1080" height="1920" />
+            </div>
+            <h3>ECAM RESETS DETAIL</h3>
+            <p>Guided resets with exact CBs, clear steps, and a live timer.</p>
+          </div>
+          <div class="screen-card">
+            <div class="screen-thumb" data-full="03.png" tabindex="0" role="button" aria-label="Screenshot 3">
+              <img src="03.png" alt="Screenshot 3" loading="lazy" width="1080" height="1920" />
+            </div>
+            <h3>DAMAGE REPORTS</h3>
+            <p>Lightning strike damage? Log multiple findings in one report with photos, clear summaries, and PDF/ZIP share.</p>
+          </div>
+          <div class="screen-card">
+            <div class="screen-thumb" data-full="04.png" tabindex="0" role="button" aria-label="Screenshot 4">
+              <img src="04.png" alt="Screenshot 4" loading="lazy" width="1080" height="1920" />
+            </div>
+            <h3>CONTACTS, SPLICES &amp; TERMINALS</h3>
+            <p>Find the right P/N fast with exact ESPM references.</p>
+          </div>
+          <div class="screen-card">
+            <div class="screen-thumb" data-full="05.png" tabindex="0" role="button" aria-label="Screenshot 5">
+              <img src="05.png" alt="Screenshot 5" loading="lazy" width="1080" height="1920" />
+            </div>
+            <h3>ALPHA CALLUPS &amp; AMM REFERENCES</h3>
+            <p>Alpha callups and AMM references with instant search.</p>
+          </div>
+          <div class="screen-card">
+            <div class="screen-thumb" data-full="06.png" tabindex="0" role="button" aria-label="Screenshot 6">
+              <img src="06.png" alt="Screenshot 6" loading="lazy" width="1080" height="1920" />
+            </div>
+            <h3>COMMONLY USED PART NUMBERS</h3>
+            <p>Live catalog with real photos, organized by zone and category.</p>
+          </div>
+          <div class="screen-card">
+            <div class="screen-thumb" data-full="07.png" tabindex="0" role="button" aria-label="Screenshot 7">
+              <img src="07.png" alt="Screenshot 7" loading="lazy" width="1080" height="1920" />
+            </div>
+            <h3>CREATE YOUR OWN ITEMS</h3>
+            <p>Add and share your own items to grow the database faster.</p>
+          </div>
+          <div class="screen-card video-filler" aria-hidden="true">
+            <div class="screen-thumb">
+              <video class="demoVideo framed" muted playsinline preload="none" poster="assets/demo_poster_540x960_v2.jpg">
+                <source src="assets/demo_full_540x960_v2.mp4" type="video/mp4">
+              </video>
+              <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill"></div></div>
+              <button class="demoPlayButton" type="button" aria-label="Play video">&#9658;</button>
+            </div>
+          </div>
+          <div class="screen-card video-filler" aria-hidden="true">
+            <div class="screen-thumb">
+              <video class="demoVideo framed" muted playsinline preload="none" poster="assets/commonpn_poster_540x960.jpg">
+                <source src="assets/commonpn_full_540x960.mp4" type="video/mp4">
+              </video>
+              <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill"></div></div>
+              <button class="demoPlayButton" type="button" aria-label="Play video">&#9658;</button>
+            </div>
+          </div>
+          <div class="screen-card video-filler" aria-hidden="true">
+            <div class="screen-thumb">
+              <video class="demoVideo" muted playsinline preload="none" poster="assets/damage_report_poster_540x960.jpg">
+                <source src="assets/damage_report_noaudio.webm" type="video/webm">
+              </video>
+              <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill"></div></div>
+              <button class="demoPlayButton" type="button" aria-label="Play video">&#9658;</button>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </header>
@@ -337,38 +589,188 @@
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="hint">Tap anywhere to close</div>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
+    <div class="lightbox-count" id="lightboxCount">1/7</div>
     <img id="lightboxImage" alt="Screenshot preview" />
   </div>
 
   <script>
     const lightbox = document.getElementById("lightbox");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxCount = document.getElementById("lightboxCount");
     const lightboxImage = document.getElementById("lightboxImage");
-    const thumbs = document.querySelectorAll(".screen-thumb");
+    const thumbs = Array.from(document.querySelectorAll(".screen-card:not(.video-filler) .screen-thumb"));
+    const isDesktop = () => window.matchMedia("(min-width: 821px)").matches;
+    let activeIndex = 0;
+    const totalImages = thumbs.length;
 
-    function openLightbox(src){
+    function setLightboxImage(index){
+      const safeIndex = (index + totalImages) % totalImages;
+      activeIndex = safeIndex;
+      const src = thumbs[safeIndex]?.dataset.full || "";
       if (!src) return;
       lightboxImage.src = src;
+      lightboxCount.textContent = `${safeIndex + 1}/${totalImages}`;
+      if (isDesktop()) {
+        lightboxImage.classList.add("zoomed");
+      } else {
+        lightboxImage.classList.remove("zoomed");
+      }
+    }
+
+    function openLightbox(index){
+      setLightboxImage(index);
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden","false");
+      document.body.classList.add("no-scroll");
     }
 
     function closeLightbox(){
       lightbox.classList.remove("open");
       lightbox.setAttribute("aria-hidden","true");
+      lightboxImage.classList.remove("zoomed");
       lightboxImage.removeAttribute("src");
+      document.body.classList.remove("no-scroll");
+    }
+    function prevImage(){
+      setLightboxImage(activeIndex - 1);
+    }
+    function nextImage(){
+      setLightboxImage(activeIndex + 1);
     }
 
-    thumbs.forEach(t => {
+    thumbs.forEach((t, index) => {
       t.addEventListener("click", () => {
-        const src = t.dataset.full || "";
-        openLightbox(src);
+        openLightbox(index);
+      });
+      t.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter" && e.key !== " ") return;
+        e.preventDefault();
+        openLightbox(index);
       });
     });
 
-    lightbox.addEventListener("click", closeLightbox);
+    lightboxImage.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (isDesktop()) {
+        lightboxImage.classList.toggle("zoomed");
+      }
+    });
+    lightboxPrev.addEventListener("click", (e) => {
+      e.stopPropagation();
+      prevImage();
+    });
+    lightboxNext.addEventListener("click", (e) => {
+      e.stopPropagation();
+      nextImage();
+    });
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
     window.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("open")) return;
       if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "ArrowRight") nextImage();
+    });
+    document.querySelectorAll('a[href="#"]').forEach((link) => {
+      link.addEventListener("click", (e) => e.preventDefault());
+    });
+
+    if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+      const cards = document.querySelectorAll(".screen-card");
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("reveal");
+          obs.unobserve(entry.target);
+        });
+      }, { threshold: 0.15 });
+
+      cards.forEach((card, index) => {
+        card.style.transitionDelay = `${Math.min(index * 40, 180)}ms`;
+        observer.observe(card);
+      });
+    } else {
+      document.querySelectorAll(".screen-card").forEach((card) => card.classList.add("reveal"));
+    }
+
+    document.querySelectorAll(".video-filler").forEach((tile) => {
+      const demoVideo = tile.querySelector(".demoVideo");
+      const demoPlayButton = tile.querySelector(".demoPlayButton");
+      const demoProgressFill = tile.querySelector(".demoProgressFill");
+      if (!demoVideo || !demoPlayButton) return;
+
+      const syncDemoButton = () => {
+        const playing = !demoVideo.paused && !demoVideo.ended;
+        tile.classList.toggle("is-playing", playing);
+        demoPlayButton.classList.toggle("is-playing", playing);
+        demoPlayButton.innerHTML = playing ? "&#10074;&#10074;" : "&#9658;";
+        demoPlayButton.setAttribute("aria-label", playing ? "Pause video" : "Play video");
+      };
+      const updateProgress = () => {
+        if (!demoProgressFill) return;
+        const duration = demoVideo.duration;
+        if (!Number.isFinite(duration) || duration <= 0) {
+          demoProgressFill.style.width = "0%";
+          return;
+        }
+        const percent = Math.min(100, Math.max(0, (demoVideo.currentTime / duration) * 100));
+        demoProgressFill.style.width = `${percent}%`;
+      };
+
+      demoPlayButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (demoVideo.paused || demoVideo.ended) {
+          if (demoVideo.ended) demoVideo.currentTime = 0;
+          const playPromise = demoVideo.play();
+          if (playPromise && typeof playPromise.catch === "function") {
+            playPromise.catch(() => {});
+          }
+        } else {
+          demoVideo.pause();
+        }
+        syncDemoButton();
+      });
+
+      demoVideo.addEventListener("play", syncDemoButton);
+      demoVideo.addEventListener("pause", syncDemoButton);
+      demoVideo.addEventListener("timeupdate", updateProgress);
+      demoVideo.addEventListener("loadedmetadata", updateProgress);
+      demoVideo.addEventListener("durationchange", updateProgress);
+      demoVideo.addEventListener("ended", () => {
+        demoVideo.currentTime = 0;
+        updateProgress();
+        syncDemoButton();
+      });
+      updateProgress();
+      syncDemoButton();
     });
   </script>
 </body>
+<!-- CHANGES:
+- Kept a darker hero overlay for safer contrast and preserved mobile-first background attachment (scroll on mobile, fixed on desktop).
+- Preserved the two-column desktop hero composition (main card + links card) while keeping single-column mobile flow.
+- Added a radius scale system with --r-lg, --r-md and --r-sm derived from the existing base radius.
+- Unified card/link/screenshot border and shadow treatment with shared edge and soft-edge variables for visual consistency.
+- Applied consistent radii across cards, links, screenshots, buttons and lightbox image surfaces.
+- Improved interaction states with focus-visible ring and subtle active/tap feedback for buttons, links, thumbs and lightbox controls.
+- Styled hash CTAs as disabled/coming-soon and prevented hash jump with JS preventDefault.
+- Kept ghost CTA contrast strong over complex backgrounds without changing visible labels.
+- Improved app-tour mobile rail polish (snap stability, shadow-safe padding, hidden scrollbar) and preserved reduced-motion behavior.
+- Added keyboard support to screenshot thumbs (Enter/Space) with button semantics and tabindex.
+- Added width/height attributes to icon and screenshot images to reduce layout shift while keeping lazy loading.
+- Expanded lightbox UX with close button, desktop prev/next controls, ArrowLeft/ArrowRight navigation and numeric counter.
+- Preserved overlay click + Escape close behavior and maintained desktop-only zoom toggle on the preview image.
+- Added two desktop-only video filler tiles in App tour to avoid empty grid slots.
+- Added play/pause overlay buttons for both video tiles with visible active state.
+- Updated video tile behavior so video tiles are excluded from lightbox navigation.
+-->
 </html>
