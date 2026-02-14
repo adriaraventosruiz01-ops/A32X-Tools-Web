@@ -188,22 +188,15 @@
       box-shadow: none;
       transition: transform 0.2s ease;
     }
+    
     .store-badge img {
       display: block;
       object-fit: contain;
       object-position: center;
-      width: auto;
-      height: auto;
+      width: 176px;
+      height: 52px;
       max-width: 100%;
       max-height: 100%;
-    }
-    .store-badge-play img {
-      width: 188px;
-      height: 56px;
-    }
-    .store-badge-apple img {
-      width: 164px;
-      height: 38px;
     }
     .store-badge:hover { transform: translateY(-1px); }
     .store-badge:active { transform: translateY(0); }
@@ -408,9 +401,7 @@
       .pillGroup .pill {
         width: fit-content;
       }
-      .pillGroup .pill-soft {
-        flex-basis: 100%;
-      }
+      .pillGroup .pill-soft { flex-basis: auto; width: fit-content; }
     }
 @media (max-width: 480px) {
       .wrap { padding: 20px 12px; }
@@ -561,13 +552,6 @@
 
         </section>
 
-        <aside class="card pad-md links sideCard">
-          <div style="font-weight:900; margin-bottom:10px;">Links</div>
-
-          <a class="link" href="/privacy.html">Privacy Policy</a>
-          <a class="link" href="support.html">Support / FAQ</a>
-          <a class="link" href="mailto:info@a320xtools.com">Need help? Email us</a>
-        </aside>
 
       </div>
       <section class="section" style="padding-top:18px; padding-bottom:24px;">
@@ -681,6 +665,14 @@
           </div>
         </div>
       </section>
+
+        <aside class="card pad-md links sideCard">
+          <div style="font-weight:900; margin-bottom:10px;">Links</div>
+
+          <a class="link" href="/privacy.html">Privacy Policy</a>
+          <a class="link" href="support.html">Support / FAQ</a>
+          <a class="link" href="mailto:info@a320xtools.com">Need help? Email us</a>
+        </aside>
     </div>
   </header>
 
@@ -893,6 +885,10 @@
 - Updated video tile behavior so video tiles are excluded from lightbox navigation.
 -->
 </html>
+
+
+
+
 
 
 
