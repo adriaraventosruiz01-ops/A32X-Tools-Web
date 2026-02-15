@@ -268,6 +268,7 @@
 
     .screen-card { flex: 0 0 82%; min-width: 260px; scroll-snap-align: start; background: var(--panel); border: var(--edge-soft); border-radius: var(--r-md); box-shadow: var(--shadow-soft); padding:18px; display:flex; flex-direction:column; gap:14px; }
     .video-filler { display: flex; }
+    .desktop-video-grid { display: none; }
     .mobile-video-grid { display: none; }
     .mobile-video-grid::-webkit-scrollbar { display: none; }
     .screen-thumb { width:100%; border-radius:var(--r-sm); aspect-ratio: 9 / 16; border: 1px dashed rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:0.6px; cursor: pointer; position: relative; overflow: hidden; background: rgba(0,0,0,0.2); }
@@ -371,6 +372,19 @@
       text-wrap: balance;
     }
     .screen-card p { margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
+    .videos-heading {
+      font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      margin: 8px 4px 10px;
+    }
+    .video-filler,
+    .mobile-video-card {
+      background: linear-gradient(160deg, rgba(15, 46, 66, 0.82), rgba(10, 57, 66, 0.78));
+      border-color: rgba(82, 193, 255, 0.42);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(82, 193, 255, 0.14);
+    }
 
     @media (prefers-reduced-motion: no-preference) {
       .screen-card {
@@ -433,11 +447,13 @@
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         scroll-padding-inline: 4px;
-        padding: 4px 4px 20px;
-        margin: 8px 0 0;
+        padding: 14px 4px 20px;
+        margin: 16px 0 0;
+        border-top: 1px solid rgba(82, 193, 255, 0.26);
         scrollbar-width: none;
         -ms-overflow-style: none;
       }
+      .desktop-video-grid { display: none; }
     }
 
     @media (min-width: 821px) {
@@ -460,6 +476,12 @@
       }
       .screen-card { min-width: 0; flex: initial; }
       .video-filler { display: flex; }
+      .desktop-video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 14px;
+      }
     }
 
     .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.84); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 24px; }
@@ -619,7 +641,10 @@
             <h3>CREATE YOUR OWN ITEMS</h3>
             <p>Add and share your own items to grow the database faster.</p>
           </div>
-          <div class="screen-card video-filler" aria-hidden="true">
+        </div>
+        <h3 class="videos-heading">Demos</h3>
+        <div class="desktop-video-grid" aria-label="Video demos">
+          <div class="screen-card video-filler">
             <div class="screen-thumb">
               <video class="demoVideo framed" muted playsinline preload="none" poster="assets/demo_poster_540x960_v2.jpg">
                 <source src="assets/demo_full_540x960_v2.mp4" type="video/mp4">
@@ -627,8 +652,10 @@
               <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill"></div></div>
               <button class="demoPlayButton" type="button" aria-label="Play video">&#9658;</button>
             </div>
+            <h3>ECAM MESSAGE SEARCH &amp; RESET</h3>
+            <p>Find an ECAM message and follow the complete reset procedure step by step.</p>
           </div>
-          <div class="screen-card video-filler" aria-hidden="true">
+          <div class="screen-card video-filler">
             <div class="screen-thumb">
               <video class="demoVideo framed" muted playsinline preload="none" poster="assets/commonpn_poster_540x960.jpg">
                 <source src="assets/commonpn_full_540x960.mp4" type="video/mp4">
@@ -636,8 +663,10 @@
               <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill"></div></div>
               <button class="demoPlayButton" type="button" aria-label="Play video">&#9658;</button>
             </div>
+            <h3>PART SEARCH &amp; PHOTO CHECK</h3>
+            <p>Locate a part quickly and review its photo to verify the item before action.</p>
           </div>
-          <div class="screen-card video-filler" aria-hidden="true">
+          <div class="screen-card video-filler">
             <div class="screen-thumb">
               <video class="demoVideo" muted playsinline preload="none" poster="assets/damage_report_poster_540x960.jpg">
                 <source src="assets/damage_report_noaudio.webm" type="video/webm">
@@ -645,6 +674,8 @@
               <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill"></div></div>
               <button class="demoPlayButton" type="button" aria-label="Play video">&#9658;</button>
             </div>
+            <h3>DAMAGE REPORT PDF WORKFLOW</h3>
+            <p>Create a damage report and preview the generated PDF instantly inside the app.</p>
           </div>
         </div>
         <div class="mobile-video-grid" aria-label="Video demos">
@@ -656,6 +687,8 @@
               <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill"></div></div>
               <button class="demoPlayButton" type="button" aria-label="Play video">&#9658;</button>
             </div>
+            <h3>ECAM MESSAGE SEARCH &amp; RESET</h3>
+            <p>Find an ECAM message and follow the complete reset procedure step by step.</p>
           </div>
           <div class="screen-card mobile-video-card">
             <div class="screen-thumb">
@@ -665,6 +698,8 @@
               <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill"></div></div>
               <button class="demoPlayButton" type="button" aria-label="Play video">&#9658;</button>
             </div>
+            <h3>PART SEARCH &amp; PHOTO CHECK</h3>
+            <p>Locate a part quickly and review its photo to verify the item before action.</p>
           </div>
           <div class="screen-card mobile-video-card">
             <div class="screen-thumb">
@@ -674,6 +709,8 @@
               <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill"></div></div>
               <button class="demoPlayButton" type="button" aria-label="Play video">&#9658;</button>
             </div>
+            <h3>DAMAGE REPORT PDF WORKFLOW</h3>
+            <p>Create a damage report and preview the generated PDF instantly inside the app.</p>
           </div>
         </div>
       </section>
