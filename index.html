@@ -201,6 +201,26 @@
       width: 160px;
       height: 48px;
     }
+    .store-badge-wrap {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .coming-soon {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
     .store-badge-apple img {
       width: 140px;
       height: 32px;
@@ -576,9 +596,12 @@
           </p>
 
           <div class="btnRow">
-            <a class="store-badge store-badge-play" href="https://play.google.com/store/search?q=A32X%20Tools&c=apps" target="_blank" rel="noopener noreferrer" aria-label="Google Play Store">
-              <img src="assets/store-badges/google-play-badge.png" alt="Get it on Google Play">
-            </a>
+            <div class="store-badge-wrap">
+              <a class="store-badge store-badge-play" href="https://play.google.com/store/search?q=A32X%20Tools&c=apps" target="_blank" rel="noopener noreferrer" aria-label="Google Play Store">
+                <img src="assets/store-badges/google-play-badge.png" alt="Get it on Google Play">
+              </a>
+              <span class="coming-soon">Android · Coming Soon</span>
+            </div>
             <a class="store-badge store-badge-apple" href="https://apps.apple.com/es/app/a32x-tools/id6759071028" target="_blank" rel="noopener noreferrer" aria-label="Apple Store">
               <img src="assets/store-badges/app-store-badge.svg" alt="Download on the App Store">
             </a>
