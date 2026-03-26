@@ -364,6 +364,7 @@
     .links .link:hover { background: rgba(11, 24, 40, 0.78); border-color: rgba(255, 255, 255, 0.22); }
 
     .disclaimer { background: rgba(9,27,48,0.8); border: 1px solid rgba(247, 213, 107, 0.25); border-radius:18px; padding:18px 16px; color:var(--muted); font-size:14px; line-height:1.6; }
+    body[data-product="a330"] .disclaimer { background: rgba(10, 44, 12, 0.8); border-color: rgba(255, 209, 63, 0.25); }
 
     .screens-grid {
       display: flex;
@@ -389,25 +390,25 @@
       cursor: default;
       border-style: solid;
       border-color: rgba(255,255,255,0.18);
-      background:
-        linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.48)),
-        center / cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.94), rgba(0,0,0,0.98));
     }
     .screen-thumb.placeholder::after { content:""; }
     .placeholder-note {
       position: absolute;
-      inset: auto 12px 12px 12px;
-      padding: 12px 12px 11px;
-      border-radius: 12px;
-      background: rgba(6, 18, 31, 0.58);
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.14);
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.95);
       font-size: 11px;
-      line-height: 1.45;
-      letter-spacing: 0.35px;
-      text-transform: none;
-      font-weight: 700;
-      text-align: left;
+      line-height: 1;
+      letter-spacing: 0.45px;
+      text-transform: uppercase;
+      font-weight: 800;
+      text-align: center;
+      white-space: nowrap;
     }
     .demoVideo { width:100%; height:100%; object-fit:cover; display:block; border-radius: inherit; }
     .demoVideo.framed { object-fit: contain; background: #000; }
@@ -926,8 +927,8 @@
       if (item.placeholder) {
         return `
           <div class="screen-card">
-            <div class="screen-thumb placeholder" style="background-image: linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.48)), url('${item.bg}');">
-              <div class="placeholder-note">${item.text}</div>
+            <div class="screen-thumb placeholder">
+              <div class="placeholder-note">Coming soon</div>
             </div>
             <h3>${item.title}</h3>
             <p>${item.text}</p>
@@ -952,8 +953,8 @@
       if (item.placeholder) {
         return `
           <div class="${cardClass}">
-            <div class="screen-thumb placeholder" style="background-image: linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.48)), url('${item.bg}');">
-              <div class="placeholder-note">${item.text}</div>
+            <div class="screen-thumb placeholder">
+              <div class="placeholder-note">Coming soon</div>
             </div>
             <h3>${item.title}</h3>
             <p>${item.text}</p>
