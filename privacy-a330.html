@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Privacy Policy – A32X Tools</title>
-  <link rel="icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" href="icon.png" />
+  <title>Privacy Policy – A330 Tools</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/products/a330/icon.png" />
   <style>
     :root{
-      --bg0:#041326;
-      --panel: rgba(6,26,51,0.88);
+      --bg0:#0a2107;
+      --panel: rgba(9,36,10,0.88);
       --panel2: rgba(0,0,0,0.18);
-      --border: rgba(255,255,255,0.14);
-      --border2: rgba(255,255,255,0.10);
+      --border: rgba(255,235,136,0.14);
+      --border2: rgba(255,235,136,0.10);
       --text: rgba(255,255,255,0.95);
       --muted: rgba(255,255,255,0.78);
       --shadow: 0 18px 60px rgba(0,0,0,0.40);
@@ -26,12 +26,14 @@
       margin:0;
       color:var(--text);
       font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background: var(--bg0);
+      background:
+        linear-gradient(rgba(8, 26, 7, 0.84), rgba(8, 26, 7, 0.9)),
+        url("assets/products/a330/background.png") center/cover fixed no-repeat;
       line-height:1.6;
     }
 
     header{
-      background: rgba(4,19,38,0.95);
+      background: rgba(9,33,10,0.95);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border2);
@@ -60,9 +62,7 @@
       transition: opacity 0.3s ease;
     }
 
-    .header-brand:hover{
-      opacity:0.8;
-    }
+    .header-brand:hover{ opacity:0.8; }
 
     .header-brand img{
       width:32px;
@@ -70,10 +70,7 @@
       border-radius:8px;
     }
 
-    nav{
-      display:flex;
-      gap:8px;
-    }
+    nav{ display:flex; gap:8px; }
 
     nav a{
       display:inline-block;
@@ -87,13 +84,11 @@
       font-size:14px;
     }
 
-    nav a:hover{
-      background: rgba(255,255,255,0.1);
-    }
+    nav a:hover{ background: rgba(255,255,255,0.1); }
 
     nav a.active{
       background: rgba(255,255,255,0.15);
-      border-bottom: 2px solid rgba(255,255,255,0.3);
+      border-bottom: 2px solid rgba(255,235,136,0.3);
     }
 
     .wrap{
@@ -116,15 +111,8 @@
       margin-bottom:12px;
     }
 
-    p{
-      margin-bottom:12px;
-      color:var(--text);
-    }
-
-    strong{
-      font-weight:900;
-      color:white;
-    }
+    p{ margin-bottom:12px; color:var(--text); }
+    strong{ font-weight:900; color:white; }
 
     a{
       color:rgba(255,255,255,0.95);
@@ -132,9 +120,7 @@
       transition: opacity 0.3s ease;
     }
 
-    a:hover{
-      opacity:0.8;
-    }
+    a:hover{ opacity:0.8; }
 
     footer{
       text-align:center;
@@ -156,32 +142,23 @@
         flex-direction:column;
       }
 
-      nav a{
-        display:block;
-        padding:12px 14px;
-      }
-
-      h1{
-        font-size:28px;
-      }
-
-      .wrap{
-        padding:36px 12px;
-      }
+      nav a{ display:block; padding:12px 14px; }
+      h1{ font-size:28px; }
+      .wrap{ padding:36px 12px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="header-content">
-      <a href="index.html" class="header-brand">
-        <img src="icon.png" alt="A32X Tools" />
-        A32X Tools
+      <a href="index.html?product=a330" class="header-brand">
+        <img src="assets/products/a330/icon.png" alt="A330 Tools" />
+        A330 Tools
       </a>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="privacy.html" class="active">Privacy</a>
-        <a href="support.html">Support</a>
+        <a href="index.html?product=a330">Home</a>
+        <a href="privacy-a330.html" class="active">Privacy</a>
+        <a href="support-a330.html">Support</a>
       </nav>
     </div>
   </header>
@@ -189,12 +166,12 @@
   <main class="wrap">
     <h1>Privacy Policy</h1>
 
-    <p><strong>Effective date:</strong> 2026-01-27</p>
+    <p><strong>Effective date:</strong> 2026-03-26</p>
 
-    <p>A32X Tools respects your privacy. This app is designed to work without collecting personal information from users.</p>
+    <p>A330 Tools respects your privacy. This app is designed to work without collecting personal information from users.</p>
 
     <h2>1) Personal data</h2>
-    <p>A32X Tools does not collect, store, sell, or share personal data such as names, email addresses, phone numbers, or advertising identifiers.</p>
+    <p>A330 Tools does not collect, store, sell, or share personal data such as names, email addresses, phone numbers, or advertising identifiers.</p>
     <p>The app does not require user accounts or registration.</p>
 
     <h2>2) Camera and photos</h2>
@@ -204,15 +181,15 @@
     <h2>3) Internet access</h2>
     <p>Internet access is used only to download updates for the internal part number database.</p>
     <p>The app does not send personal data as part of these updates.<br>
-    Note: like most internet services, standard server logs may temporarily process technical information (such as IP address) for security and delivery purposes.</p>
+    Note: like most internet services, standard server logs may temporarily process technical information such as IP address for security and delivery purposes.</p>
 
     <h2>4) Local storage</h2>
     <p>All user-created data (custom part numbers, damage reports and related photos) is stored locally on the device.</p>
-    <p>A32X Tools does not use cloud storage for user content.</p>
+    <p>A330 Tools does not use cloud storage for user content.</p>
 
     <h2>5) Third-party services</h2>
-    <p>A32X Tools does not use advertising SDKs.</p>
-    <p>A32X Tools does not use analytics or tracking services.</p>
+    <p>A330 Tools does not use advertising SDKs.</p>
+    <p>A330 Tools does not use analytics or tracking services.</p>
 
     <h2>6) Changes to this policy</h2>
     <p>This privacy policy may be updated if the app functionality changes. The latest version will be made available at this page.</p>
@@ -223,7 +200,7 @@
   </main>
 
   <footer>
-    © 2026 A32X Tools
+    © 2026 A330 Tools
   </footer>
 </body>
 </html>

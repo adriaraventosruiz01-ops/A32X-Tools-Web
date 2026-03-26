@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Support – A32X Tools</title>
-  <link rel="icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" href="icon.png" />
+  <title>Support – A330 Tools</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/products/a330/icon.png" />
   <style>
     :root{
-      --bg0:#041326;
-      --panel: rgba(6,26,51,0.88);
+      --bg0:#0a2107;
+      --panel: rgba(9,36,10,0.88);
       --panel2: rgba(0,0,0,0.18);
-      --border: rgba(255,255,255,0.14);
-      --border2: rgba(255,255,255,0.10);
+      --border: rgba(255,235,136,0.14);
+      --border2: rgba(255,235,136,0.10);
       --text: rgba(255,255,255,0.95);
       --muted: rgba(255,255,255,0.78);
       --shadow: 0 18px 60px rgba(0,0,0,0.40);
@@ -26,12 +26,14 @@
       margin:0;
       color:var(--text);
       font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background: var(--bg0);
+      background:
+        linear-gradient(rgba(8, 26, 7, 0.84), rgba(8, 26, 7, 0.9)),
+        url("assets/products/a330/background.png") center/cover fixed no-repeat;
       line-height:1.6;
     }
 
     header{
-      background: rgba(4,19,38,0.95);
+      background: rgba(9,33,10,0.95);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border2);
@@ -60,9 +62,7 @@
       transition: opacity 0.3s ease;
     }
 
-    .header-brand:hover{
-      opacity:0.8;
-    }
+    .header-brand:hover{ opacity:0.8; }
 
     .header-brand img{
       width:32px;
@@ -70,10 +70,7 @@
       border-radius:8px;
     }
 
-    nav{
-      display:flex;
-      gap:8px;
-    }
+    nav{ display:flex; gap:8px; }
 
     nav a{
       display:inline-block;
@@ -87,13 +84,11 @@
       font-size:14px;
     }
 
-    nav a:hover{
-      background: rgba(255,255,255,0.1);
-    }
+    nav a:hover{ background: rgba(255,255,255,0.1); }
 
     nav a.active{
       background: rgba(255,255,255,0.15);
-      border-bottom: 2px solid rgba(255,255,255,0.3);
+      border-bottom: 2px solid rgba(255,235,136,0.3);
     }
 
     .wrap{
@@ -116,15 +111,8 @@
       margin-bottom:12px;
     }
 
-    p{
-      margin-bottom:12px;
-      color:var(--text);
-    }
-
-    strong{
-      font-weight:900;
-      color:white;
-    }
+    p{ margin-bottom:12px; color:var(--text); }
+    strong{ font-weight:900; color:white; }
 
     a{
       color:rgba(255,255,255,0.95);
@@ -132,9 +120,7 @@
       transition: opacity 0.3s ease;
     }
 
-    a:hover{
-      opacity:0.8;
-    }
+    a:hover{ opacity:0.8; }
 
     .contact-box{
       background: var(--panel);
@@ -172,32 +158,23 @@
         flex-direction:column;
       }
 
-      nav a{
-        display:block;
-        padding:12px 14px;
-      }
-
-      h1{
-        font-size:28px;
-      }
-
-      .wrap{
-        padding:36px 12px;
-      }
+      nav a{ display:block; padding:12px 14px; }
+      h1{ font-size:28px; }
+      .wrap{ padding:36px 12px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="header-content">
-      <a href="index.html" class="header-brand">
-        <img src="icon.png" alt="A32X Tools" />
-        A32X Tools
+      <a href="index.html?product=a330" class="header-brand">
+        <img src="assets/products/a330/icon.png" alt="A330 Tools" />
+        A330 Tools
       </a>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="support.html" class="active">Support</a>
+        <a href="index.html?product=a330">Home</a>
+        <a href="privacy-a330.html">Privacy</a>
+        <a href="support-a330.html" class="active">Support</a>
       </nav>
     </div>
   </header>
@@ -213,7 +190,7 @@
     <h2>Frequently Asked Questions</h2>
 
     <p><strong>Where is my data stored?</strong><br>
-    All user-created data is stored locally on your device. A32X Tools does not use cloud storage.</p>
+    All user-created data is stored locally on your device. A330 Tools does not use cloud storage.</p>
 
     <p><strong>How do I report a bug?</strong><br>
     Email us at info@a320xtools.com with your device model, OS version, and steps to reproduce the issue.</p>
@@ -223,7 +200,7 @@
   </main>
 
   <footer>
-    © 2026 A32X Tools
+    © 2026 A330 Tools
   </footer>
 </body>
 </html>
