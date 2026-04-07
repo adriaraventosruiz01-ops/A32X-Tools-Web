@@ -386,6 +386,14 @@
     .mobile-video-grid::-webkit-scrollbar { display: none; }
     .screen-thumb { width:100%; border-radius:var(--r-sm); aspect-ratio: 9 / 16; border: 1px dashed rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:0.6px; cursor: pointer; position: relative; overflow: hidden; background: rgba(0,0,0,0.2); }
     .screen-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    body[data-product="a330"] .screen-thumb {
+      aspect-ratio: 1284 / 2778;
+      background: transparent;
+    }
+    body[data-product="a330"] .screen-thumb img {
+      object-fit: contain;
+      object-position: center center;
+    }
     .screen-thumb.placeholder {
       cursor: default;
       border-style: solid;
