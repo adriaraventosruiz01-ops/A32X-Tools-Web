@@ -296,12 +296,13 @@
     .store-badge-wrap {
       display: inline-flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 6px;
     }
     .coming-soon {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       padding: 5px 9px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.24);
@@ -312,6 +313,7 @@
       letter-spacing: 0.4px;
       text-transform: uppercase;
       white-space: nowrap;
+      text-align: center;
     }
     .store-badge-apple img {
       width: 140px;
@@ -839,7 +841,8 @@
         emailHref: "mailto:info@a320xtools.com",
         playHref: "https://play.google.com/store/apps/details?id=com.a32xtools.a32xtools&hl=es",
         appStoreHref: "https://apps.apple.com/es/app/a32x-tools/id6759071028",
-        storeComingSoon: false,
+        playComingSoon: false,
+        appStoreComingSoon: false,
         pills: [
           '<div class="pill">One-time purchase</div><div class="pill pill-soft">Offline-first. No network required.</div>'
         ],
@@ -872,7 +875,8 @@
         emailHref: "mailto:info@a320xtools.com",
         playHref: "#",
         appStoreHref: "https://apps.apple.com/es/app/a330-tools/id6761683163",
-        storeComingSoon: false,
+        playComingSoon: true,
+        appStoreComingSoon: false,
         pills: [
           '<div class="pill">One-time purchase</div><div class="pill pill-soft">Offline-first. No network required.</div>'
         ],
@@ -1124,11 +1128,11 @@
       }
     }
 
-    function setComingSoonVisibility(show) {
-      googlePlaySoon.hidden = !show;
-      appStoreSoon.hidden = !show;
-      googlePlaySoon.style.display = show ? "inline-flex" : "none";
-      appStoreSoon.style.display = show ? "inline-flex" : "none";
+    function setComingSoonVisibility(googlePlayShow, appStoreShow) {
+      googlePlaySoon.hidden = !googlePlayShow;
+      appStoreSoon.hidden = !appStoreShow;
+      googlePlaySoon.style.display = googlePlayShow ? "inline-flex" : "none";
+      appStoreSoon.style.display = appStoreShow ? "inline-flex" : "none";
     }
 
     function renderProduct(productKey) {
@@ -1161,9 +1165,12 @@
       privacyFooterLink.href = product.privacyHref;
       supportFooterLink.href = product.supportHref;
 
-      setStoreLinkState(googlePlayLink, product.playHref, product.storeComingSoon);
-      setStoreLinkState(appStoreLink, product.appStoreHref, product.storeComingSoon);
-      setComingSoonVisibility(product.storeComingSoon);
+      const googlePlayDisabled = product.playComingSoon ?? product.storeComingSoon ?? false;
+      const appStoreDisabled = product.appStoreComingSoon ?? product.storeComingSoon ?? false;
+
+      setStoreLinkState(googlePlayLink, product.playHref, googlePlayDisabled);
+      setStoreLinkState(appStoreLink, product.appStoreHref, appStoreDisabled);
+      setComingSoonVisibility(googlePlayDisabled, appStoreDisabled);
 
       screensGrid.innerHTML = product.screenshots.map((item, index) => renderScreenshotCard(item, index)).join("");
       desktopVideoGrid.innerHTML = product.videos.map((item) => renderVideoCard(item, false)).join("");
