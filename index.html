@@ -130,7 +130,7 @@
       word-break: normal;
     }
 
-    .tagline { margin-top: 10px; color: var(--muted); font-size: 14px; }\n
+    .tagline { margin-top: 10px; color: var(--muted); font-size: 14px; }
 
     .productSwitchBar {
       display:flex;
@@ -768,6 +768,46 @@
         letter-spacing: 0.4px;
       }
     }
+    .pill.pill-rating {
+      background: linear-gradient(135deg, rgba(247, 213, 107, 0.12), rgba(247, 213, 107, 0.07));
+      border: 1px solid rgba(247, 213, 107, 0.38);
+      color: rgba(247, 213, 107, 0.96);
+      box-shadow: none;
+    }
+    #privacyFooterLink:hover,
+    #supportFooterLink:hover { color: rgba(255,255,255,0.96) !important; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 480px) {
+      .features-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 821px) {
+      .features-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .feature-item {
+      padding: 14px 16px;
+      background: var(--panel2);
+      border: var(--edge-soft);
+      border-radius: var(--r-md);
+    }
+    .feature-title {
+      font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.45px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin: 0 0 5px;
+    }
+    .feature-text {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
   </style>
 </head>
 
@@ -819,11 +859,15 @@
 
 
       </div>
+      <section class="section" style="padding-top:28px; padding-bottom:10px;">
+        <h2 class="section-title">What's inside</h2>
+        <div class="features-grid" id="featuresGrid"></div>
+      </section>
       <section class="section" style="padding-top:18px; padding-bottom:24px;">
         <h2 class="section-title">App tour</h2>
         <p class="section-subtitle" id="tourSubtitle">Seven key screens with quick summaries, plus 3 videos showcasing the most important features.</p>
         <div class="screens-grid" id="screensGrid"></div>
-        <h3 class="videos-heading">Demos</h3>
+        <h3 class="videos-heading" id="videosHeading">Demos</h3>
         <div class="desktop-video-grid" id="desktopVideoGrid" aria-label="Video demos"></div>
         <div class="mobile-video-grid" id="mobileVideoGrid" aria-label="Video demos"></div>
       </section>
@@ -890,7 +934,7 @@
         playComingSoon: false,
         appStoreComingSoon: false,
         pills: [
-          '<div class="pill">One-time purchase</div><div class="pill pill-soft">Offline-first. No network required.</div>'
+          '<div class="pill">One-time purchase</div><div class="pill pill-soft">Offline-first. No network required.</div><div class="pill pill-rating">★ 5.0 · App Store</div>'
         ],
         screenshots: [
           { src: "01.png", title: "HOME", text: "Central hub for Airbus A320 family maintenance." },
@@ -905,6 +949,14 @@
           { src: "assets/demo_full_540x960_v2.mp4", type: "video/mp4", poster: "assets/demo_poster_540x960_v2.jpg", title: "ECAM MESSAGE SEARCH & RESET", text: "Find an ECAM message and follow the complete reset procedure step by step.", framed: true },
           { src: "assets/commonpn_full_540x960.mp4", type: "video/mp4", poster: "assets/commonpn_poster_540x960.jpg", title: "PART SEARCH & PHOTO CHECK", text: "Locate a part quickly and review its photo to verify the item before action.", framed: true },
           { src: "assets/damage_report_noaudio.webm", type: "video/webm", poster: "assets/damage_report_poster_540x960.jpg", title: "DAMAGE REPORT PDF WORKFLOW", text: "Create a damage report and preview the generated PDF instantly inside the app.", framed: false }
+        ],
+        features: [
+          { title: "ECAM Resets", text: "A318/A319/A320/A321 messages with guided CB locations, step-by-step procedure and live timer." },
+          { title: "Damage Reports", text: "Log lightning strike damage with photos, summaries and instant PDF/ZIP export." },
+          { title: "Electrical Contacts", text: "Connectors, splices and terminals with exact ESPM part number references." },
+          { title: "Alpha Callups & AMM", text: "Alpha callups and AMM chapter references with instant search." },
+          { title: "Part Numbers", text: "Commonly used P/Ns with real photos, organized by zone and category." },
+          { title: "Custom Items", text: "Add and share your own data entries to grow the reference database." }
         ]
       },
       a330: {
@@ -941,6 +993,14 @@
           { placeholder: true, bg: "assets/products/a330/feature-graphic.png", title: "ECAM MESSAGE SEARCH & RESET", text: "Find an ECAM message and follow the complete reset procedure step by step." },
           { placeholder: true, bg: "assets/products/a330/background.png", title: "PART SEARCH & PHOTO CHECK", text: "Locate a part quickly and review its photo to verify the item before action." },
           { placeholder: true, bg: "assets/products/a330/feature-graphic.png", title: "DAMAGE REPORT PDF WORKFLOW", text: "Create a damage report and preview the generated PDF instantly inside the app." }
+        ],
+        features: [
+          { title: "ECAM Resets", text: "A330 messages with guided CB locations, step-by-step procedure and live timer." },
+          { title: "Damage Reports", text: "Log lightning strike damage with photos, summaries and instant PDF/ZIP export." },
+          { title: "Electrical Contacts", text: "Connectors, splices and terminals with exact ESPM part number references." },
+          { title: "Alpha Callups & AMM", text: "Alpha callups and AMM chapter references with instant search." },
+          { title: "Part Numbers", text: "Commonly used P/Ns with real photos, organized by zone and category." },
+          { title: "Custom Items", text: "Add and share your own data entries to grow the reference database." }
         ]
       }
     };
@@ -966,6 +1026,8 @@
     const screensGrid = document.getElementById("screensGrid");
     const desktopVideoGrid = document.getElementById("desktopVideoGrid");
     const mobileVideoGrid = document.getElementById("mobileVideoGrid");
+    const featuresGrid = document.getElementById("featuresGrid");
+    const videosHeading = document.getElementById("videosHeading");
     const disclaimerText = document.getElementById("disclaimerText");
     const footerText = document.getElementById("footerText");
     const googlePlayLink = document.getElementById("googlePlayLink");
@@ -1334,6 +1396,14 @@
       screensGrid.innerHTML = product.screenshots.map((item, index) => renderScreenshotCard(item, index)).join("");
       desktopVideoGrid.innerHTML = product.videos.map((item) => renderVideoCard(item, false)).join("");
       mobileVideoGrid.innerHTML = product.videos.map((item) => renderVideoCard(item, true)).join("");
+
+      if (videosHeading) videosHeading.hidden = !product.videos.some(v => !v.placeholder);
+      if (featuresGrid) featuresGrid.innerHTML = (product.features || []).map(f => `
+        <div class="feature-item">
+          <div class="feature-title">${f.title}</div>
+          <div class="feature-text">${f.text}</div>
+        </div>
+      `).join("");
 
       const hasProductParam = new URLSearchParams(window.location.search).has("product");
       if (pageKind === "hub" && requestedProduct) {
