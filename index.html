@@ -237,6 +237,7 @@
       width: 100%;
       min-width: 0;
       overflow: hidden;
+      position: relative;
       transition: all 0.3s ease;
     }
     .card:hover { border-color: rgba(255,255,255,0.2); box-shadow: 0 24px 72px rgba(0,0,0,0.45); }
@@ -790,6 +791,34 @@
     }
     #privacyFooterLink:hover,
     #supportFooterLink:hover { color: rgba(255,255,255,0.96) !important; }
+    .hero-photo-wrap { display: none; }
+    @media (min-width: 821px) {
+      .hero-photo-wrap:not([hidden]) {
+        display: block;
+        position: absolute;
+        top: 0; right: 0; bottom: 0;
+        width: 220px;
+        pointer-events: none;
+      }
+      .hero-photo-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 15%;
+        display: block;
+      }
+      .hero-photo-wrap::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, var(--panel) 0%, transparent 45%);
+        z-index: 1;
+        pointer-events: none;
+      }
+      .mainCard:has(.hero-photo-wrap:not([hidden])) {
+        padding-right: 240px !important;
+      }
+    }
     .features-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -869,7 +898,9 @@
               <div class="rating-display" id="ratingDisplay" hidden></div>
             </div>
           </div>
-
+          <div class="hero-photo-wrap" id="heroPhoto" hidden>
+            <img src="/assets/field.jpg" alt="A32X Tools on the ramp at night" loading="lazy" />
+          </div>
         </section>
 
 
@@ -952,6 +983,7 @@
           '<div class="pill">One-time purchase</div><div class="pill pill-soft">Offline-first. No network required.</div>'
         ],
         rating: { stars: 5, label: "5.0 · App Store" },
+        fieldPhoto: true,
         screenshots: [
           { src: "01.png", title: "HOME", text: "Central hub for Airbus A320 family maintenance." },
           { src: "02.png", title: "ECAM RESETS DETAIL", text: "Guided resets with exact CBs, clear steps, and a live timer." },
@@ -1045,6 +1077,7 @@
     const featuresGrid = document.getElementById("featuresGrid");
     const videosHeading = document.getElementById("videosHeading");
     const ratingDisplay = document.getElementById("ratingDisplay");
+    const heroPhoto = document.getElementById("heroPhoto");
     const disclaimerText = document.getElementById("disclaimerText");
     const footerText = document.getElementById("footerText");
     const googlePlayLink = document.getElementById("googlePlayLink");
@@ -1429,6 +1462,7 @@
           <div class="feature-text">${f.text}</div>
         </div>
       `).join("");
+      if (heroPhoto) heroPhoto.hidden = !product.fieldPhoto;
 
       const hasProductParam = new URLSearchParams(window.location.search).has("product");
       if (pageKind === "hub" && requestedProduct) {
