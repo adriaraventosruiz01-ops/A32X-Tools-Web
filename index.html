@@ -22,6 +22,8 @@
 
   <base href="/" />
 
+  <link rel="preload" as="image" href="/hero.png" fetchpriority="high">
+
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -784,7 +786,7 @@
         <section class="card pad-lg mainCard">
           <div class="titleRow">
             <a class="brand brandLink" id="brandHomeLink" href="/">
-              <img class="icon" id="productIcon" src="icon.png" alt="A32X Tools icon" width="80" height="80" />
+              <img class="icon" id="productIcon" src="icon.png" alt="A32X Tools icon" width="80" height="80" fetchpriority="high" />
               <div>
                 <h1 id="productTitle">A32X Tools</h1>
                 <div class="subtitle" id="productSubtitle">A320 family maintenance reference for fast ECAM troubleshooting</div>
@@ -801,13 +803,13 @@
           <div class="btnRow" id="storeButtons">
             <div class="store-badge-wrap">
               <a class="store-badge store-badge-play" id="googlePlayLink" href="https://play.google.com/store/apps/details?id=com.a32xtools.a32xtools&hl=es" target="_blank" rel="noopener noreferrer" aria-label="Google Play Store">
-                <img src="assets/store-badges/google-play-badge.png" alt="Get it on Google Play">
+                <img src="assets/store-badges/google-play-badge.png" alt="Get it on Google Play" width="160" height="48">
               </a>
               <span class="coming-soon" id="googlePlaySoon" hidden>Coming soon</span>
             </div>
             <div class="store-badge-wrap">
               <a class="store-badge store-badge-apple" id="appStoreLink" href="https://apps.apple.com/es/app/a32x-tools/id6759071028" target="_blank" rel="noopener noreferrer" aria-label="Apple Store">
-                <img src="assets/store-badges/app-store-badge.svg" alt="Download on the App Store">
+                <img src="assets/store-badges/app-store-badge.svg" alt="Download on the App Store" width="140" height="32">
               </a>
               <span class="coming-soon" id="appStoreSoon" hidden>Coming soon</span>
             </div>
@@ -1390,24 +1392,6 @@
     renderProduct(initialProduct);
   </script>
 </body>
-<!-- CHANGES:
-- Kept a darker hero overlay for safer contrast and preserved mobile-first background attachment (scroll on mobile, fixed on desktop).
-- Preserved the two-column desktop hero composition (main card + links card) while keeping single-column mobile flow.
-- Added a radius scale system with --r-lg, --r-md and --r-sm derived from the existing base radius.
-- Unified card/link/screenshot border and shadow treatment with shared edge and soft-edge variables for visual consistency.
-- Applied consistent radii across cards, links, screenshots, buttons and lightbox image surfaces.
-- Improved interaction states with focus-visible ring and subtle active/tap feedback for buttons, links, thumbs and lightbox controls.
-- Styled hash CTAs as disabled/coming-soon and prevented hash jump with JS preventDefault.
-- Kept ghost CTA contrast strong over complex backgrounds without changing visible labels.
-- Improved app-tour mobile rail polish (snap stability, shadow-safe padding, hidden scrollbar) and preserved reduced-motion behavior.
-- Added keyboard support to screenshot thumbs (Enter/Space) with button semantics and tabindex.
-- Added width/height attributes to icon and screenshot images to reduce layout shift while keeping lazy loading.
-- Expanded lightbox UX with close button, desktop prev/next controls, ArrowLeft/ArrowRight navigation and numeric counter.
-- Preserved overlay click + Escape close behavior and maintained desktop-only zoom toggle on the preview image.
-- Added two desktop-only video filler tiles in App tour to avoid empty grid slots.
-- Added play/pause overlay buttons for both video tiles with visible active state.
-- Updated video tile behavior so video tiles are excluded from lightbox navigation.
--->
 </html>
 
 
