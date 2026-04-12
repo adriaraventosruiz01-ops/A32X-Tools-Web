@@ -797,8 +797,6 @@
       color: rgba(255, 255, 255, 0.45);
       letter-spacing: 0.2px;
     }
-    #privacyFooterLink:hover,
-    #supportFooterLink:hover { color: rgba(255,255,255,0.96) !important; }
     .hero-photo-wrap { display: none; }
     @media (max-width: 820px) {
       .hero-photo-wrap:not([hidden]) {
@@ -812,7 +810,7 @@
         display: block;
         aspect-ratio: 5 / 2;
         object-fit: cover;
-        object-position: center 20%;
+        object-position: center 40%;
       }
     }
     @media (min-width: 821px) {
@@ -941,9 +939,7 @@
         <div class="mobile-video-grid" id="mobileVideoGrid" aria-label="Video demos"></div>
       </section>
 
-        <aside class="card pad-md links sideCard">
-          <div style="font-weight:900; margin-bottom:10px;">Links</div>
-
+        <aside class="links sideCard" style="padding: 4px 0 8px;">
           <a class="link" id="privacyMainLink" href="/privacy">Privacy Policy</a>
           <a class="link" id="supportMainLink" href="/support">Support / FAQ</a>
           <a class="link" id="emailMainLink" href="mailto:info@a32xtools.com">Need help? Email us</a>
@@ -964,12 +960,8 @@
       </div>
     </section>
 
-    <div style="margin-top:28px; padding-top:18px; border-top:1px solid var(--border2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
+    <div style="margin-top:28px; padding-top:18px; border-top:1px solid var(--border2);">
       <div class="footer" id="footerText">&copy; 2026 A32X Tools. All rights reserved.</div>
-      <div style="display:flex; gap:18px; font-size:12px; font-weight:900;">
-        <a id="privacyFooterLink" href="/privacy" style="color:var(--muted); text-decoration:none; transition:color 0.3s;">Privacy</a>
-        <a id="supportFooterLink" href="/support" style="color:var(--muted); text-decoration:none; transition:color 0.3s;">Support</a>
-      </div>
     </div>
   </main>
 
@@ -1110,8 +1102,6 @@
     const privacyMainLink = document.getElementById("privacyMainLink");
     const supportMainLink = document.getElementById("supportMainLink");
     const emailMainLink = document.getElementById("emailMainLink");
-    const privacyFooterLink = document.getElementById("privacyFooterLink");
-    const supportFooterLink = document.getElementById("supportFooterLink");
     const lightbox = document.getElementById("lightbox");
     const lightboxPrev = document.getElementById("lightboxPrev");
     const lightboxNext = document.getElementById("lightboxNext");
@@ -1456,8 +1446,7 @@
       privacyMainLink.href = product.privacyHref;
       supportMainLink.href = product.supportHref;
       emailMainLink.href = product.emailHref;
-      privacyFooterLink.href = product.privacyHref;
-      supportFooterLink.href = product.supportHref;
+
 
       const googlePlayDisabled = product.playComingSoon ?? product.storeComingSoon ?? false;
       const appStoreDisabled = product.appStoreComingSoon ?? product.storeComingSoon ?? false;
