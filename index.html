@@ -97,11 +97,13 @@
     }
 
     * { box-sizing: border-box; }
-    html, body { height: 100%; width: 100%; margin: 0; padding: 0; overflow-x: hidden; }
+    html { height: 100%; width: 100%; margin: 0; padding: 0; overflow-x: hidden; }
+    body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; min-height: 100%; }
 
     body {
       color: var(--text);
       font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+      background-color: #061627;
       background-image:
         linear-gradient(rgba(4, 10, 18, 0.62), rgba(4, 10, 18, 0.64)),
         url("/hero.png");
@@ -771,19 +773,19 @@
     .rating-display {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 12px;
+      justify-content: center;
+      gap: 6px;
     }
     .rating-stars {
       color: #f7d56b;
-      font-size: 17px;
-      letter-spacing: 2px;
+      font-size: 15px;
+      letter-spacing: 1.5px;
       line-height: 1;
     }
     .rating-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.45);
       letter-spacing: 0.2px;
     }
     #privacyFooterLink:hover,
@@ -864,9 +866,9 @@
                 <img src="assets/store-badges/app-store-badge.svg" alt="Download on the App Store" width="140" height="32">
               </a>
               <span class="coming-soon" id="appStoreSoon" hidden>Coming soon</span>
+              <div class="rating-display" id="ratingDisplay" hidden></div>
             </div>
           </div>
-          <div class="rating-display" id="ratingDisplay" hidden></div>
 
         </section>
 
