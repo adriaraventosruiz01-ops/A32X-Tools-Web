@@ -775,11 +775,23 @@
         letter-spacing: 0.4px;
       }
     }
-    .pill.pill-rating {
-      background: linear-gradient(135deg, rgba(247, 213, 107, 0.12), rgba(247, 213, 107, 0.07));
-      border: 1px solid rgba(247, 213, 107, 0.38);
-      color: rgba(247, 213, 107, 0.96);
-      box-shadow: none;
+    .rating-display {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .rating-stars {
+      color: #f7d56b;
+      font-size: 17px;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+    .rating-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.2px;
     }
     #privacyFooterLink:hover,
     #supportFooterLink:hover { color: rgba(255,255,255,0.96) !important; }
@@ -861,6 +873,7 @@
               <span class="coming-soon" id="appStoreSoon" hidden>Coming soon</span>
             </div>
           </div>
+          <div class="rating-display" id="ratingDisplay" hidden></div>
 
         </section>
 
@@ -941,8 +954,9 @@
         playComingSoon: false,
         appStoreComingSoon: false,
         pills: [
-          '<div class="pill">One-time purchase</div><div class="pill pill-soft">Offline-first. No network required.</div><div class="pill pill-rating">★ 5.0 · App Store</div>'
+          '<div class="pill">One-time purchase</div><div class="pill pill-soft">Offline-first. No network required.</div>'
         ],
+        rating: { stars: 5, label: "5.0 · App Store" },
         screenshots: [
           { src: "01.png", title: "HOME", text: "Central hub for Airbus A320 family maintenance." },
           { src: "02.png", title: "ECAM RESETS DETAIL", text: "Guided resets with exact CBs, clear steps, and a live timer." },
@@ -958,12 +972,12 @@
           { src: "assets/damage_report_noaudio.webm", type: "video/webm", poster: "assets/damage_report_poster_540x960.jpg", title: "DAMAGE REPORT PDF WORKFLOW", text: "Create a damage report and preview the generated PDF instantly inside the app.", framed: false }
         ],
         features: [
-          { title: "ECAM Resets", text: "A318/A319/A320/A321 messages with guided CB locations, step-by-step procedure and live timer." },
-          { title: "Damage Reports", text: "Log lightning strike damage with photos, summaries and instant PDF/ZIP export." },
-          { title: "Electrical Contacts", text: "Connectors, splices and terminals with exact ESPM part number references." },
-          { title: "Alpha Callups & AMM", text: "Alpha callups and AMM chapter references with instant search." },
-          { title: "Part Numbers", text: "Commonly used P/Ns with real photos, organized by zone and category." },
-          { title: "Custom Items", text: "Add and share your own data entries to grow the reference database." }
+          { title: "ECAM Resets", text: "Search any ECAM message and get the full reset: step-by-step procedure, circuit breakers with panel location and photos, and a built-in live timer." },
+          { title: "Structural Damage Reports", text: "Log multiple damage findings with photos and generate a ready-to-share PDF or ZIP report directly from your phone, in seconds." },
+          { title: "Electrical References", text: "Find the right crimping reference for any connector, splice or terminal instantly — with exact ESPM part numbers." },
+          { title: "AMM & Alpha Callups", text: "Every AMM reference and alpha callup at your fingertips — searchable instantly, from task numbers to chapter references." },
+          { title: "Part Numbers", text: "Your most-used parts with real photos, organized by zone and category. Find what you need before you reach the shelf." },
+          { title: "Custom Items", text: "Missing a part in the catalog? Add it yourself with photos and references. Your entries are saved and ready for next time." }
         ]
       },
       a330: {
@@ -1002,12 +1016,12 @@
           { placeholder: true, bg: "assets/products/a330/feature-graphic.png", title: "DAMAGE REPORT PDF WORKFLOW", text: "Create a damage report and preview the generated PDF instantly inside the app." }
         ],
         features: [
-          { title: "ECAM Resets", text: "A330 messages with guided CB locations, step-by-step procedure and live timer." },
-          { title: "Damage Reports", text: "Log lightning strike damage with photos, summaries and instant PDF/ZIP export." },
-          { title: "Electrical Contacts", text: "Connectors, splices and terminals with exact ESPM part number references." },
-          { title: "Alpha Callups & AMM", text: "Alpha callups and AMM chapter references with instant search." },
-          { title: "Part Numbers", text: "Commonly used P/Ns with real photos, organized by zone and category." },
-          { title: "Custom Items", text: "Add and share your own data entries to grow the reference database." }
+          { title: "ECAM Resets", text: "Search any A330 ECAM message and get the full reset: step-by-step procedure, circuit breakers with panel location and photos, and a built-in live timer." },
+          { title: "Structural Damage Reports", text: "Log multiple damage findings with photos and generate a ready-to-share PDF or ZIP report directly from your phone, in seconds." },
+          { title: "Electrical References", text: "Find the right crimping reference for any connector, splice or terminal instantly — with exact ESPM part numbers." },
+          { title: "AMM & Alpha Callups", text: "Every AMM reference and alpha callup at your fingertips — searchable instantly, from task numbers to chapter references." },
+          { title: "Part Numbers", text: "Your most-used parts with real photos, organized by zone and category. Find what you need before you reach the shelf." },
+          { title: "Custom Items", text: "Missing a part in the catalog? Add it yourself with photos and references. Your entries are saved and ready for next time." }
         ]
       }
     };
@@ -1035,6 +1049,7 @@
     const mobileVideoGrid = document.getElementById("mobileVideoGrid");
     const featuresGrid = document.getElementById("featuresGrid");
     const videosHeading = document.getElementById("videosHeading");
+    const ratingDisplay = document.getElementById("ratingDisplay");
     const disclaimerText = document.getElementById("disclaimerText");
     const footerText = document.getElementById("footerText");
     const googlePlayLink = document.getElementById("googlePlayLink");
@@ -1405,6 +1420,14 @@
       mobileVideoGrid.innerHTML = product.videos.map((item) => renderVideoCard(item, true)).join("");
 
       if (videosHeading) videosHeading.hidden = !product.videos.some(v => !v.placeholder);
+      if (ratingDisplay) {
+        if (product.rating) {
+          ratingDisplay.innerHTML = `<span class="rating-stars">${"★".repeat(product.rating.stars)}</span><span class="rating-label">${product.rating.label}</span>`;
+          ratingDisplay.hidden = false;
+        } else {
+          ratingDisplay.hidden = true;
+        }
+      }
       if (featuresGrid) featuresGrid.innerHTML = (product.features || []).map(f => `
         <div class="feature-item">
           <div class="feature-title">${f.title}</div>
