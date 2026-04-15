@@ -305,7 +305,7 @@
       box-shadow: none;
     }
 
-    .btnRow { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+    .btnRow { margin-top:18px; display:flex; gap:44px; flex-wrap:wrap; }
     .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:var(--r-md); text-decoration:none; font-weight:900; border: 1px solid transparent; cursor:pointer; transition: all 0.3s ease; }
     .btn-icon { width: 18px; height: 18px; display: inline-block; flex: 0 0 18px; }
     .btn.primary { background: rgba(255,255,255,0.94); color: #061a33; }
@@ -902,6 +902,7 @@
                 <img src="assets/store-badges/google-play-badge.png" alt="Get it on Google Play" width="160" height="48">
               </a>
               <span class="coming-soon" id="googlePlaySoon" hidden>Coming soon</span>
+              <div class="rating-display" id="playRatingDisplay" hidden></div>
             </div>
             <div class="store-badge-wrap">
               <a class="store-badge store-badge-apple" id="appStoreLink" href="https://apps.apple.com/es/app/a32x-tools/id6759071028" target="_blank" rel="noopener noreferrer" aria-label="Apple Store">
@@ -990,6 +991,7 @@
           '<div class="pill">One-time purchase</div><div class="pill pill-soft">Offline-first. No network required.</div>'
         ],
         rating: { stars: 5, label: "5.0 · App Store" },
+        playRating: { stars: 5, label: "5.0 · Google Play" },
         fieldPhoto: true,
         screenshots: [
           { src: "01.png", title: "HOME", text: "Central hub for Airbus A320 family maintenance." },
@@ -1084,6 +1086,7 @@
     const featuresGrid = document.getElementById("featuresGrid");
     const videosHeading = document.getElementById("videosHeading");
     const ratingDisplay = document.getElementById("ratingDisplay");
+    const playRatingDisplay = document.getElementById("playRatingDisplay");
     const heroPhoto = document.getElementById("heroPhoto");
     const disclaimerText = document.getElementById("disclaimerText");
     const footerText = document.getElementById("footerText");
@@ -1458,6 +1461,14 @@
           ratingDisplay.hidden = false;
         } else {
           ratingDisplay.hidden = true;
+        }
+      }
+      if (playRatingDisplay) {
+        if (product.playRating) {
+          playRatingDisplay.innerHTML = `<span class="rating-stars">${"★".repeat(product.playRating.stars)}</span><span class="rating-label">${product.playRating.label}</span>`;
+          playRatingDisplay.hidden = false;
+        } else {
+          playRatingDisplay.hidden = true;
         }
       }
       if (featuresGrid) featuresGrid.innerHTML = (product.features || []).map(f => `
