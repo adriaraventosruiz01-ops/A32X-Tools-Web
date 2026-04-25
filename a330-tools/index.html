@@ -8,6 +8,8 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0B1F33" />
   <link rel="canonical" href="https://www.a32xtools.com/a330-tools/" />
+  <link rel="alternate" hreflang="en" href="https://www.a32xtools.com/a330-tools/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.a32xtools.com/a330-tools/" />
   <meta property="og:title" content="A330 Tools | Airbus A330 ECAM Resets App" />
   <meta property="og:description" content="A330 Tools is an Airbus A330 maintenance reference app for ECAM troubleshooting and ECAM resets, plus structural damage reports, electrical contacts, alpha callups, and common part numbers." />
   <meta property="og:image" content="https://www.a32xtools.com/assets/products/a330/background.png" />
@@ -31,7 +33,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <script type="application/ld+json" id="structuredData">
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -44,20 +46,38 @@
           "email": "info@a32xtools.com"
         },
         {
-          "@type": "SoftwareApplication",
+          "@type": ["SoftwareApplication", "MobileApplication"],
           "@id": "https://www.a32xtools.com/a330-tools/#software",
           "name": "A330 Tools",
           "url": "https://www.a32xtools.com/a330-tools/",
           "description": "A330 Tools is an Airbus A330 maintenance reference app for ECAM troubleshooting and ECAM resets, plus structural damage reports, electrical contacts, alpha callups, and common part numbers.",
           "applicationCategory": "UtilitiesApplication",
-          "operatingSystem": "iOS",
+          "operatingSystem": "Android, iOS",
+          "softwareVersion": "1.0",
+          "datePublished": "2025-04-01",
           "image": "https://www.a32xtools.com/assets/products/a330/icon.png",
-          "sameAs": [
+          "screenshot": "https://www.a32xtools.com/assets/products/a330/screenshots/01.png",
+          "featureList": "ECAM Troubleshooting, ECAM Resets, Structural Damage Reports, Electrical Contacts, Alpha Callups, Common Part Numbers",
+          "downloadUrl": [
+            "https://play.google.com/store/apps/details?id=com.a32xtools.a330tools",
             "https://apps.apple.com/es/app/a330-tools/id6761683163"
           ],
-          "publisher": {
-            "@id": "https://www.a32xtools.com/#organization"
-          }
+          "installUrl": [
+            "https://play.google.com/store/apps/details?id=com.a32xtools.a330tools",
+            "https://apps.apple.com/es/app/a330-tools/id6761683163"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "4.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "sameAs": [
+            "https://apps.apple.com/es/app/a330-tools/id6761683163",
+            "https://play.google.com/store/apps/details?id=com.a32xtools.a330tools"
+          ],
+          "author": { "@id": "https://www.a32xtools.com/#organization" },
+          "publisher": { "@id": "https://www.a32xtools.com/#organization" }
         }
       ]
     }
@@ -892,8 +912,8 @@
             <a class="brand brandLink" id="brandHomeLink" href="/">
               <img class="icon" id="productIcon" src="assets/products/a330/icon.png" alt="A330 Tools icon" width="80" height="80" fetchpriority="high" />
               <div>
-                <h1 id="productTitle">A330 Tools</h1>
-                <div class="subtitle" id="productSubtitle">A330 family maintenance reference for fast ECAM troubleshooting</div>
+                <h1 id="productTitle">A330 Tools — A330 ECAM Resets</h1>
+                <div class="subtitle" id="productSubtitle">ECAM resets, damage reports, AMM alpha callups &amp; part numbers. Offline.</div>
               </div>
             </a>
             <div class="pillGroup" id="pillGroup"><div class="pill">One-time purchase</div><div class="pill pill-soft">Offline-first. No network required.</div></div>
@@ -906,10 +926,11 @@
 
           <div class="btnRow" id="storeButtons">
             <div class="store-badge-wrap">
-              <a class="store-badge store-badge-play" id="googlePlayLink" href="#" aria-label="Google Play Store">
+              <!-- TODO: replace placeholder URL with actual A330 Tools Google Play URL -->
+              <a class="store-badge store-badge-play" id="googlePlayLink" href="https://play.google.com/store/apps/details?id=com.a32xtools.a330tools" target="_blank" rel="noopener noreferrer" aria-label="Google Play Store">
                 <img src="assets/store-badges/google-play-badge.png" alt="Get it on Google Play" width="160" height="48">
               </a>
-              <span class="coming-soon" id="googlePlaySoon">Coming soon</span>
+              <span class="coming-soon" id="googlePlaySoon" hidden>Coming soon</span>
             </div>
             <div class="store-badge-wrap">
               <a class="store-badge store-badge-apple" id="appStoreLink" href="https://apps.apple.com/es/app/a330-tools/id6761683163" target="_blank" rel="noopener noreferrer" aria-label="Apple Store">
@@ -977,9 +998,9 @@
   <script>
     const PRODUCTS = {
       a32x: {
-        name: "A32X Tools",
+        name: "A32X Tools — A320 ECAM Resets",
         pageTitle: "A32X Tools | Airbus A320 ECAM Resets App",
-        subtitle: "A320 family maintenance reference for fast ECAM troubleshooting",
+        subtitle: "ECAM resets, damage reports, electrical contacts & part numbers. Offline.",
         description: "Professional reference app for A318/A319/A320/A321 technicians covering ECAM resets, structural damage reports, electrical contacts, alpha callups, and most common part numbers in one fast toolkit.",
         icon: "/icon.png",
         background: "/hero.png",
@@ -1022,9 +1043,9 @@
         ]
       },
       a330: {
-        name: "A330 Tools",
+        name: "A330 Tools — A330 ECAM Resets",
         pageTitle: "A330 Tools | Airbus A330 ECAM Resets App",
-        subtitle: "A330 family maintenance reference for fast ECAM troubleshooting",
+        subtitle: "ECAM resets, damage reports, AMM alpha callups & part numbers. Offline.",
         description: "Professional reference app for A330 technicians covering ECAM resets, structural damage reports, electrical contacts, alpha callups, and most common part numbers in one fast toolkit.",
         icon: "/assets/products/a330/icon.png",
         background: "/assets/products/a330/background.png",
@@ -1035,9 +1056,9 @@
         privacyHref: "/privacy-a330",
         supportHref: "/support-a330",
         emailHref: "mailto:info@a32xtools.com",
-        playHref: "#",
+        playHref: "https://play.google.com/store/apps/details?id=com.a32xtools.a330tools",
         appStoreHref: "https://apps.apple.com/es/app/a330-tools/id6761683163",
-        playComingSoon: true,
+        playComingSoon: false,
         appStoreComingSoon: false,
         pills: [
           '<div class="pill">One-time purchase</div><div class="pill pill-soft">Offline-first. No network required.</div>'
