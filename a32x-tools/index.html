@@ -898,6 +898,125 @@
       line-height: 1.5;
       margin: 0;
     }
+
+    /* ── Reviews carousel ── */
+    .reviews-track-outer {
+      overflow: hidden;
+      border-radius: var(--r-lg);
+      cursor: grab;
+    }
+    .reviews-track-outer:active { cursor: grabbing; }
+    .reviews-track {
+      display: flex;
+      transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    .review-card {
+      flex: 0 0 100%;
+      box-sizing: border-box;
+      background: var(--panel);
+      border: var(--edge);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 24px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      user-select: none;
+    }
+    .review-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .review-card-stars { color: var(--accent3); font-size: 14px; letter-spacing: 1px; }
+    .review-source-pill {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.52);
+      letter-spacing: 0.2px;
+      flex-shrink: 0;
+    }
+    .review-card-title {
+      font-family: "Space Grotesk", system-ui;
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.3;
+    }
+    .review-card-text {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      margin: 0;
+      flex: 1;
+    }
+    .review-card-meta {
+      font-size: 12px;
+      color: rgba(255,255,255,0.40);
+      margin: 0;
+    }
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .carousel-arrow-btn {
+      appearance: none;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: rgba(255,255,255,0.70);
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      padding: 0 0 1px 0;
+      flex-shrink: 0;
+    }
+    .carousel-arrow-btn:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.28);
+      color: rgba(255,255,255,0.95);
+    }
+    .carousel-dots-wrap {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 260px;
+    }
+    .carousel-dot-btn {
+      appearance: none;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.25s, width 0.25s;
+      flex-shrink: 0;
+    }
+    .carousel-dot-btn.active {
+      background: var(--accent2);
+      width: 16px;
+    }
   </style>
 </head>
 
@@ -964,6 +1083,19 @@
         <h3 class="videos-heading" id="videosHeading">Demos</h3>
         <div class="desktop-video-grid" id="desktopVideoGrid" aria-label="Video demos"></div>
         <div class="mobile-video-grid" id="mobileVideoGrid" aria-label="Video demos"></div>
+      </section>
+
+      <section class="section" id="reviewsSection" hidden style="padding-top:40px; padding-bottom:32px;">
+        <h2 class="section-title">What professionals say</h2>
+        <p class="section-subtitle">Verified reviews from aviation maintenance engineers.</p>
+        <div class="reviews-track-outer" id="reviewsTrackOuter">
+          <div class="reviews-track" id="reviewsTrack"></div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-arrow-btn" id="reviewsPrev" aria-label="Previous review">&#8249;</button>
+          <div class="carousel-dots-wrap" id="reviewsDots"></div>
+          <button class="carousel-arrow-btn" id="reviewsNext" aria-label="Next review">&#8250;</button>
+        </div>
       </section>
 
         <aside class="links sideCard" style="padding: 4px 0 8px;">
@@ -1047,6 +1179,24 @@
           { title: "AMM & Alpha Callups", text: "Every AMM reference and alpha callup at your fingertips — searchable instantly, from task numbers to chapter references." },
           { title: "Part Numbers", text: "Your most-used parts with real photos, organized by zone and category. Find what you need before you reach the shelf." },
           { title: "Custom Items", text: "Missing a part in the catalog? Add it yourself with photos and references. Your entries are saved and ready for next time." }
+        ],
+        reviews: [
+          { author: "Ivan Martínez", date: "31 mar 2026", text: "Como certificador de A320, esta app es esencial en mi día a día. Lo mejor son los resets de ECAM: procedimientos precisos con fotos reales de paneles de CBs y una cuenta atrás que funciona de maravilla. Además, facilita encontrar referencias tanto de AMM/MEL como los P/N más usados. Se nota que está diseñada por alguien que entiende de verdad el mantenimiento en línea. Interfaz muy intuitiva - 100% recomendable!", source: "Google Play" },
+          { title: "Imprescindible", author: "JoScBo", date: "3 mar. 2026", text: "Despues de probar varias apps, sin duda la mas completa con funciones y caracteristicas que la hacen imprescindible para el dia a dia de un TMA.", source: "App Store" },
+          { author: "Jose Luis Izquierdo", date: "15 abr 2026", text: "Funciona perfectamente. Tiene todo lo que necesitas para mantenimiento en línea en esos momentos que necesitas acceso rápido al manual del A320. Resuelve los ECAM WARNINGS con el reset/test o capitulo MEL. Descárgala sin dudarlo si trabajas en mantenimiento en linea.", source: "Google Play" },
+          { title: "Basic tool for line maintenance", author: "AirMechanic777", date: "23 feb. 2026", text: "Really good and usefull tool for line maintenance working on A320, fast access to common CB resets and common PN. Totally worthy for aircraft maintenance engineers.", source: "App Store" },
+          { title: "Buena app", author: "Gongolf7", date: "23 feb. 2026", text: "App muy completa para el reset de sistemas y otras funciones clave del A320, como también P/N más comunes, AMM reference entre muchas otras cosas. Es intuitiva, rápida y práctica, mucho mejor y obviamente mas completa de las que he tenido hasta ahora.", source: "App Store" },
+          { author: "Antonio", date: "12 abr 2026", text: "La verdad que me ha sorprendido, tiene más ECAM messages resets que otras que he usado. Poder tener una base de datos de P/N con sus fotos va muy bien. ¡Recomendada!", source: "Google Play" },
+          { title: "Funcional 100 %", author: "Landy Salomón", date: "15 mar. 2026", text: "Está app está muy bien estructura y pensada para todos los profesionales del sector, ha sido creada por un técnico de mantenimiento así que sin duda alguna muy funcional recomendable 100 %", source: "App Store" },
+          { author: "Carlos Javier Minuesa", date: "14 abr 2026", text: "Muy buena aplicación, más completa que otras aplicaciones más caras y populares, sin duda muy recomendable para TMA's.", source: "Google Play" },
+          { title: "Perfecta", author: "A Blasco", date: "23 feb. 2026", text: "Indispensable para trabajar en Airbus, he probado varias y esta sin duda es la más completa y resolutiva.", source: "App Store" },
+          { author: "Raúl Martín", date: "17 abr 2026", text: "Muy útil para el turno de noche y el mantenimiento de línea. Excelente aplicación. Permite trabajar con rapidez y precisión.", source: "Google Play" },
+          { title: "Fantástica herramienta", author: "ECJAP", date: "24 feb. 2026", text: "Fantástica herramienta, para aprender, que te guiará de manera rápida a los manuales necesarios, facilitando en gran manera el trabajo diario.", source: "App Store" },
+          { author: "Pascual Brisa", date: "14 abr 2026", text: "Una app imprescindible si trabajas con aviones Airbus. La mejor que he probado sin duda.", source: "Google Play" },
+          { title: "Recomendable", author: "fsbbxje", date: "27 feb. 2026", text: "Aplicación mucho más completa que otras actuales, interfaz claro, intuitiva y muy práctica. La recomiendo", source: "App Store" },
+          { author: "Alexandre Vale", date: "16 abr 2026", text: "Buena herramienta, una buena plataforma base. Necesita mejoras, pero creo que el equipo de desarrollo seguirá mejorando la aplicación.", source: "Google Play" },
+          { title: "Espectacular", author: "PauTech", date: "27 feb. 2026", text: "La mejor herramienta enfocada al A32X hasta ahora. Simplemente genial.", source: "App Store" },
+          { author: "Pol Salvador", date: "15 abr 2026", text: "¡¡¡Aplicación increíble y sumamente útil para el mantenimiento en línea!!! ¡¡¡La mejor para el A320!!!", source: "Google Play" }
         ]
       },
       a330: {
@@ -1453,6 +1603,58 @@
       updateStructuredData(productKey);
     }
 
+    let _carouselIdx = 0, _carouselTotal = 0, _carouselTimer = null, _carouselAC = null;
+    function _carouselStop() { if (_carouselTimer) { clearInterval(_carouselTimer); _carouselTimer = null; } }
+    function _carouselStart() { _carouselStop(); _carouselTimer = setInterval(() => _carouselGoto(_carouselIdx + 1), 5500); }
+    function _carouselGoto(idx) {
+      if (!_carouselTotal) return;
+      _carouselIdx = ((idx % _carouselTotal) + _carouselTotal) % _carouselTotal;
+      const outer = document.getElementById('reviewsTrackOuter');
+      const track = document.getElementById('reviewsTrack');
+      if (outer && track) track.style.transform = `translateX(-${_carouselIdx * outer.offsetWidth}px)`;
+      document.querySelectorAll('.carousel-dot-btn').forEach((d, i) => d.classList.toggle('active', i === _carouselIdx));
+    }
+    function initReviewsCarousel(reviews) {
+      const section = document.getElementById('reviewsSection');
+      if (!section) return;
+      _carouselStop();
+      if (_carouselAC) _carouselAC.abort();
+      _carouselAC = new AbortController();
+      const sig = _carouselAC.signal;
+      if (!reviews || !reviews.length) { section.hidden = true; return; }
+      _carouselTotal = reviews.length;
+      _carouselIdx = 0;
+      const track = document.getElementById('reviewsTrack');
+      const dots = document.getElementById('reviewsDots');
+      const prev = document.getElementById('reviewsPrev');
+      const next = document.getElementById('reviewsNext');
+      const outer = document.getElementById('reviewsTrackOuter');
+      track.innerHTML = reviews.map(r => `<div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-pill">${r.source}</span></div>
+        ${r.title ? `<p class="review-card-title">${r.title}</p>` : ''}
+        <p class="review-card-text">“${r.text}”</p>
+        <p class="review-card-meta">${r.author} &middot; ${r.date}</p>
+      </div>`).join('');
+      dots.innerHTML = reviews.map((_, i) => `<button class="carousel-dot-btn${i === 0 ? ' active' : ''}" aria-label="Review ${i + 1}"></button>`).join('');
+      dots.querySelectorAll('.carousel-dot-btn').forEach((d, i) => {
+        d.addEventListener('click', () => { _carouselGoto(i); _carouselStart(); }, { signal: sig });
+      });
+      prev.addEventListener('click', () => { _carouselGoto(_carouselIdx - 1); _carouselStart(); }, { signal: sig });
+      next.addEventListener('click', () => { _carouselGoto(_carouselIdx + 1); _carouselStart(); }, { signal: sig });
+      outer.addEventListener('mouseenter', _carouselStop, { signal: sig });
+      outer.addEventListener('mouseleave', _carouselStart, { signal: sig });
+      let touchX = 0;
+      outer.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true, signal: sig });
+      outer.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) { _carouselGoto(_carouselIdx + (dx < 0 ? 1 : -1)); _carouselStart(); }
+      }, { signal: sig });
+      window.addEventListener('resize', () => _carouselGoto(_carouselIdx), { signal: sig });
+      section.hidden = false;
+      _carouselGoto(0);
+      _carouselStart();
+    }
+
     function renderProduct(productKey) {
       const product = PRODUCTS[productKey];
       const normalizedPath = product.canonicalPath;
@@ -1520,6 +1722,7 @@
       bindLightbox();
       bindReveal();
       bindVideos();
+      initReviewsCarousel(product.reviews);
     }
 
     lightboxImage.addEventListener("click", (event) => {
