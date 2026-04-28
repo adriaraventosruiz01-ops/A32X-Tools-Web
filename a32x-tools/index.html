@@ -904,10 +904,12 @@
       overflow: hidden;
       border-radius: var(--r-lg);
       cursor: grab;
+      transition: height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .reviews-track-outer:active { cursor: grabbing; }
     .reviews-track {
       display: flex;
+      align-items: flex-start;
       transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
       will-change: transform;
     }
@@ -1618,7 +1620,11 @@
       _carouselIdx = ((idx % _carouselTotal) + _carouselTotal) % _carouselTotal;
       const outer = document.getElementById('reviewsTrackOuter');
       const track = document.getElementById('reviewsTrack');
-      if (outer && track) track.style.transform = `translateX(-${_carouselIdx * outer.offsetWidth}px)`;
+      if (outer && track) {
+        track.style.transform = `translateX(-${_carouselIdx * outer.offsetWidth}px)`;
+        const card = track.children[_carouselIdx];
+        if (card) outer.style.height = card.offsetHeight + 'px';
+      }
       document.querySelectorAll('.carousel-dot-btn').forEach((d, i) => d.classList.toggle('active', i === _carouselIdx));
     }
     const _STORE_ICONS = {
@@ -1663,8 +1669,7 @@
       }, { signal: sig });
       window.addEventListener('resize', () => _carouselGoto(_carouselIdx), { signal: sig });
       section.hidden = false;
-      _carouselGoto(0);
-      _carouselStart();
+      requestAnimationFrame(() => { _carouselGoto(0); _carouselStart(); });
     }
 
     function renderProduct(productKey) {
