@@ -904,7 +904,6 @@
       overflow: hidden;
       border-radius: var(--r-lg);
       cursor: grab;
-      transition: height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .reviews-track-outer:active { cursor: grabbing; }
     .reviews-track {
@@ -1623,7 +1622,8 @@
       if (outer && track) {
         track.style.transform = `translateX(-${_carouselIdx * outer.offsetWidth}px)`;
         const card = track.children[_carouselIdx];
-        if (card) outer.style.height = card.offsetHeight + 'px';
+        const h = card ? card.offsetHeight : 0;
+        if (h > 0) outer.style.height = h + 'px';
       }
       document.querySelectorAll('.carousel-dot-btn').forEach((d, i) => d.classList.toggle('active', i === _carouselIdx));
     }
@@ -1669,9 +1669,7 @@
       }, { signal: sig });
       window.addEventListener('resize', () => _carouselGoto(_carouselIdx), { signal: sig });
       section.hidden = false;
-      void outer.offsetHeight;
-      _carouselGoto(0);
-      _carouselStart();
+      setTimeout(() => { _carouselGoto(0); _carouselStart(); }, 0);
     }
 
     function renderProduct(productKey) {
