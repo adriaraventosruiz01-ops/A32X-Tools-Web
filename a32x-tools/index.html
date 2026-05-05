@@ -1669,7 +1669,7 @@
       }, { signal: sig });
       window.addEventListener('resize', () => _carouselGoto(_carouselIdx), { signal: sig });
       section.hidden = false;
-      setTimeout(() => { _carouselGoto(0); _carouselStart(); }, 0);
+      document.fonts.ready.then(() => requestAnimationFrame(() => { _carouselGoto(0); _carouselStart(); }));
     }
 
     function renderProduct(productKey) {
