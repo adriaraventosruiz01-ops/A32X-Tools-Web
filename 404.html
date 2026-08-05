@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#041326" />
+  <title>Page not found | A32X Tools</title>
+  <meta name="description" content="This page does not exist on a32xtools.com. Browse the A32X Tools, A330 Tools and 737 Tools maintenance reference apps." />
+  <meta name="robots" content="noindex, follow" />
+  <base href="/" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <style>
+    :root{
+      --bg0:#041326;
+      --panel: rgba(6,26,51,0.88);
+      --panel2: rgba(0,0,0,0.18);
+      --border: rgba(255,255,255,0.14);
+      --border2: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.78);
+      --shadow: 0 18px 60px rgba(0,0,0,0.40);
+      --r: 26px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background: var(--bg0);
+      line-height:1.6;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+
+    header{
+      background: rgba(4,19,38,0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border2);
+    }
+
+    .header-content{
+      max-width:1100px;
+      margin:0 auto;
+      padding:16px 18px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .header-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      font-weight:900;
+      color:white;
+      transition: opacity 0.3s ease;
+    }
+
+    .header-brand:hover{ opacity:0.8; }
+    .header-brand img{ width:32px; height:32px; border-radius:8px; }
+
+    main{
+      flex:1 0 auto;
+      max-width:760px;
+      width:100%;
+      margin:0 auto;
+      padding:72px 18px 56px;
+    }
+
+    .code{
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin:0 0 10px;
+    }
+
+    h1{
+      font-size:36px;
+      font-weight:900;
+      margin:0 0 14px;
+      letter-spacing:0.2px;
+    }
+
+    p{ margin:0 0 12px; color:var(--muted); }
+
+    .apps{
+      display:grid;
+      gap:10px;
+      margin-top:32px;
+    }
+
+    .app{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:16px 18px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background: var(--panel);
+      text-decoration:none;
+      color:var(--text);
+      box-shadow: var(--shadow);
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .app:hover{ border-color: rgba(255,255,255,0.30); transform: translateY(-1px); }
+    .app img{ width:38px; height:38px; border-radius:999px; flex:0 0 auto; }
+    .app-name{ font-weight:900; }
+    .app-note{ font-size:13px; color:var(--muted); }
+
+    .more{
+      margin-top:28px;
+      padding-top:18px;
+      border-top:1px solid var(--border2);
+      font-size:14px;
+    }
+
+    a{ color:rgba(255,255,255,0.95); }
+
+    footer{
+      flex:0 0 auto;
+      text-align:center;
+      padding:32px 18px;
+      font-size:12px;
+      color:var(--muted);
+      border-top: 1px solid var(--border2);
+    }
+
+    @media (max-width: 640px){
+      h1{ font-size:28px; }
+      main{ padding:44px 14px 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="/" class="header-brand">
+        <img src="icon.png" alt="A32X Tools" />
+        A32X Tools
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <p class="code">Error 404</p>
+    <h1>Page not found</h1>
+    <p>The page you are looking for does not exist or has been moved.</p>
+
+    <div class="apps">
+      <a class="app" href="/a32x-tools/">
+        <img src="icon.png" alt="" />
+        <span>
+          <span class="app-name">A32X Tools</span><br>
+          <span class="app-note">Airbus A320 family maintenance reference</span>
+        </span>
+      </a>
+      <a class="app" href="/a330-tools/">
+        <img src="assets/products/a330/icon.png" alt="" />
+        <span>
+          <span class="app-name">A330 Tools</span><br>
+          <span class="app-note">Airbus A330 maintenance reference</span>
+        </span>
+      </a>
+      <a class="app" href="/737-tools/">
+        <img src="assets/products/b737/icon.png" alt="" />
+        <span>
+          <span class="app-name">737 Tools</span><br>
+          <span class="app-note">Boeing 737 NG maintenance reference</span>
+        </span>
+      </a>
+    </div>
+
+    <p class="more">
+      Need help? Email <a href="mailto:info@a32xtools.com">info@a32xtools.com</a>,
+      or go back to the <a href="/">home page</a>.
+    </p>
+  </main>
+
+  <footer>
+    &copy; 2026 A32X Tools. All rights reserved.
+  </footer>
+</body>
+</html>

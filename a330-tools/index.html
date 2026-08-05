@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>A330 Tools | Airbus A330 ECAM Resets App</title>
-  <meta name="description" content="A330 Tools is an Airbus A330 maintenance reference app for ECAM troubleshooting and ECAM resets, plus structural damage reports, electrical contacts, alpha callups, and common part numbers." />
+  <meta name="description" content="Airbus A330 maintenance app: ECAM troubleshooting and resets, structural damage reports, electrical contacts, alpha callups and common part numbers." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0B1F33" />
   <link rel="canonical" href="https://www.a32xtools.com/a330-tools/" />
   <link rel="alternate" hreflang="en" href="https://www.a32xtools.com/a330-tools/" />
   <link rel="alternate" hreflang="x-default" href="https://www.a32xtools.com/a330-tools/" />
   <meta property="og:title" content="A330 Tools | Airbus A330 ECAM Resets App" />
-  <meta property="og:description" content="A330 Tools is an Airbus A330 maintenance reference app for ECAM troubleshooting and ECAM resets, plus structural damage reports, electrical contacts, alpha callups, and common part numbers." />
+  <meta property="og:description" content="Airbus A330 maintenance app: ECAM troubleshooting and resets, structural damage reports, electrical contacts, alpha callups and common part numbers." />
   <meta property="og:image" content="https://www.a32xtools.com/assets/products/a330/background.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.a32xtools.com/a330-tools/" />
@@ -19,7 +19,7 @@
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="A330 Tools | Airbus A330 ECAM Resets App" />
-  <meta name="twitter:description" content="A330 Tools is an Airbus A330 maintenance reference app for ECAM troubleshooting and ECAM resets, plus structural damage reports, electrical contacts, alpha callups, and common part numbers." />
+  <meta name="twitter:description" content="Airbus A330 maintenance app: ECAM troubleshooting and resets, structural damage reports, electrical contacts, alpha callups and common part numbers." />
   <meta name="twitter:image" content="https://www.a32xtools.com/assets/products/a330/background.png" />
 
   <base href="/" />
@@ -50,7 +50,7 @@
           "@id": "https://www.a32xtools.com/a330-tools/#software",
           "name": "A330 Tools",
           "url": "https://www.a32xtools.com/a330-tools/",
-          "description": "A330 Tools is an Airbus A330 maintenance reference app for ECAM troubleshooting and ECAM resets, plus structural damage reports, electrical contacts, alpha callups, and common part numbers.",
+          "description": "Airbus A330 maintenance app: ECAM troubleshooting and resets, structural damage reports, electrical contacts, alpha callups and common part numbers.",
           "applicationCategory": "UtilitiesApplication",
           "operatingSystem": "Android, iOS",
           "softwareVersion": "1.0",
@@ -121,6 +121,18 @@
       --accent: #8ded29;
       --accent2: #ffd13f;
       --accent3: #fff29c;
+    }
+
+    body[data-product="b737"] {
+      --bg0: #101418;
+      --bg1: #171C22;
+      --panel: rgba(28, 34, 41, 0.92);
+      --panel2: rgba(20, 25, 30, 0.68);
+      --border: rgba(154, 172, 190, 0.20);
+      --border2: rgba(154, 172, 190, 0.13);
+      --accent: #9AACBE;
+      --accent2: #5AA9E6;
+      --accent3: #FFA726;
     }
 
     * { box-sizing: border-box; }
@@ -208,34 +220,61 @@
       color: rgba(242, 255, 214, 0.94);
     }
     .productSwitchLabel {
-      padding: 10px 14px;
-      color: rgba(223, 241, 255, 0.9);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
+      padding: 10px 6px 10px 12px;
+      color: rgba(223, 241, 255, 0.60);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.9px;
       text-transform: uppercase;
       white-space: nowrap;
-      border-radius: 999px;
-      background: rgba(8, 24, 42, 0.34);
-      border: 1px solid rgba(112, 188, 255, 0.14);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
     }
-    body[data-product="a330"] .productSwitchLabel {
-      color: rgba(239, 255, 208, 0.92);
-      background: rgba(19, 45, 11, 0.34);
-      border-color: rgba(188, 233, 104, 0.14);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    body[data-product="a330"] .productSwitchLabel { color: rgba(239, 255, 208, 0.62); }
+    .productSwitch [data-product]:hover {
+      background: rgba(82, 193, 255, 0.16);
+      border-color: rgba(82, 193, 255, 0.44);
+      transform: translateY(-1px);
     }
     .productSwitch [data-product].active {
-      background: linear-gradient(135deg, rgba(82, 193, 255, 0.18), rgba(79, 227, 178, 0.14));
-      border-color: rgba(82, 193, 255, 0.36);
-      color: rgba(255,255,255,0.98);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, rgba(82, 193, 255, 0.38), rgba(79, 227, 178, 0.26));
+      border-color: rgba(82, 193, 255, 0.75);
+      color: #ffffff;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16),
+                  0 0 0 1px rgba(82, 193, 255, 0.30),
+                  0 6px 18px rgba(0, 0, 0, 0.30);
+    }
+    .productSwitch [data-product].active:hover { transform: none; }
+    body[data-product="a330"] .productSwitch [data-product]:hover {
+      background: rgba(141, 237, 41, 0.16);
+      border-color: rgba(255, 209, 63, 0.44);
     }
     body[data-product="a330"] .productSwitch [data-product].active {
-      background: linear-gradient(135deg, rgba(141, 237, 41, 0.18), rgba(255, 209, 63, 0.18));
-      border-color: rgba(255, 209, 63, 0.4);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, rgba(141, 237, 41, 0.36), rgba(255, 209, 63, 0.32));
+      border-color: rgba(255, 209, 63, 0.78);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16),
+                  0 0 0 1px rgba(255, 209, 63, 0.28),
+                  0 6px 18px rgba(0, 0, 0, 0.30);
+    }
+
+    body[data-product="b737"] .productSwitch {
+      background: linear-gradient(135deg, rgba(46, 56, 68, 0.52), rgba(30, 37, 45, 0.60));
+      border-color: rgba(154, 172, 190, 0.22);
+    }
+    body[data-product="b737"] .productSwitch [data-product] {
+      border-color: rgba(154, 172, 190, 0.18);
+      background: rgba(22, 27, 33, 0.52);
+      color: rgba(226, 234, 242, 0.94);
+    }
+    body[data-product="b737"] .productSwitchLabel { color: rgba(226, 234, 242, 0.62); }
+    body[data-product="b737"] .productSwitch [data-product]:hover {
+      background: rgba(154, 172, 190, 0.16);
+      border-color: rgba(90, 169, 230, 0.46);
+    }
+    body[data-product="b737"] .productSwitch [data-product].active {
+      background: linear-gradient(135deg, rgba(90, 169, 230, 0.44), rgba(154, 172, 190, 0.22));
+      border-color: rgba(90, 169, 230, 0.80);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16),
+                  0 0 0 1px rgba(90, 169, 230, 0.32),
+                  0 6px 18px rgba(0, 0, 0, 0.30);
     }
 
     .hero {
@@ -280,6 +319,14 @@
 
     .icon { width: 80px; height: 80px; border-radius: var(--r-md); flex: 0 0 auto; transform: scale(1.16); transform-origin: center; object-fit: cover; object-position: center; display:block; }
     body[data-product="a330"] .icon {
+      transform: scale(1.16);
+      border-radius: 999px;
+      clip-path: circle(50% at 50% 50%);
+      background: transparent;
+      box-shadow: none;
+    }
+
+    body[data-product="b737"] .icon {
       transform: scale(1.16);
       border-radius: 999px;
       clip-path: circle(50% at 50% 50%);
@@ -441,6 +488,7 @@
 
     .disclaimer { background: rgba(9,27,48,0.8); border: 1px solid rgba(247, 213, 107, 0.25); border-radius:18px; padding:18px 16px; color:var(--muted); font-size:14px; line-height:1.6; }
     body[data-product="a330"] .disclaimer { background: rgba(10, 44, 12, 0.8); border-color: rgba(255, 209, 63, 0.25); }
+    body[data-product="b737"] .disclaimer { background: rgba(20, 25, 30, 0.84); border-color: rgba(154, 172, 190, 0.24); }
 
     .screens-grid {
       display: flex;
@@ -467,6 +515,15 @@
       background: transparent;
     }
     body[data-product="a330"] .screen-thumb img {
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    body[data-product="b737"] .screen-thumb {
+      aspect-ratio: 1284 / 2778;
+      background: transparent;
+    }
+    body[data-product="b737"] .screen-thumb img {
       object-fit: contain;
       object-position: center center;
     }
@@ -613,6 +670,13 @@
       box-shadow: 0 16px 34px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(255, 209, 63, 0.12);
     }
 
+    body[data-product="b737"] .video-filler,
+    body[data-product="b737"] .mobile-video-card {
+      background: linear-gradient(160deg, rgba(28, 34, 41, 0.88), rgba(52, 66, 82, 0.56));
+      border-color: rgba(154, 172, 190, 0.32);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(154, 172, 190, 0.12);
+    }
+
     @media (prefers-reduced-motion: no-preference) {
       .screen-card {
         opacity: 0;
@@ -662,6 +726,7 @@
       .brand { flex-direction: column; align-items: flex-start; }
       .icon { width: 64px; height: 64px; }
       body[data-product="a330"] .icon { border-radius: 999px; }
+      body[data-product="b737"] .icon { border-radius: 999px; }
       .pill { font-size: 10px; padding: 6px 12px; }
       .pill.pill-soft { font-size: 10px; padding: 6px 12px; }
       .btn { width: 100%; justify-content: center; }
@@ -794,9 +859,9 @@
         font-size: 12px;
       }
       .productSwitchLabel {
-        padding: 8px 10px;
+        padding: 8px 4px 8px 8px;
         font-size: 11px;
-        letter-spacing: 0.4px;
+        letter-spacing: 0.6px;
       }
     }
     .rating-display {
@@ -877,6 +942,25 @@
       border: var(--edge-soft);
       border-radius: var(--r-md);
     }
+
+    .feature-item[data-accent] {
+      border-left: 3px solid var(--feat);
+      background: linear-gradient(90deg, color-mix(in srgb, var(--feat) 14%, transparent), var(--panel2) 46%);
+    }
+    .feature-item[data-accent] .feature-title { color: var(--feat); }
+
+    .tour-empty {
+      border: 1px dashed var(--border);
+      border-radius: var(--r-md);
+      background: var(--panel2);
+      padding: 26px 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
     .feature-title {
       font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
       font-size: 12px;
@@ -900,9 +984,10 @@
     <div class="wrap">
       <div class="productSwitchBar">
         <div class="productSwitch" role="tablist" aria-label="Product selector">
-          <span class="productSwitchLabel">Airplane Models:</span>
+          <span class="productSwitchLabel">Choose aircraft:</span>
           <a href="/a32x-tools/" data-product="a32x" aria-selected="false" role="tab">Airbus A320</a>
           <a href="/a330-tools/" class="active" data-product="a330" aria-selected="true" role="tab">Airbus A330</a>
+          <a href="/737-tools/" data-product="b737" aria-selected="false" role="tab">Boeing 737</a>
         </div>
       </div>
       <div class="grid hero-layout">
@@ -954,6 +1039,7 @@
         <h2 class="section-title">App tour</h2>
         <p class="section-subtitle" id="tourSubtitle">Seven key screens with quick summaries, plus 3 videos showcasing the most important features.</p>
         <div class="screens-grid" id="screensGrid"></div>
+        <div class="tour-empty" id="tourEmpty" hidden>Screenshots coming soon</div>
         <h3 class="videos-heading" id="videosHeading">Demos</h3>
         <div class="desktop-video-grid" id="desktopVideoGrid" aria-label="Video demos"></div>
         <div class="mobile-video-grid" id="mobileVideoGrid" aria-label="Video demos"></div>
@@ -1005,7 +1091,7 @@
         background: "/hero.webp",
         ogImage: "/hero.png",
         canonicalPath: "/a32x-tools/",
-        metaDescription: "A32X Tools is an Airbus A320 family maintenance reference app for ECAM troubleshooting and ECAM resets, plus structural damage reports, electrical contacts, alpha callups, and common part numbers.",
+        metaDescription: "Airbus A320 family maintenance app: ECAM troubleshooting and resets, structural damage reports, electrical contacts, alpha callups and common part numbers.",
         tourSubtitle: "Seven key screens with quick summaries, plus 3 videos showcasing the most important features.",
         disclaimer: "A32X Tools is designed for training and reference use only. It does not replace official Airbus documentation. ECAM messages, reset procedures, structural damage reports, and AMM/MEL/ESPM references are provided as learning aids. Always consult the latest official Airbus manuals before performing any maintenance or operational task. Airbus and A320 are trademarks of their respective owners and are not affiliated with this app.",
         privacyHref: "/privacy",
@@ -1051,7 +1137,7 @@
         background: "/assets/products/a330/background.webp",
         ogImage: "/assets/products/a330/background.png",
         canonicalPath: "/a330-tools/",
-        metaDescription: "A330 Tools is an Airbus A330 maintenance reference app for ECAM troubleshooting and ECAM resets, plus structural damage reports, electrical contacts, alpha callups, and common part numbers.",
+        metaDescription: "Airbus A330 maintenance app: ECAM troubleshooting and resets, structural damage reports, electrical contacts, alpha callups and common part numbers.",
         tourSubtitle: "Seven key screens with quick summaries.",
         disclaimer: "A330 Tools is designed for training and reference use only. It does not replace official Airbus documentation. ECAM messages, reset procedures, structural damage reports, and AMM/MEL/ESPM references are provided as learning aids. Always consult the latest official Airbus manuals before performing any maintenance or operational task. Airbus and A330 are trademarks of their respective owners and are not affiliated with this app.",
         privacyHref: "/privacy-a330",
@@ -1082,13 +1168,46 @@
           { title: "Part Numbers", text: "Your most-used parts with real photos, organized by zone and category. Find what you need before you reach the shelf." },
           { title: "Custom Items", text: "Missing a part in the catalog? Add it yourself with photos and references. Your entries are saved and ready for next time." }
         ]
+      },
+      b737: {
+        name: "737 Tools",
+        pageTitle: "737 Tools | Boeing 737 NG Maintenance Reference App",
+        subtitle: "Annunciator lights, E/E tour, circuit breakers & part numbers. Offline.",
+        description: "Quick-reference app for Boeing 737 NG line and base maintenance. Annunciator lights by ATA chapter with fault modes, LRUs, circuit breakers and MEL links; a photographic E/E compartment tour; circuit breaker panels; common part numbers; and field damage reports. Built to be used on the ramp, one-handed and with gloves on.",
+        icon: "/assets/products/b737/icon.png",
+        background: "/assets/products/b737/background.webp",
+        ogImage: "/assets/products/b737/background.png",
+        canonicalPath: "/737-tools/",
+        metaDescription: "Boeing 737 NG maintenance app: annunciator lights by ATA chapter, MEL due-date calculator, E/E tour, circuit breakers and part numbers. Offline.",
+        tourSubtitle: "A look inside the app, module by module.",
+        disclaimer: "For training and reference only. Designed for aircraft systems study and fault simulation. Information may not be current or fleet-specific. This independent app is not affiliated with any manufacturer and does not replace approved AMM, MEL, or official documentation.",
+        privacyHref: "/privacy-737",
+        supportHref: "/support-737",
+        emailHref: "mailto:info@a32xtools.com",
+        playHref: "",
+        appStoreHref: "",
+        playComingSoon: true,
+        appStoreComingSoon: true,
+        pills: [
+          '<div class="pill">Free download &middot; Pro one-time payment</div><div class="pill pill-soft">No subscription. Offline-first.</div>'
+        ],
+        screenshots: [],
+        videos: [],
+        features: [
+          { title: "Annunciator Lights", color: "#FFA726", text: "Every 737 NG annunciator light by ATA chapter: what it means, the associated procedure, fault modes, LRUs involved, related circuit breakers, linked MEL items with a NO DISPATCH warning, and your own notes. Includes an MEL due-date calculator that works in UTC." },
+          { title: "E/E Tour", color: "#1E88E5", text: "A photographic walkthrough of the electrical and electronic compartment. Real bay photos with each LRU position marked on top, plus the circuit breaker panels with the exact position of every CB." },
+          { title: "Circuit Breakers", color: "#4CAF50", text: "Search any circuit breaker and open the panel viewer with its location pinpointed." },
+          { title: "Common PN", color: "#26C6DA", text: "Frequently used part numbers organised by aircraft zone and category, each with a photo. Create your own entries with photos and notes, and import or export your collection to share it with colleagues." },
+          { title: "Damage Reports", color: "#EF5350", text: "Build damage reports on the spot: camera photos, annotations, measurements and damage location. Export to PDF or ZIP to send by email." },
+          { title: "Global Search", color: "#64B5F6", text: "One search box across annunciator lights, LRUs, circuit breakers and part numbers at once. Everything is embedded in the app, so it works with no signal on the ramp or in the hangar." }
+        ]
       }
     };
 
     const SITE_URL = "https://www.a32xtools.com";
     const HOME_PAGE = {
-      pageTitle: "A32X Tools | Airbus Maintenance Reference Apps",
-      metaDescription: "A32X Tools and A330 Tools are professional maintenance reference apps for ECAM troubleshooting, ECAM resets, structural damage reports, electrical contacts, alpha callups, and common part numbers.",
+      pageTitle: "A32X Tools | Airbus & Boeing Maintenance Reference Apps",
+      metaDescription: "A32X Tools, A330 Tools and 737 Tools are professional maintenance reference apps for ECAM resets, annunciator lights, structural damage reports, electrical contacts, alpha callups, and common part numbers.",
       canonicalPath: "/",
       ogImage: "/hero.png"
     };
@@ -1110,6 +1229,7 @@
     const videosHeading = document.getElementById("videosHeading");
     const ratingDisplay = document.getElementById("ratingDisplay");
     const heroPhoto = document.getElementById("heroPhoto");
+    const tourEmpty = document.getElementById("tourEmpty");
     const disclaimerText = document.getElementById("disclaimerText");
     const footerText = document.getElementById("footerText");
     const googlePlayLink = document.getElementById("googlePlayLink");
@@ -1472,7 +1592,11 @@
       setStoreLinkState(appStoreLink, product.appStoreHref, appStoreDisabled);
       setComingSoonVisibility(googlePlayDisabled, appStoreDisabled);
 
-      screensGrid.innerHTML = product.screenshots.map((item, index) => renderScreenshotCard(item, index)).join("");
+      const hasScreenshots = (product.screenshots || []).length > 0;
+      screensGrid.innerHTML = (product.screenshots || [])
+        .map((item, index) => renderScreenshotCard(item, index)).join("");
+      screensGrid.hidden = !hasScreenshots;
+      if (tourEmpty) tourEmpty.hidden = hasScreenshots;
       desktopVideoGrid.innerHTML = product.videos.map((item) => renderVideoCard(item, false)).join("");
       mobileVideoGrid.innerHTML = product.videos.map((item) => renderVideoCard(item, true)).join("");
 
@@ -1486,7 +1610,7 @@
         }
       }
       if (featuresGrid) featuresGrid.innerHTML = (product.features || []).map(f => `
-        <div class="feature-item">
+        <div class="feature-item"${f.color ? ` data-accent style="--feat:${f.color}"` : ""}>
           <div class="feature-title">${f.title}</div>
           <div class="feature-text">${f.text}</div>
         </div>

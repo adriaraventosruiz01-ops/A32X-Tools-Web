@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#101418" />
+  <title>Support &amp; FAQ | 737 Tools</title>
+  <meta name="description" content="Support and FAQ for 737 Tools: annunciator lights, E/E tour, circuit breakers, part numbers, damage reports, offline use, Pro purchase and data privacy." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://www.a32xtools.com/support-737" />
+  <meta property="og:title" content="Support &amp; FAQ | 737 Tools" />
+  <meta property="og:description" content="Support and FAQ for 737 Tools: annunciator lights, E/E tour, circuit breakers, part numbers, damage reports, offline use, Pro purchase and data privacy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.a32xtools.com/support-737" />
+  <meta property="og:image" content="https://www.a32xtools.com/assets/products/b737/icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Support &amp; FAQ | 737 Tools" />
+  <meta name="twitter:description" content="Support and FAQ for 737 Tools: annunciator lights, E/E tour, circuit breakers, part numbers, damage reports, offline use, Pro purchase and data privacy." />
+  <meta name="twitter:image" content="https://www.a32xtools.com/assets/products/b737/icon.png" />
+  <base href="/" />
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/products/b737/icon.png" />
+  <style>
+    :root{
+      --bg0:#101418;
+      --panel: rgba(28,34,41,0.88);
+      --panel2: rgba(20,25,30,0.68);
+      --border: rgba(154,172,190,0.20);
+      --border2: rgba(154,172,190,0.13);
+      --text: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.78);
+      --shadow: 0 18px 60px rgba(0,0,0,0.40);
+      --r: 26px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:
+        linear-gradient(rgba(13, 16, 20, 0.86), rgba(13, 16, 20, 0.92)),
+        url("/assets/products/b737/background.png") center/cover fixed no-repeat;
+      line-height:1.6;
+    }
+
+    header{
+      background: rgba(19,23,28,0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content{
+      max-width:1100px;
+      margin:0 auto;
+      padding:16px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .header-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      font-weight:900;
+      color:white;
+      transition: opacity 0.3s ease;
+    }
+
+    .header-brand:hover{ opacity:0.8; }
+
+    .header-brand img{
+      width:32px;
+      height:32px;
+      border-radius:8px;
+    }
+
+    nav{ display:flex; gap:8px; }
+
+    nav a{
+      display:inline-block;
+      padding:8px 14px;
+      text-decoration:none;
+      color:white;
+      font-weight:700;
+      border-radius:12px;
+      background: transparent;
+      transition: all 0.3s ease;
+      font-size:14px;
+    }
+
+    nav a:hover{ background: rgba(255,255,255,0.1); }
+
+    nav a.active{
+      background: rgba(255,255,255,0.15);
+      border-bottom: 2px solid rgba(90,169,230,0.50);
+    }
+
+    .wrap{
+      max-width:900px;
+      margin:0 auto;
+      padding:56px 18px;
+    }
+
+    h1{
+      font-size:36px;
+      font-weight:900;
+      margin-top:0;
+      letter-spacing:0.2px;
+    }
+
+    h2{
+      font-weight:900;
+      margin-top:36px;
+      margin-bottom:10px;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.8px;
+    }
+
+    p{ margin-bottom:12px; color:var(--text); }
+    strong{ font-weight:900; color:white; }
+
+    a{
+      color:rgba(255,255,255,0.95);
+      text-decoration:underline;
+      transition: opacity 0.3s ease;
+    }
+
+    a:hover{ opacity:0.8; }
+
+    .contact-box{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding:24px;
+      margin:32px 0;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .contact-box p{ margin:0; font-size:16px; }
+
+    .legal-note{
+      margin-top:40px;
+      padding:18px 16px;
+      border:1px solid rgba(154,172,190,0.26);
+      border-radius:18px;
+      background: rgba(20,25,30,0.84);
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+    }
+    .legal-note p{ margin:0; color:var(--muted); }
+
+    footer{
+      text-align:center;
+      padding:32px 18px;
+      font-size:12px;
+      color:var(--muted);
+      border-top: 1px solid var(--border2);
+      margin-top:56px;
+    }
+
+    /* FAQ accordion */
+    details {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 8px;
+      background: var(--panel2);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+    details:hover { border-color: rgba(154,172,190,0.34); }
+    details[open] { border-color: rgba(154,172,190,0.28); }
+    summary {
+      cursor: pointer;
+      padding: 15px 18px;
+      font-weight: 700;
+      font-size: 15px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      user-select: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--muted);
+      flex: 0 0 auto;
+      line-height: 1;
+    }
+    details[open] summary::after { content: "−"; }
+    .faq-answer {
+      padding: 2px 18px 15px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--muted);
+      border-top: 1px solid var(--border2);
+    }
+    .faq-answer p { margin: 10px 0 0; color: var(--muted); }
+
+    @media (max-width: 640px){
+      .header-content{ flex-direction:column; align-items:flex-start; }
+      nav{ width:100%; flex-direction:column; }
+      nav a{ display:block; padding:12px 14px; }
+      h1{ font-size:28px; }
+      .wrap{ padding:36px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="/" class="header-brand">
+        <img src="assets/products/b737/icon.png" alt="737 Tools" />
+        737 Tools
+      </a>
+      <nav>
+        <a href="/737-tools/">Home</a>
+        <a href="/privacy-737">Privacy</a>
+        <a href="/support-737" class="active">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Support &amp; FAQ</h1>
+
+    <div class="contact-box">
+      <p><strong>Questions or issues?</strong><br>
+      Contact us at: <strong><a href="mailto:info@a32xtools.com">info@a32xtools.com</a></strong></p>
+    </div>
+
+    <!-- Block 1: About the app and its content -->
+    <h2>About the App</h2>
+
+    <details>
+      <summary>What aircraft type does 737 Tools cover?</summary>
+      <div class="faq-answer">
+        <p>737 Tools is a quick-reference tool for the Boeing 737 NG. It is an independent app, not affiliated with any manufacturer; the aircraft type is named only to describe what the content refers to.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What is inside the app?</summary>
+      <div class="faq-answer">
+        <p>Five modules. <strong>Annunciator Lights</strong>: the 737 NG annunciator catalog navigable by ATA chapter, each light with its meaning, associated procedure, fault modes, LRUs involved, related circuit breakers, linked MEL items and your own notes. <strong>E/E Tour</strong>: a photographic walkthrough of the electrical and electronic compartment with LRU positions marked on real bay photos, plus the circuit breaker panels. <strong>Circuit Breakers</strong>: search and panel viewer with the exact location. <strong>Common PN</strong>: frequently used part numbers by zone and category, each with a photo. <strong>Damage Reports</strong>: field damage reporting with photos, annotations and measurements, exportable to PDF and ZIP.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Who is it for?</summary>
+      <div class="faq-answer">
+        <p>Line and base maintenance technicians (AMTs / TMAs), maintenance engineers, and Part-66 B1/B2 students studying 737 NG systems. It is designed to be used next to the aircraft: one-handed, with gloves on, and with no signal.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How is it different from A32X Tools and A330 Tools?</summary>
+      <div class="faq-answer">
+        <p>They are separate apps for different aircraft types, from the same developer. A32X Tools covers the Airbus A320 family and A330 Tools the Airbus A330, both built around ECAM resets. 737 Tools is built around the 737 NG annunciator lights, the E/E compartment tour and circuit breaker panels. Each app's technical content is specific to its type.</p>
+      </div>
+    </details>
+
+    <!-- Block 2: Usage and functionality -->
+    <h2>How It Works</h2>
+
+    <details>
+      <summary>Does the app work offline?</summary>
+      <div class="faq-answer">
+        <p>Yes. All content is embedded in the app, so every module works with no connection at all — on the ramp, in the hangar, or inside the E/E compartment. An internet connection is only used to refresh the Common PN catalog and its images, and to check whether a newer app version is available.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What does the MEL due-date calculator do?</summary>
+      <div class="faq-answer">
+        <p>Annunciator lights that have linked MEL items show them directly on the light's page, with a highlighted <strong>NO DISPATCH</strong> warning where it applies. The calculator takes the date the defect was detected and returns the expiry date for the MEL category. All calculations are done in UTC, not local time.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How does the E/E tour work?</summary>
+      <div class="faq-answer">
+        <p>It is a photographic tour of the electrical and electronic bays. Each bay photo has the position of every LRU marked on top of it, so you can locate a unit before you go down to the E/E compartment. It also includes the circuit breaker panels with the exact position of each CB.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do damage reports and PDF export work?</summary>
+      <div class="faq-answer">
+        <p>You create a report in the field with photos taken from the camera, annotations, measurements and the location of the damage. The app then generates a PDF or a ZIP that you can send by email or share with any compatible app. No account and no connection required.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Can I add my own part numbers and share them?</summary>
+      <div class="faq-answer">
+        <p>Yes. On top of the built-in catalog you can create your own part numbers with photos and notes, and import or export your collection to share it with colleagues.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Is there a single search across everything?</summary>
+      <div class="faq-answer">
+        <p>Yes. One search box queries annunciator lights, LRUs, circuit breakers and part numbers at the same time. The home screen also keeps your recent items for quick access.</p>
+      </div>
+    </details>
+
+    <!-- Block 3: Purchase and pricing -->
+    <h2>Purchase &amp; Pricing</h2>
+
+    <details>
+      <summary>Is it a one-time purchase or a subscription?</summary>
+      <div class="faq-answer">
+        <p>A <strong>one-time purchase</strong>. The app is free to download with part of the content open so you can try it, and Pro is a single payment that unlocks it for life. There is no subscription, no renewal and no recurring fee of any kind.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What does Pro unlock?</summary>
+      <div class="faq-answer">
+        <p>The complete E/E tour with every bay and every circuit breaker panel, all annunciator light ATA chapters, and unlimited damage reports with PDF and ZIP export.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Is there a free trial?</summary>
+      <div class="faq-answer">
+        <p>The free download is the trial: a full slice of the content is open before you pay anything. If you have a question about coverage or a specific feature, email us at <a href="mailto:info@a32xtools.com">info@a32xtools.com</a> and we will answer directly.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What happens to my purchase if I change or reset my phone?</summary>
+      <div class="faq-answer">
+        <p>Pro is a non-consumable purchase tied to the App Store or Google Play account you bought it with. The transaction is handled entirely by Apple or Google — the app never sees or stores your payment details, and it verifies the unlock locally on the device.</p>
+      </div>
+    </details>
+
+    <!-- Block 4: Technical and data privacy -->
+    <h2>Technical &amp; Data Privacy</h2>
+
+    <details>
+      <summary>Where is my data stored?</summary>
+      <div class="faq-answer">
+        <p>Everything you create — damage reports, your own part numbers, notes, photos and preferences — is stored locally on your device using the platform's standard app storage. There are no user accounts and no server of ours holds your data. See the <a href="/privacy-737">privacy policy</a> for the full detail.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do backups work?</summary>
+      <div class="faq-answer">
+        <p>The app generates a backup file containing your damage reports and your own part numbers. You choose where to save it — iCloud Drive, Google Drive, the Files app, or anywhere else. Once saved, that copy is handled by the service you chose, under its own terms.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Does the app use analytics or advertising?</summary>
+      <div class="faq-answer">
+        <p>No. There are no analytics services, no advertising SDKs, no tracking and no third-party cookies. No advertising profile is built about you, and the app does not track you across apps or websites.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I report a bug or issue?</summary>
+      <div class="faq-answer">
+        <p>Use the in-app support option. It prepares an email with technical information that helps us diagnose the problem — device model, OS version, app version, screen resolution and the error log stored locally on your device. The message opens in your own email app, so you can read it, edit it or cancel it before sending. Nothing is sent automatically. You can also write to <a href="mailto:info@a32xtools.com">info@a32xtools.com</a> directly. We aim to respond within 2 business days.</p>
+      </div>
+    </details>
+
+    <div class="legal-note">
+      <p>For training and reference only. Designed for aircraft systems study and fault simulation.
+      Information may not be current or fleet-specific. This independent app is not affiliated with any
+      manufacturer and does not replace approved AMM, MEL, or official documentation.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 737 Tools
+  </footer>
+</body>
+</html>
