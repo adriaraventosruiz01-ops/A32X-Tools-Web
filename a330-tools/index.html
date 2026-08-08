@@ -131,8 +131,8 @@
       --border: rgba(154, 172, 190, 0.20);
       --border2: rgba(154, 172, 190, 0.13);
       --accent: #9AACBE;
-      --accent2: #5AA9E6;
-      --accent3: #FFA726;
+      --accent2: #FFA726;
+      --accent3: #5AA9E6;
     }
 
     * { box-sizing: border-box; }
@@ -1173,9 +1173,10 @@
         name: "737 Tools",
         pageTitle: "737 Tools | Boeing 737 NG Maintenance Reference App",
         subtitle: "Annunciator lights, E/E tour, circuit breakers & part numbers. Offline.",
-        description: "Quick-reference app for Boeing 737 NG line and base maintenance. Annunciator lights by ATA chapter with fault modes, LRUs, circuit breakers and MEL links; a photographic E/E compartment tour; circuit breaker panels; common part numbers; and field damage reports. Built to be used on the ramp, one-handed and with gloves on.",
+        description: "On the ramp you don't have time to dig through binders. 737 Tools takes you from an annunciator light straight to the exact procedure, CB and LRU photo in seconds — built for gloved hands, working fully offline with no signal needed.",
         icon: "/assets/products/b737/icon.png",
         background: "/assets/products/b737/background.webp",
+        overlay: ["rgba(36, 22, 74, 0.58)", "rgba(10, 46, 50, 0.62)"],
         ogImage: "/assets/products/b737/background.png",
         canonicalPath: "/737-tools/",
         metaDescription: "Boeing 737 NG maintenance app: annunciator lights by ATA chapter, MEL due-date calculator, E/E tour, circuit breakers and part numbers. Offline.",
@@ -1191,15 +1192,23 @@
         pills: [
           '<div class="pill">Free download &middot; Pro one-time payment</div><div class="pill pill-soft">No subscription. Offline-first.</div>'
         ],
-        screenshots: [],
+        screenshots: [
+          { src: "assets/products/b737/screenshots/01.webp", title: "HOME", text: "737 NG maintenance training and quick reference, in one place." },
+          { src: "assets/products/b737/screenshots/02.webp", title: "PROCEDURE, COMPUTERS & CBs", text: "Check the procedure and find the computer and circuit breakers with real photos." },
+          { src: "assets/products/b737/screenshots/03.webp", title: "DAMAGE REPORTS", text: "Structural damage report form with PDF generator." },
+          { src: "assets/products/b737/screenshots/04.webp", title: "ANNUNCIATOR LIGHTS", text: "Know what the light means, by ATA chapter." },
+          { src: "assets/products/b737/screenshots/05.webp", title: "COMMON PN", text: "Your part numbers, always at hand." },
+          { src: "assets/products/b737/screenshots/06.webp", title: "E/E TOUR", text: "Locate the box with real aircraft images." }
+        ],
+        hideScreenshotCaptions: true,
         videos: [],
         features: [
-          { title: "Annunciator Lights", color: "#FFA726", text: "Every 737 NG annunciator light by ATA chapter: what it means, the associated procedure, fault modes, LRUs involved, related circuit breakers, linked MEL items with a NO DISPATCH warning, and your own notes. Includes an MEL due-date calculator that works in UTC." },
-          { title: "E/E Tour", color: "#1E88E5", text: "A photographic walkthrough of the electrical and electronic compartment. Real bay photos with each LRU position marked on top, plus the circuit breaker panels with the exact position of every CB." },
-          { title: "Circuit Breakers", color: "#4CAF50", text: "Search any circuit breaker and open the panel viewer with its location pinpointed." },
-          { title: "Common PN", color: "#26C6DA", text: "Frequently used part numbers organised by aircraft zone and category, each with a photo. Create your own entries with photos and notes, and import or export your collection to share it with colleagues." },
-          { title: "Damage Reports", color: "#EF5350", text: "Build damage reports on the spot: camera photos, annotations, measurements and damage location. Export to PDF or ZIP to send by email." },
-          { title: "Global Search", color: "#64B5F6", text: "One search box across annunciator lights, LRUs, circuit breakers and part numbers at once. Everything is embedded in the app, so it works with no signal on the ramp or in the hangar." }
+          { title: "Annunciator Lights", text: "Every 737 NG annunciator light by ATA chapter: what it means, the associated procedure, fault modes, LRUs involved, related circuit breakers, linked MEL items with a NO DISPATCH warning, and your own notes. Includes an MEL due-date calculator that works in UTC." },
+          { title: "E/E Tour", text: "A photographic walkthrough of the electrical and electronic compartment. Real bay photos with each LRU position marked on top, plus the circuit breaker panels with the exact position of every CB." },
+          { title: "Circuit Breakers", text: "Search any circuit breaker and open the panel viewer with its location pinpointed." },
+          { title: "Common PN", text: "Frequently used part numbers organised by aircraft zone and category, each with a photo. Create your own entries with photos and notes, and import or export your collection to share it with colleagues." },
+          { title: "Damage Reports", text: "Build damage reports on the spot: camera photos, annotations, measurements and damage location. Export to PDF or ZIP to send by email." },
+          { title: "Global Search", text: "One search box across annunciator lights, LRUs, circuit breakers and part numbers at once. Everything is embedded in the app, so it works with no signal on the ramp or in the hangar." }
         ]
       }
     };
@@ -1262,15 +1271,17 @@
     let currentThumbs = [];
     let activeIndex = 0;
 
-    function renderScreenshotCard(item, index) {
+    function renderScreenshotCard(item, index, product) {
+      const hideCaption = product && product.hideScreenshotCaptions;
+      const caption = hideCaption ? "" : `<h3>${item.title}</h3>\n          <p>${item.text}</p>`;
+
       if (item.placeholder) {
         return `
           <div class="screen-card">
             <div class="screen-thumb placeholder">
               <div class="placeholder-note">Coming soon</div>
             </div>
-            <h3>${item.title}</h3>
-            <p>${item.text}</p>
+            ${caption}
           </div>
         `;
       }
@@ -1280,8 +1291,7 @@
           <div class="screen-thumb" data-full="${item.src}" tabindex="0" role="button" aria-label="Screenshot ${index + 1}">
             <img src="${item.src}" alt="${item.title}" loading="lazy" width="1080" height="1920" />
           </div>
-          <h3>${item.title}</h3>
-          <p>${item.text}</p>
+          ${caption}
         </div>
       `;
     }
@@ -1568,7 +1578,9 @@
       const normalizedPath = product.canonicalPath;
 
       body.dataset.product = productKey;
-      body.style.backgroundImage = `linear-gradient(rgba(4, 10, 18, 0.62), rgba(4, 10, 18, 0.64)), url("${product.background}")`;
+      const overlayTop = product.overlay ? product.overlay[0] : "rgba(4, 10, 18, 0.62)";
+      const overlayBottom = product.overlay ? product.overlay[1] : "rgba(4, 10, 18, 0.64)";
+      body.style.backgroundImage = `linear-gradient(${overlayTop}, ${overlayBottom}), url("${product.background}")`;
       productIcon.src = product.icon;
       productIcon.alt = `${product.name} icon`;
       productTitle.textContent = product.name;
@@ -1594,7 +1606,7 @@
 
       const hasScreenshots = (product.screenshots || []).length > 0;
       screensGrid.innerHTML = (product.screenshots || [])
-        .map((item, index) => renderScreenshotCard(item, index)).join("");
+        .map((item, index) => renderScreenshotCard(item, index, product)).join("");
       screensGrid.hidden = !hasScreenshots;
       if (tourEmpty) tourEmpty.hidden = hasScreenshots;
       desktopVideoGrid.innerHTML = product.videos.map((item) => renderVideoCard(item, false)).join("");
