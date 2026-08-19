@@ -267,6 +267,36 @@
                   0 6px 18px rgba(0, 0, 0, 0.30);
     }
     .productSwitch [data-product].active:hover { transform: none; }
+    .productSwitch [data-product] { position: relative; overflow: visible; }
+    .tabNew {
+      position: absolute;
+      top: -10px;
+      right: -8px;
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0.4px;
+      color: #ffffff;
+      background: radial-gradient(circle at 50% 36%, #ff7a6b 0%, #ea3b30 56%, #b81d18 100%);
+      clip-path: polygon(50.0% 0.0%, 59.7% 13.8%, 75.0% 6.7%, 76.5% 23.5%, 93.3% 25.0%, 86.2% 40.3%, 100.0% 50.0%, 86.2% 59.7%, 93.3% 75.0%, 76.5% 76.5%, 75.0% 93.3%, 59.7% 86.2%, 50.0% 100.0%, 40.3% 86.2%, 25.0% 93.3%, 23.5% 76.5%, 6.7% 75.0%, 13.8% 59.7%, 0.0% 50.0%, 13.8% 40.3%, 6.7% 25.0%, 23.5% 23.5%, 25.0% 6.7%, 40.3% 13.8%);
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+      filter: drop-shadow(0 4px 10px rgba(216, 34, 27, 0.45));
+      transform: rotate(-8deg);
+      animation: tabNewPulse 2.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes tabNewPulse {
+      0%, 100% { transform: rotate(-8deg) scale(1); }
+      50% { transform: rotate(-8deg) scale(1.09); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tabNew { animation: none; }
+    }
     body[data-product="a330"] .productSwitch [data-product]:hover {
       background: rgba(141, 237, 41, 0.16);
       border-color: rgba(255, 209, 63, 0.44);
@@ -887,6 +917,13 @@
         font-size: 11px;
         letter-spacing: 0.6px;
       }
+      .tabNew {
+        top: -8px;
+        right: -4px;
+        width: 28px;
+        height: 28px;
+        font-size: 7px;
+      }
     }
     .rating-display {
       display: flex;
@@ -1075,7 +1112,7 @@
           <span class="productSwitchLabel">Choose aircraft:</span>
           <a href="/a32x-tools/" class="active" data-product="a32x" aria-selected="true" role="tab">Airbus A320</a>
           <a href="/a330-tools/" data-product="a330" aria-selected="false" role="tab">Airbus A330</a>
-          <a href="/737-tools/" data-product="b737" aria-selected="false" role="tab">Boeing 737</a>
+          <a href="/737-tools/" data-product="b737" aria-selected="false" role="tab">Boeing 737<span class="tabNew" aria-hidden="true">NEW</span></a>
         </div>
       </div>
       <div class="grid hero-layout">
