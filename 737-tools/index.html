@@ -52,14 +52,16 @@
           "url": "https://www.a32xtools.com/737-tools/",
           "description": "Boeing 737 NG maintenance app: annunciator lights by ATA chapter, MEL due-date calculator, E/E tour, circuit breakers and part numbers. Offline.",
           "applicationCategory": "UtilitiesApplication",
-          "operatingSystem": "iOS",
+          "operatingSystem": "Android, iOS",
           "image": "https://www.a32xtools.com/assets/products/b737/icon.png",
           "featureList": "Annunciator Lights by ATA Chapter, MEL Due Date Calculator, E/E Compartment Photo Tour, Circuit Breaker Panels, Common Part Numbers, Damage Reports, Offline Global Search",
           "downloadUrl": [
-            "https://apps.apple.com/es/app/737-tools-annunciator-lights/id6794879293"
+            "https://apps.apple.com/es/app/737-tools-annunciator-lights/id6794879293",
+            "https://play.google.com/store/apps/details?id=com.b737tools.b737tools"
           ],
           "installUrl": [
-            "https://apps.apple.com/es/app/737-tools-annunciator-lights/id6794879293"
+            "https://apps.apple.com/es/app/737-tools-annunciator-lights/id6794879293",
+            "https://play.google.com/store/apps/details?id=com.b737tools.b737tools"
           ],
           "offers": {
             "@type": "Offer",
@@ -69,7 +71,8 @@
             "description": "Free download with an optional one-time Pro unlock. No subscription."
           },
           "sameAs": [
-            "https://apps.apple.com/es/app/737-tools-annunciator-lights/id6794879293"
+            "https://apps.apple.com/es/app/737-tools-annunciator-lights/id6794879293",
+            "https://play.google.com/store/apps/details?id=com.b737tools.b737tools"
           ],
           "author": { "@id": "https://www.a32xtools.com/#organization" },
           "publisher": { "@id": "https://www.a32xtools.com/#organization" }
@@ -1045,10 +1048,10 @@
 
           <div class="btnRow" id="storeButtons">
             <div class="store-badge-wrap">
-              <a class="store-badge store-badge-play" id="googlePlayLink" href="" data-disabled="true" aria-label="Google Play Store">
+              <a class="store-badge store-badge-play" id="googlePlayLink" href="https://play.google.com/store/apps/details?id=com.b737tools.b737tools" target="_blank" rel="noopener noreferrer" aria-label="Google Play Store">
                 <img src="assets/store-badges/google-play-badge.png" alt="Get it on Google Play" width="160" height="48">
               </a>
-              <span class="coming-soon" id="googlePlaySoon">Coming soon</span>
+              <span class="coming-soon" id="googlePlaySoon" hidden>Coming soon</span>
             </div>
             <div class="store-badge-wrap">
               <a class="store-badge store-badge-apple" id="appStoreLink" href="https://apps.apple.com/es/app/737-tools-annunciator-lights/id6794879293" target="_blank" rel="noopener noreferrer" aria-label="Apple Store">
@@ -1217,9 +1220,9 @@
         privacyHref: "/privacy-737",
         supportHref: "/support-737",
         emailHref: "mailto:info@a32xtools.com",
-        playHref: "",
+        playHref: "https://play.google.com/store/apps/details?id=com.b737tools.b737tools",
         appStoreHref: "https://apps.apple.com/es/app/737-tools-annunciator-lights/id6794879293",
-        playComingSoon: true,
+        playComingSoon: false,
         appStoreComingSoon: false,
         fieldPhoto: true,
         pills: [
@@ -1574,7 +1577,7 @@
             "url": absoluteUrl(product.canonicalPath),
             "description": product.metaDescription,
             "applicationCategory": "UtilitiesApplication",
-            "operatingSystem": productKey === "a32x" ? "Android, iOS" : "iOS",
+            "operatingSystem": product.playHref && !product.playComingSoon ? "Android, iOS" : "iOS",
             "image": absoluteUrl(product.icon),
             "sameAs": sameAs,
             "publisher": {

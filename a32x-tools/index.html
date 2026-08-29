@@ -1395,9 +1395,9 @@
         privacyHref: "/privacy-737",
         supportHref: "/support-737",
         emailHref: "mailto:info@a32xtools.com",
-        playHref: "",
+        playHref: "https://play.google.com/store/apps/details?id=com.b737tools.b737tools",
         appStoreHref: "https://apps.apple.com/es/app/737-tools-annunciator-lights/id6794879293",
-        playComingSoon: true,
+        playComingSoon: false,
         appStoreComingSoon: false,
         pills: [
           '<div class="pill">Free download &middot; Pro one-time payment</div><div class="pill pill-soft">No subscription. Offline-first.</div>'
@@ -1751,7 +1751,7 @@
             "url": absoluteUrl(product.canonicalPath),
             "description": product.metaDescription,
             "applicationCategory": "UtilitiesApplication",
-            "operatingSystem": productKey === "a32x" ? "Android, iOS" : "iOS",
+            "operatingSystem": product.playHref && !product.playComingSoon ? "Android, iOS" : "iOS",
             "image": absoluteUrl(product.icon),
             "sameAs": sameAs,
             "publisher": {
