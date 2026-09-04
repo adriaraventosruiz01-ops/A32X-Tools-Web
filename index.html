@@ -1101,6 +1101,34 @@
       cursor: pointer; transition: background 0.25s, width 0.25s; flex-shrink: 0;
     }
     .carousel-dot-btn.active { background: var(--accent2); width: 16px; }
+    .downloadJumpBtn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: var(--accent2);
+      color: #061a33;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(14px);
+      transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .downloadJumpBtn.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .downloadJumpBtn:hover { box-shadow: 0 14px 38px rgba(0,0,0,0.5); transform: translateY(-3px); }
+    .downloadJumpBtn.visible:hover { transform: translateY(-3px); }
+    @media (max-width: 640px) {
+      .downloadJumpBtn { right: 14px; bottom: 14px; padding: 11px 16px; font-size: 13px; }
+    }
   </style>
 </head>
 
@@ -1209,6 +1237,8 @@
       <div class="footer" id="footerText">&copy; 2026 A32X Tools. All rights reserved.</div>
     </div>
   </main>
+
+  <a class="downloadJumpBtn" id="downloadJumpBtn" href="#storeButtons">Download</a>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="hint">Tap anywhere to close</div>
@@ -1916,6 +1946,24 @@
 
     const initialProduct = pageKind === "product" && PRODUCTS[pageProduct] ? pageProduct : (requestedProduct || "a32x");
     renderProduct(initialProduct);
+
+    const downloadJumpBtn = document.getElementById("downloadJumpBtn");
+    const downloadTarget = document.getElementById("storeButtons");
+    if (downloadJumpBtn && downloadTarget) {
+      downloadJumpBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        downloadTarget.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+      const downloadObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            downloadJumpBtn.classList.toggle("visible", !entry.isIntersecting);
+          });
+        },
+        { threshold: 0 }
+      );
+      downloadObserver.observe(downloadTarget);
+    }
   </script>
 </body>
 </html>
