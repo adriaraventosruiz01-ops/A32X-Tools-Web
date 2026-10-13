@@ -1693,8 +1693,32 @@
       });
     }
 
+    // Seguimiento de las visitas que llegan a las tiendas desde la web.
+    // Solo añade parámetros al enlace; el destino es el mismo. Si algo falla, deja el enlace original.
+    // applePt: código de proveedor de App Store Connect (vacío = no se toca el enlace de Apple).
+    const STORE_TRACKING = { source: "a32xtools.com", medium: "website", applePt: "128544735" };
+
+    function withStoreTracking(href) {
+      try {
+        if (!href || href === "#") return href;
+        const url = new URL(href);
+        const page = location.pathname.split("/").filter(Boolean)[0] || "home";
+        if (url.hostname === "play.google.com" && !url.searchParams.has("referrer")) {
+          url.searchParams.set("referrer", "utm_source=" + STORE_TRACKING.source + "&utm_medium=" + STORE_TRACKING.medium + "&utm_campaign=" + page);
+          return url.toString();
+        }
+        if (url.hostname === "apps.apple.com" && STORE_TRACKING.applePt && !url.searchParams.has("pt")) {
+          url.searchParams.set("pt", STORE_TRACKING.applePt);
+          url.searchParams.set("ct", "web-" + page);
+          url.searchParams.set("mt", "8");
+          return url.toString();
+        }
+      } catch (e) {}
+      return href;
+    }
+
     function setStoreLinkState(link, href, disabled) {
-      link.href = href;
+      link.href = withStoreTracking(href);
       link.dataset.disabled = disabled ? "true" : "false";
       if (disabled) {
         link.removeAttribute("target");
