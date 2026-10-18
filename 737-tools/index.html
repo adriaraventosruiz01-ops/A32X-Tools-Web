@@ -515,13 +515,17 @@
     .links .link:hover { background: rgba(11, 24, 40, 0.78); border-color: rgba(255, 255, 255, 0.22); }
 
     .disclaimer { background: rgba(9,27,48,0.8); border: 1px solid rgba(247, 213, 107, 0.25); border-radius:18px; padding:18px 16px; color:var(--muted); font-size:14px; line-height:1.6; }
-    .footerResources { display: flex; align-items: center; gap: 16px; margin-top: 18px; padding: 14px 16px; border: 1px solid var(--border2); border-radius: var(--r-sm); background: rgba(255,255,255,0.03); color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .footerResources { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; padding: 14px 16px; border: 1px solid var(--border2); border-radius: var(--r-sm); background: rgba(255,255,255,0.03); color: var(--muted); font-size: 14px; line-height: 1.5; }
     .footerResourcesLogo { flex: none; display: block; }
     .footerResourcesLogo img { display: block; height: 28px; width: auto; }
-    .footerResourcesLabel { display: block; margin-bottom: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; }
+    .footerResourcesText { margin: 0 0 4px; }
+    .footerResourcesLinks { display: flex; flex-wrap: wrap; gap: 6px 20px; }
     .footerResources a { color: var(--text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
     .footerResources a:hover, .footerResources a:focus-visible { color: var(--accent); }
-    @media (max-width: 640px) { .footerResources { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 64px; } }
+    @media (max-width: 640px) {
+      .footerResources { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .footerResources + .footer { margin-bottom: 64px; }
+    }
     body[data-product="a330"] .disclaimer { background: rgba(10, 44, 12, 0.8); border-color: rgba(255, 209, 63, 0.25); }
     body[data-product="b737"] .disclaimer { background: rgba(20, 25, 30, 0.84); border-color: rgba(154, 172, 190, 0.24); }
 
@@ -1137,14 +1141,17 @@
     </section>
 
     <div style="margin-top:28px; padding-top:18px; border-top:1px solid var(--border2);">
-      <div class="footer" id="footerText">&copy; 2026 737 Tools. All rights reserved.</div>
       <div class="footerResources">
-        <a class="footerResourcesLogo" href="https://techlogmro.com/?utm_source=a32xtools.com&amp;utm_medium=referral&amp;utm_campaign=footer" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/techlogmro-logo.png" alt="" width="94" height="28" loading="lazy" /></a>
+        <a class="footerResourcesLogo" href="https://techlogmro.com/?utm_source=a32xtools.com&amp;utm_medium=referral&amp;utm_campaign=footer&amp;utm_content=logo" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/techlogmro-logo.png" alt="" width="94" height="28" loading="lazy" /></a>
         <div>
-          <span class="footerResourcesLabel">Maintenance jobs</span>
-          Find aircraft maintenance opportunities that match your licences and type ratings on <a href="https://techlogmro.com/?utm_source=a32xtools.com&amp;utm_medium=referral&amp;utm_campaign=footer" target="_blank" rel="noopener">TechlogMRO</a>.
+          <p class="footerResourcesText">Find aircraft maintenance jobs and training that match your licences and type ratings.</p>
+          <div class="footerResourcesLinks">
+            <a href="https://techlogmro.com/?utm_source=a32xtools.com&amp;utm_medium=referral&amp;utm_campaign=footer&amp;utm_content=jobs" target="_blank" rel="noopener">View Jobs</a>
+            <a href="https://techlogmro.com/formacion?utm_source=a32xtools.com&amp;utm_medium=referral&amp;utm_campaign=footer&amp;utm_content=training" target="_blank" rel="noopener">View Training</a>
+          </div>
         </div>
       </div>
+      <div class="footer" id="footerText">&copy; 2026 737 Tools. All rights reserved.</div>
     </div>
   </main>
 
