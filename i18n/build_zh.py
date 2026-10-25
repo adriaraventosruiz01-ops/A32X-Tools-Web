@@ -27,6 +27,8 @@ from zh_strings import FAQ, HEAD, KEYWORDS, PAIRS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://www.a32xtools.com"
+# Bilibili account banned on 2026-10-25 for 365 days; set SHOW_BILIBILI back to True when it is lifted.
+SHOW_BILIBILI = False
 BILIBILI = "https://space.bilibili.com/3747575152774840"
 # Bilibili videos listed under each page's demos (page key -> [(title, BV id)]).
 _A32X_VIDEOS = [
@@ -196,14 +198,15 @@ def translate(src, head_key, en_path, zh_path):
 
     # Link to the Bilibili channel under the demo videos.
     grid = '<div class="mobile-video-grid" id="mobileVideoGrid" aria-label="演示视频"></div>'
-    if grid not in s:
+    if SHOW_BILIBILI and grid not in s:
         raise SystemExit(f"video grid not found in {en_path}")
     videos = "".join(
         f'\n          <li><a href="https://www.bilibili.com/video/{bv}/" target="_blank" rel="noopener">{html.escape(t)}</a></li>'
         for t, bv in BILIBILI_VIDEOS.get(head_key, [])
     )
     video_list = f'\n        <ul class="bili-list">{videos}\n        </ul>' if videos else ""
-    s = s.replace(grid, grid + f'\n        <a class="bili-link" href="{BILIBILI}" target="_blank" rel="noopener">在 Bilibili 观看更多演示视频 →</a>' + video_list, 1)
+    if SHOW_BILIBILI:
+        s = s.replace(grid, grid + f'\n        <a class="bili-link" href="{BILIBILI}" target="_blank" rel="noopener">在 Bilibili 观看更多演示视频 →</a>' + video_list, 1)
 
     # Chinese App Store storefront.
     s = s.replace("https://apps.apple.com/es/app/", "https://apps.apple.com/cn/app/")
