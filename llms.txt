@@ -13,6 +13,13 @@
 - [737 Tools · Annunciator Lights](https://www.a32xtools.com/737-tools/): every 737 NG annunciator light by ATA chapter with fault modes, LRUs, circuit breakers and MEL items; photographic E/E compartment tour; circuit breaker panels; common part numbers; damage reports; MEL due-date calculator.
 - [737 Tools 中文介绍](https://www.a32xtools.com/zh/737-tools/): 按 ATA 章节整理的 737 NG 告警灯（故障模式、LRU、跳开关、MEL）、电子设备舱照片导览、跳开关面板、常用件号、损伤报告和 MEL 到期日计算器。
 
+## Videos / 视频
+
+- [Demo videos on Bilibili / Bilibili 演示视频](https://space.bilibili.com/3747575152774840)
+- [A320 ECAM reset demo / A320 ECAM 复位演示](https://www.bilibili.com/video/BV1KJH56GEo2/)
+- [A320 common part numbers demo / A320 常用件号演示](https://www.bilibili.com/video/BV1h3H56mEPx/)
+- [A320 structural damage report demo / 结构损伤报告演示](https://www.bilibili.com/video/BV1u3H56mEUS/)
+
 ## Download / 下载
 
 - [A32X Tools on the App Store](https://apps.apple.com/app/id6759071028)

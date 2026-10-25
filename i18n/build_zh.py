@@ -27,6 +27,14 @@ from zh_strings import FAQ, HEAD, KEYWORDS, PAIRS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://www.a32xtools.com"
+BILIBILI = "https://space.bilibili.com/3747575152774840"
+# Bilibili videos listed under each page's demos (page key -> [(title, BV id)]).
+_A32X_VIDEOS = [
+    ("A320 ECAM 复位：一分钟找到程序和跳开关", "BV1KJH56GEo2"),
+    ("A320 常用件号速查：带真实照片", "BV1h3H56mEPx"),
+    ("雷击检查后用手机几分钟出结构损伤报告 PDF", "BV1u3H56mEUS"),
+]
+BILIBILI_VIDEOS = {"hub": _A32X_VIDEOS, "a32x": _A32X_VIDEOS}
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 PORT = 8799
 
@@ -59,6 +67,10 @@ ZH_HEAD_EXTRA = """  <meta name="applicable-device" content="pc,mobile" />
     .faq-list details { background: var(--panel); border: var(--edge-soft); border-radius: var(--r-md); padding: 14px 16px; }
     .faq-list summary { cursor: pointer; font-weight: 700; line-height: 1.5; }
     .faq-list p { margin: 10px 0 0; color: var(--muted); line-height: 1.7; }
+    .bili-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 10px 18px; border-radius: 999px; border: 1px solid #fb7299; color: #fff; background: rgba(251, 114, 153, 0.16); font-weight: 700; text-decoration: none; }
+    .bili-link:hover { background: rgba(251, 114, 153, 0.28); }
+    .bili-list { margin: 12px 0 0; padding-left: 20px; line-height: 1.9; }
+    .bili-list a { color: inherit; }
   </style>
 """
 
@@ -176,6 +188,17 @@ def translate(src, head_key, en_path, zh_path):
     )
     if not removed:
         raise SystemExit(f"TechlogMRO block not found in {en_path}")
+
+    # Link to the Bilibili channel under the demo videos.
+    grid = '<div class="mobile-video-grid" id="mobileVideoGrid" aria-label="演示视频"></div>'
+    if grid not in s:
+        raise SystemExit(f"video grid not found in {en_path}")
+    videos = "".join(
+        f'\n          <li><a href="https://www.bilibili.com/video/{bv}/" target="_blank" rel="noopener">{html.escape(t)}</a></li>'
+        for t, bv in BILIBILI_VIDEOS.get(head_key, [])
+    )
+    video_list = f'\n        <ul class="bili-list">{videos}\n        </ul>' if videos else ""
+    s = s.replace(grid, grid + f'\n        <a class="bili-link" href="{BILIBILI}" target="_blank" rel="noopener">在 Bilibili 观看更多演示视频 →</a>' + video_list, 1)
 
     # Chinese App Store storefront.
     s = s.replace("https://apps.apple.com/es/app/", "https://apps.apple.com/cn/app/")
