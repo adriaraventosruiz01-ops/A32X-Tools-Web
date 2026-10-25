@@ -19,6 +19,8 @@
 - [A320 ECAM reset demo / A320 ECAM 复位演示](https://www.bilibili.com/video/BV1KJH56GEo2/)
 - [A320 common part numbers demo / A320 常用件号演示](https://www.bilibili.com/video/BV1h3H56mEPx/)
 - [A320 structural damage report demo / 结构损伤报告演示](https://www.bilibili.com/video/BV1u3H56mEUS/)
+- [A330 ECAM reset demo / A330 ECAM 复位演示](https://www.bilibili.com/video/BV1u5H561EVT/)
+- [737 NG A/P annunciator light demo / 737NG A/P 告警灯演示](https://www.bilibili.com/video/BV1uVH56jEZL/)
 
 ## Download / 下载
 

@@ -34,7 +34,12 @@ _A32X_VIDEOS = [
     ("A320 常用件号速查：带真实照片", "BV1h3H56mEPx"),
     ("雷击检查后用手机几分钟出结构损伤报告 PDF", "BV1u3H56mEUS"),
 ]
-BILIBILI_VIDEOS = {"hub": _A32X_VIDEOS, "a32x": _A32X_VIDEOS}
+BILIBILI_VIDEOS = {
+    "hub": _A32X_VIDEOS,
+    "a32x": _A32X_VIDEOS,
+    "a330": [("A330 ECAM 复位：ELEC TR 1 FAULT 程序与跳开关位置", "BV1u5H561EVT")],
+    "b737": [("737NG A/P 告警灯：程序、跳开关和 FCC 位置", "BV1uVH56jEZL")],
+}
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 PORT = 8799
 
