@@ -1,12 +1,13 @@
-"""Builds the Simplified Chinese pages under /zh/ from the English pages.
+"""Pre-renders the English pages and builds the Simplified Chinese pages under /zh/.
 
 Usage (from the repo root):  python3 i18n/build_zh.py
 
-1. Translates the English page with zh_strings.PAIRS and points links at /zh/.
-2. Serves the site locally and lets headless Chrome run the page scripts, then
-   writes the rendered content (features, screenshots, videos, reviews…) into
-   the static HTML, so Baidu and AI crawlers that do not run JavaScript still
-   see all the Chinese text.
+1. Serves the site locally and lets headless Chrome run each English page's
+   scripts, then writes the rendered content (features, screenshots, videos,
+   reviews…) into the page's static HTML. Crawlers read it without running
+   JavaScript, and nothing below it shifts while the page loads.
+2. Translates each English page with zh_strings.PAIRS, points links at /zh/,
+   and pre-renders the Chinese page the same way.
 
 Re-run it whenever the English pages change.
 """
@@ -225,7 +226,7 @@ def translate(src, head_key, en_path, zh_path):
 def render(url):
     out = subprocess.run(
         [CHROME, "--headless=new", "--disable-gpu", "--virtual-time-budget=6000",
-         "--window-size=1300,4000", "--dump-dom", url],
+         "--lang=en-US", "--window-size=1300,4000", "--dump-dom", url],
         capture_output=True, text=True, timeout=120, check=True,
     )
     return out.stdout
@@ -260,6 +261,15 @@ def main():
 
     used = set()
     try:
+        for src, _, en_path, _ in PAGES:
+            path = ROOT / src
+            raw = path.read_bytes()
+            bom = raw.startswith(b"\xef\xbb\xbf")
+            english = raw.decode("utf-8-sig")
+            english = prerender(english, render(f"http://127.0.0.1:{PORT}{en_path}"))
+            path.write_bytes((b"\xef\xbb\xbf" if bom else b"") + english.encode("utf-8"))
+            print(f"pre-rendered {src}")
+
         for src, head_key, en_path, zh_path in PAGES:
             english = (ROOT / src).read_text(encoding="utf-8-sig")
             used |= {k for k in PAIRS if k in english}
