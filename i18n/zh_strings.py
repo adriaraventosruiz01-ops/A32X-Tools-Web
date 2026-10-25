@@ -8,7 +8,6 @@ PAIRS = {
     # ── Static markup ───────────────────────────────────────────────────────
     'aria-label="Product selector"': 'aria-label="选择机型"',
     '>Choose aircraft:<': '>选择机型：<',
-    'aria-hidden="true">NEW<': 'aria-hidden="true">新<',
     '>One-time purchase<': '>一次性购买<',
     '>Offline-first. No network required.<': '>离线优先，无需网络。<',
     '>Download now<': '>立即下载<',
