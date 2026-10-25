@@ -65,6 +65,25 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+# Chinese search engines and AI assistants (Baidu/ERNIE, ByteDance/Doubao, Sogou, 360, Shenma/Quark, Huawei Petal)
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: YisouSpider
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
 # Default: allow all not listed above
 User-agent: *
 Allow: /
@@ -80,9 +99,6 @@ User-agent: anthropic-ai
 Disallow: /
 
 User-agent: cohere-ai
-Disallow: /
-
-User-agent: Bytespider
 Disallow: /
 
 User-agent: DataForSeoBot
