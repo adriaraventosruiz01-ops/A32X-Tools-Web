@@ -36,10 +36,6 @@ PAIRS = {
     '>Support / FAQ<': '>支持 / 常见问题（英文）<',
     '>Need help? Email us<': '>需要帮助？给我们发邮件<',
     '>Disclaimer<': '>免责声明<',
-    '>Find aircraft maintenance jobs and training that match your licences and type ratings.<':
-        '>查找与你的执照和机型签署相匹配的飞机维修职位和培训。<',
-    '>View Jobs<': '>查看职位<',
-    '>View Training<': '>查看培训<',
     '. All rights reserved.': ' 版权所有。',
     '>Download</a>': '>下载</a>',
     '>Tap anywhere to close<': '>点击任意位置关闭<',

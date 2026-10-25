@@ -135,6 +135,14 @@ def translate(src, head_key, en_path, zh_path):
     s = s.replace('canonicalPath: "/",', 'canonicalPath: "/zh/",')
     s = s.replace('id="brandHomeLink" href="/"', 'id="brandHomeLink" href="/zh/"')
 
+    # The TechlogMRO jobs and training links are not shown in the Chinese version.
+    s, removed = re.subn(
+        r'\n\s*<div class="footerResources">.*?\n      </div>(?=\n\s*<div class="footer" id="footerText">)',
+        "", s, count=1, flags=re.S,
+    )
+    if not removed:
+        raise SystemExit(f"TechlogMRO block not found in {en_path}")
+
     # Chinese App Store storefront.
     s = s.replace("https://apps.apple.com/es/app/", "https://apps.apple.com/cn/app/")
 
