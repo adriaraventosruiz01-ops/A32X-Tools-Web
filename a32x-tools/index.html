@@ -1276,7 +1276,7 @@
         <section class="card pad-lg mainCard">
           <div class="titleRow">
             <a class="brand brandLink" id="brandHomeLink" href="/">
-              <img class="icon" id="productIcon" src="icon.png" alt="A32X Tools icon" width="80" height="80" fetchpriority="high" />
+              <img class="icon" id="productIcon" src="/assets/icons/a32x-tools.webp" alt="A32X Tools icon" width="80" height="80" fetchpriority="high" />
               <div>
                 <h1 id="productTitle">A32X Tools — A320 ECAM Resets</h1>
                 <div class="subtitle" id="productSubtitle">ECAM resets, damage reports, electrical contacts &amp; part numbers. Offline.</div>
@@ -1285,10 +1285,7 @@
             <div class="pillGroup" id="pillGroup"><div class="pill">One-time purchase</div><div class="pill pill-soft">Offline-first. No network required.</div></div>
           </div>
 
-          <p class="section-subtitle" id="productDescription" style="margin-top:16px;">
-            Professional reference app for A318/A319/A320/A321 technicians covering ECAM resets, structural
-            damage reports, electrical contacts, alpha callups, and most common part numbers in one fast toolkit.
-          </p>
+          <p class="section-subtitle" id="productDescription" style="margin-top:16px;">Professional reference app for A318/A319/A320/A321 technicians covering ECAM resets, structural damage reports, electrical contacts, alpha callups, and most common part numbers in one fast toolkit.</p>
 
           <div class="store-panel" id="storeButtons">
           <div class="store-panel-label">Download now</div>
@@ -1309,8 +1306,8 @@
             </div>
           </div>
           </div>
-          <div class="hero-photo-wrap" id="heroPhoto" hidden>
-            <img src="/assets/field.jpg" alt="A32X Tools on the ramp at night" loading="lazy" />
+          <div class="hero-photo-wrap" id="heroPhoto">
+            <img src="/assets/field.webp" alt="A32X Tools on the ramp at night" width="1080" height="1574" decoding="async" fetchpriority="high" />
           </div>
         </section>
 
@@ -1318,23 +1315,277 @@
       </div>
       <section class="section" style="padding-top:28px; padding-bottom:10px;">
         <h2 class="section-title">What's inside</h2>
-        <div class="features-grid" id="featuresGrid"></div>
+        <div class="features-grid" id="featuresGrid">
+        <div class="feature-item">
+          <div class="feature-title">ECAM Resets</div>
+          <div class="feature-text">Search any ECAM message and get the full reset: step-by-step procedure, circuit breakers with panel location and photos, and a built-in live timer.</div>
+        </div>
+      
+        <div class="feature-item">
+          <div class="feature-title">Structural Damage Reports</div>
+          <div class="feature-text">Log multiple damage findings with photos and generate a ready-to-share PDF or ZIP report directly from your phone, in seconds.</div>
+        </div>
+      
+        <div class="feature-item">
+          <div class="feature-title">Electrical References</div>
+          <div class="feature-text">Find the right crimping reference for any connector, splice or terminal instantly — with exact ESPM part numbers.</div>
+        </div>
+      
+        <div class="feature-item">
+          <div class="feature-title">AMM &amp; Alpha Callups</div>
+          <div class="feature-text">Every AMM reference and alpha callup at your fingertips — searchable instantly, from task numbers to chapter references.</div>
+        </div>
+      
+        <div class="feature-item">
+          <div class="feature-title">Part Numbers</div>
+          <div class="feature-text">Your most-used parts with real photos, organized by zone and category. Find what you need before you reach the shelf.</div>
+        </div>
+      
+        <div class="feature-item">
+          <div class="feature-title">Custom Items</div>
+          <div class="feature-text">Missing a part in the catalog? Add it yourself with photos and references. Your entries are saved and ready for next time.</div>
+        </div>
+      </div>
       </section>
       <section class="section" style="padding-top:18px; padding-bottom:24px;">
         <h2 class="section-title">App tour</h2>
         <p class="section-subtitle" id="tourSubtitle">Seven key screens with quick summaries, plus 3 videos showcasing the most important features.</p>
-        <div class="screens-grid" id="screensGrid"></div>
-        <div class="tour-empty" id="tourEmpty" hidden>Screenshots coming soon</div>
+        <div class="screens-grid" id="screensGrid">
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="01.webp" tabindex="0" role="button" aria-label="Screenshot 1">
+            <img src="01.webp" alt="HOME" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>HOME</h3>
+          <p>Central hub for Airbus A320 family maintenance.</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="02.webp" tabindex="0" role="button" aria-label="Screenshot 2">
+            <img src="02.webp" alt="ECAM RESETS DETAIL" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>ECAM RESETS DETAIL</h3>
+          <p>Guided resets with exact CBs, clear steps, and a live timer.</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="03.webp" tabindex="0" role="button" aria-label="Screenshot 3">
+            <img src="03.webp" alt="DAMAGE REPORTS" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>DAMAGE REPORTS</h3>
+          <p>Lightning strike damage? Log multiple findings in one report with photos, clear summaries, and PDF/ZIP share.</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="04.webp" tabindex="0" role="button" aria-label="Screenshot 4">
+            <img src="04.webp" alt="CONTACTS, SPLICES &amp; TERMINALS" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>CONTACTS, SPLICES &amp; TERMINALS</h3>
+          <p>Find the right P/N fast with exact ESPM references.</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="05.webp" tabindex="0" role="button" aria-label="Screenshot 5">
+            <img src="05.webp" alt="ALPHA CALLUPS &amp; AMM REFERENCES" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>ALPHA CALLUPS &amp; AMM REFERENCES</h3>
+          <p>Alpha callups and AMM references with instant search.</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="06.webp" tabindex="0" role="button" aria-label="Screenshot 6">
+            <img src="06.webp" alt="COMMONLY USED PART NUMBERS" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>COMMONLY USED PART NUMBERS</h3>
+          <p>Live catalog with real photos, organized by zone and category.</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="07.webp" tabindex="0" role="button" aria-label="Screenshot 7">
+            <img src="07.webp" alt="CREATE YOUR OWN ITEMS" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>CREATE YOUR OWN ITEMS</h3>
+          <p>Add and share your own items to grow the database faster.</p>
+        </div>
+      </div>
+        <div class="tour-empty" id="tourEmpty" hidden="">Screenshots coming soon</div>
         <h3 class="videos-heading" id="videosHeading">Demos</h3>
-        <div class="desktop-video-grid" id="desktopVideoGrid" aria-label="Video demos"></div>
-        <div class="mobile-video-grid" id="mobileVideoGrid" aria-label="Video demos"></div>
+        <div class="desktop-video-grid" id="desktopVideoGrid" aria-label="Video demos">
+        <div class="screen-card video-filler reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo framed" muted="" playsinline="" preload="none" poster="assets/demo_poster_540x960_v2.webp">
+              <source src="assets/demo_full_540x960_v2.mp4" type="video/mp4">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="Play video">►</button>
+          </div>
+          <h3>ECAM MESSAGE SEARCH &amp; RESET</h3>
+          <p>Find an ECAM message and follow the complete reset procedure step by step.</p>
+        </div>
+      
+        <div class="screen-card video-filler reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo framed" muted="" playsinline="" preload="none" poster="assets/commonpn_poster_540x960.webp">
+              <source src="assets/commonpn_full_540x960.mp4" type="video/mp4">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="Play video">►</button>
+          </div>
+          <h3>PART SEARCH &amp; PHOTO CHECK</h3>
+          <p>Locate a part quickly and review its photo to verify the item before action.</p>
+        </div>
+      
+        <div class="screen-card video-filler reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo" muted="" playsinline="" preload="none" poster="assets/damage_report_poster_540x960.webp">
+              <source src="assets/damage_report_noaudio.webm" type="video/webm">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="Play video">►</button>
+          </div>
+          <h3>DAMAGE REPORT PDF WORKFLOW</h3>
+          <p>Create a damage report and preview the generated PDF instantly inside the app.</p>
+        </div>
+      </div>
+        <div class="mobile-video-grid" id="mobileVideoGrid" aria-label="Video demos">
+        <div class="screen-card mobile-video-card reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo framed" muted="" playsinline="" preload="none" poster="assets/demo_poster_540x960_v2.webp">
+              <source src="assets/demo_full_540x960_v2.mp4" type="video/mp4">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="Play video">►</button>
+          </div>
+          <h3>ECAM MESSAGE SEARCH &amp; RESET</h3>
+          <p>Find an ECAM message and follow the complete reset procedure step by step.</p>
+        </div>
+      
+        <div class="screen-card mobile-video-card reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo framed" muted="" playsinline="" preload="none" poster="assets/commonpn_poster_540x960.webp">
+              <source src="assets/commonpn_full_540x960.mp4" type="video/mp4">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="Play video">►</button>
+          </div>
+          <h3>PART SEARCH &amp; PHOTO CHECK</h3>
+          <p>Locate a part quickly and review its photo to verify the item before action.</p>
+        </div>
+      
+        <div class="screen-card mobile-video-card reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo" muted="" playsinline="" preload="none" poster="assets/damage_report_poster_540x960.webp">
+              <source src="assets/damage_report_noaudio.webm" type="video/webm">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="Play video">►</button>
+          </div>
+          <h3>DAMAGE REPORT PDF WORKFLOW</h3>
+          <p>Create a damage report and preview the generated PDF instantly inside the app.</p>
+        </div>
+      </div>
       </section>
 
-      <section class="section" id="reviewsSection" hidden style="padding-top:40px; padding-bottom:32px;">
+      <section class="section" id="reviewsSection" style="padding-top:40px; padding-bottom:32px;">
         <h2 class="section-title">What professionals say</h2>
         <p class="section-subtitle">Verified reviews from aviation maintenance engineers.</p>
         <div class="reviews-track-outer" id="reviewsTrackOuter">
-          <div class="reviews-track" id="reviewsTrack"></div>
+          <div class="reviews-track" id="reviewsTrack"><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Como certificador de A320, esta app es esencial en mi día a día. Lo mejor son los resets de ECAM: procedimientos precisos con fotos reales de paneles de CBs y una cuenta atrás que funciona de maravilla. Además, facilita encontrar referencias tanto de AMM/MEL como los P/N más usados. Se nota que está diseñada por alguien que entiende de verdad el mantenimiento en línea. Interfaz muy intuitiva - 100% recomendable!”</p>
+        <p class="”review-card-text-en”">”As an A320 certifier, this app is essential in my daily work. The best part are the ECAM resets: precise procedures with real CB panel photos and a countdown that works brilliantly. It also makes it easy to find AMM/MEL references and the most used P/Ns. You can tell it was designed by someone who truly understands line maintenance. Very intuitive interface — 100% recommended!”</p>
+        <p class="”review-card-meta”">Ivan Martínez · 31 mar 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Imprescindible</p>
+        <p class="”review-card-text”">”Despues de probar varias apps, sin duda la mas completa con funciones y caracteristicas que la hacen imprescindible para el dia a dia de un TMA.”</p>
+        <p class="”review-card-text-en”">”After trying several apps, without doubt the most complete one — with features and characteristics that make it indispensable for the daily work of an AME.”</p>
+        <p class="”review-card-meta”">JoScBo · 3 mar. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Funciona perfectamente. Tiene todo lo que necesitas para mantenimiento en línea en esos momentos que necesitas acceso rápido al manual del A320. Resuelve los ECAM WARNINGS con el reset/test o capitulo MEL. Descárgala sin dudarlo si trabajas en mantenimiento en linea.”</p>
+        <p class="”review-card-text-en”">”Works perfectly. It has everything you need for line maintenance when you need quick access to the A320 manual. Resolves ECAM warnings with the reset/test or MEL chapter. Download it without hesitation if you work in line maintenance.”</p>
+        <p class="”review-card-meta”">Jose Luis Izquierdo · 15 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Basic tool for line maintenance</p>
+        <p class="”review-card-text”">”Really good and usefull tool for line maintenance working on A320, fast access to common CB resets and common PN. Totally worthy for aircraft maintenance engineers.”</p>
+        
+        <p class="”review-card-meta”">AirMechanic777 · 23 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Buena app</p>
+        <p class="”review-card-text”">”App muy completa para el reset de sistemas y otras funciones clave del A320, como también P/N más comunes, AMM reference entre muchas otras cosas. Es intuitiva, rápida y práctica, mucho mejor y obviamente mas completa de las que he tenido hasta ahora.”</p>
+        <p class="”review-card-text-en”">”Very complete app for A320 system resets and other key functions, including the most common P/Ns, AMM references, and much more. Intuitive, fast and practical — much better and more complete than anything I've used before.”</p>
+        <p class="”review-card-meta”">Gongolf7 · 23 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”La verdad que me ha sorprendido, tiene más ECAM messages resets que otras que he usado. Poder tener una base de datos de P/N con sus fotos va muy bien. ¡Recomendada!”</p>
+        <p class="”review-card-text-en”">”It really surprised me — it has more ECAM message resets than other apps I've used. Having a P/N database with photos is really handy. Recommended!”</p>
+        <p class="”review-card-meta”">Antonio · 12 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Funcional 100 %</p>
+        <p class="”review-card-text”">”Está app está muy bien estructura y pensada para todos los profesionales del sector, ha sido creada por un técnico de mantenimiento así que sin duda alguna muy funcional recomendable 100 %”</p>
+        <p class="”review-card-text-en”">”This app is very well structured and designed for all professionals in the sector. It was created by a maintenance technician, so it is without any doubt very functional — 100% recommended.”</p>
+        <p class="”review-card-meta”">Landy Salomón · 15 mar. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Muy buena aplicación, más completa que otras aplicaciones más caras y populares, sin duda muy recomendable para TMA's.”</p>
+        <p class="”review-card-text-en”">”Very good app, more complete than other more expensive and popular ones — definitely recommended for AMEs.”</p>
+        <p class="”review-card-meta”">Carlos Javier Minuesa · 14 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Perfecta</p>
+        <p class="”review-card-text”">”Indispensable para trabajar en Airbus, he probado varias y esta sin duda es la más completa y resolutiva.”</p>
+        <p class="”review-card-text-en”">”Indispensable for working on Airbus aircraft. I've tried several and this one is without doubt the most complete and effective.”</p>
+        <p class="”review-card-meta”">A Blasco · 23 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Muy útil para el turno de noche y el mantenimiento de línea. Excelente aplicación. Permite trabajar con rapidez y precisión.”</p>
+        <p class="”review-card-text-en”">”Very useful for night shifts and line maintenance. Excellent app. Lets you work quickly and precisely.”</p>
+        <p class="”review-card-meta”">Raúl Martín · 17 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Fantástica herramienta</p>
+        <p class="”review-card-text”">”Fantástica herramienta, para aprender, que te guiará de manera rápida a los manuales necesarios, facilitando en gran manera el trabajo diario.”</p>
+        <p class="”review-card-text-en”">”Fantastic tool — it guides you quickly to the necessary manuals, greatly streamlining daily work.”</p>
+        <p class="”review-card-meta”">ECJAP · 24 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Una app imprescindible si trabajas con aviones Airbus. La mejor que he probado sin duda.”</p>
+        <p class="”review-card-text-en”">”An essential app if you work with Airbus aircraft. The best I've tried, without doubt.”</p>
+        <p class="”review-card-meta”">Pascual Brisa · 14 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Recomendable</p>
+        <p class="”review-card-text”">”Aplicación mucho más completa que otras actuales, interfaz claro, intuitiva y muy práctica. La recomiendo”</p>
+        <p class="”review-card-text-en”">”Much more complete than other current apps — clean interface, intuitive and very practical. I recommend it.”</p>
+        <p class="”review-card-meta”">fsbbxje · 27 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Buena herramienta, una buena plataforma base. Necesita mejoras, pero creo que el equipo de desarrollo seguirá mejorando la aplicación.”</p>
+        <p class="”review-card-text-en”">”Good tool, a solid base platform. It needs improvements, but I believe the development team will keep making the app better.”</p>
+        <p class="”review-card-meta”">Alexandre Vale · 16 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Espectacular</p>
+        <p class="”review-card-text”">”La mejor herramienta enfocada al A32X hasta ahora. Simplemente genial.”</p>
+        <p class="”review-card-text-en”">”The best tool focused on the A32X so far. Simply brilliant.”</p>
+        <p class="”review-card-meta”">PauTech · 27 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”¡¡¡Aplicación increíble y sumamente útil para el mantenimiento en línea!!! ¡¡¡La mejor para el A320!!!”</p>
+        <p class="”review-card-text-en”">”Amazing and extremely useful app for line maintenance!!! The best for the A320!!!”</p>
+        <p class="”review-card-meta”">Pol Salvador · 15 abr 2026</p>
+      </div></div>
         </div>
         <div class="carousel-controls">
           <button class="carousel-arrow-btn" id="reviewsPrev" aria-label="Previous review">&#8249;</button>
@@ -1356,13 +1607,7 @@
 
     <section class="section">
       <h2 class="section-title">Disclaimer</h2>
-      <div class="disclaimer" id="disclaimerText">
-        A32X Tools is designed for training and reference use only. It does not replace official Airbus
-        documentation. ECAM messages, reset procedures, structural damage reports, and AMM/MEL/ESPM references
-        are provided as learning aids. Always consult the latest official Airbus manuals before performing any
-        maintenance or operational task. Airbus and A320 are trademarks of their respective owners and are not
-        affiliated with this app.
-      </div>
+      <div class="disclaimer" id="disclaimerText">A32X Tools is designed for training and reference use only. It does not replace official Airbus documentation. ECAM messages, reset procedures, structural damage reports, and AMM/MEL/ESPM references are provided as learning aids. Always consult the latest official Airbus manuals before performing any maintenance or operational task. Airbus and A320 are trademarks of their respective owners and are not affiliated with this app.</div>
     </section>
 
     <div style="margin-top:28px; padding-top:18px; border-top:1px solid var(--border2);">
@@ -1376,7 +1621,7 @@
           </div>
         </div>
       </div>
-      <div class="footer" id="footerText">&copy; 2026 A32X Tools. All rights reserved.</div>
+      <div class="footer" id="footerText">© 2026 A32X Tools — A320 ECAM Resets. All rights reserved.</div>
     </div>
   </main>
 
@@ -1398,7 +1643,7 @@
         pageTitle: "A32X Tools | Airbus A320 ECAM Resets App",
         subtitle: "ECAM resets, damage reports, electrical contacts & part numbers. Offline.",
         description: "Professional reference app for A318/A319/A320/A321 technicians covering ECAM resets, structural damage reports, electrical contacts, alpha callups, and most common part numbers in one fast toolkit.",
-        icon: "/icon.png",
+        icon: "/assets/icons/a32x-tools.webp",
         background: "/hero.webp",
         ogImage: "/hero.png",
         canonicalPath: "/a32x-tools/",
@@ -1463,7 +1708,7 @@
         pageTitle: "A330 Tools | Airbus A330 ECAM Resets App",
         subtitle: "ECAM resets, damage reports, AMM alpha callups & part numbers. Offline.",
         description: "Professional reference app for A330 technicians covering ECAM resets, structural damage reports, electrical contacts, alpha callups, and most common part numbers in one fast toolkit.",
-        icon: "/assets/products/a330/icon.png",
+        icon: "/assets/icons/a330-tools.webp",
         background: "/assets/products/a330/background.webp",
         ogImage: "/assets/products/a330/background.png",
         canonicalPath: "/a330-tools/",
@@ -1506,7 +1751,7 @@
         pageTitle: "737 Tools · Annunciator Lights | Boeing 737 NG Maintenance App",
         subtitle: "Annunciator lights, E/E tour, circuit breakers & part numbers. Offline.",
         description: "On the ramp you don't have time to dig through binders. 737 Tools takes you from an annunciator light straight to the exact procedure, CB and LRU photo in seconds — built for gloved hands, working fully offline with no signal needed.",
-        icon: "/assets/products/b737/icon.png",
+        icon: "/assets/icons/737-tools.webp",
         background: "/assets/products/b737/background.webp",
         overlay: ["rgba(36, 22, 74, 0.58)", "rgba(10, 46, 50, 0.62)"],
         ogImage: "/assets/products/b737/background.png",
