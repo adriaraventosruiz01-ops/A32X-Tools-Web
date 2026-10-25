@@ -12,6 +12,8 @@ Re-run it whenever the English pages change.
 """
 
 import functools
+import html
+import json
 import http.server
 import re
 import subprocess
@@ -21,7 +23,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from zh_strings import HEAD, PAIRS  # noqa: E402
+from zh_strings import FAQ, HEAD, KEYWORDS, PAIRS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://www.a32xtools.com"
@@ -53,6 +55,10 @@ ZH_HEAD_EXTRA = """  <meta name="applicable-device" content="pc,mobile" />
     /* Google Play is not available in mainland China. */
     .store-badge-wrap:has(#googlePlayLink) { display: none; }
     body { font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .faq-list { display: grid; gap: 10px; }
+    .faq-list details { background: var(--panel); border: var(--edge-soft); border-radius: var(--r-md); padding: 14px 16px; }
+    .faq-list summary { cursor: pointer; font-weight: 700; line-height: 1.5; }
+    .faq-list p { margin: 10px 0 0; color: var(--muted); line-height: 1.7; }
   </style>
 """
 
@@ -125,6 +131,34 @@ def translate(src, head_key, en_path, zh_path):
     s = s.replace(f'<link rel="canonical" href="{SITE}{en_path}" />', f'<link rel="canonical" href="{SITE}{zh_path}" />')
     s = s.replace(f'<meta property="og:url" content="{SITE}{en_path}" />', f'<meta property="og:url" content="{SITE}{zh_path}" />')
     s = s.replace('<meta name="viewport"', ZH_HEAD_EXTRA + '  <meta name="viewport"', 1)
+    s = re.sub(r'(<meta name="description" content="[^"]*" />\n)',
+               rf'\1  <meta name="keywords" content="{KEYWORDS[head_key]}" />\n', s, count=1)
+
+    # FAQ: visible section plus FAQPage structured data, both static.
+    faq = FAQ[head_key]
+    items = "\n".join(
+        f"        <details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>" for q, a in faq
+    )
+    section = (
+        '    <section class="section" id="faq">\n'
+        '      <h2 class="section-title">常见问题</h2>\n'
+        f'      <div class="faq-list">\n{items}\n      </div>\n'
+        '    </section>\n\n'
+    )
+    anchor = '    <section class="section">\n      <h2 class="section-title">免责声明</h2>'
+    if anchor not in s:
+        raise SystemExit(f"disclaimer section not found in {en_path}")
+    s = s.replace(anchor, section + anchor, 1)
+    faq_ld = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "inLanguage": "zh-Hans",
+        "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq
+        ],
+    }
+    s = s.replace("</head>", '  <script type="application/ld+json">\n'
+                  + json.dumps(faq_ld, ensure_ascii=False, indent=2) + "\n  </script>\n</head>", 1)
 
     # Product page URLs inside structured data and the page script.
     for en, zh in PRODUCT_PATHS.items():

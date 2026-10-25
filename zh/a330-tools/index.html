@@ -9,10 +9,15 @@
     /* Google Play is not available in mainland China. */
     .store-badge-wrap:has(#googlePlayLink) { display: none; }
     body { font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .faq-list { display: grid; gap: 10px; }
+    .faq-list details { background: var(--panel); border: var(--edge-soft); border-radius: var(--r-md); padding: 14px 16px; }
+    .faq-list summary { cursor: pointer; font-weight: 700; line-height: 1.5; }
+    .faq-list p { margin: 10px 0 0; color: var(--muted); line-height: 1.7; }
   </style>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>A330 Tools | 空客 A330 ECAM 复位应用</title>
   <meta name="description" content="空客 A330 维修应用：ECAM 排故与复位、结构损伤报告、电气触点、Alpha Callups 和常用件号。" />
+  <meta name="keywords" content="A330,A330neo,ECAM复位,ECAM排故,跳开关,航线维修,机务,宽体机维修,结构损伤报告,件号,AMM,MEL" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0B1F33" />
   <link rel="canonical" href="https://www.a32xtools.com/zh/a330-tools/" />
@@ -1116,6 +1121,71 @@
       .downloadJumpBtn { right: 14px; bottom: 14px; padding: 11px 16px; font-size: 13px; }
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "zh-Hans",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A330 Tools 是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A330 Tools 是面向 A330 维修技术人员的专业参考应用，包含 ECAM 复位程序、跳开关位置照片、结构损伤报告、电气触点、Alpha Callups 和常用件号。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何查找 A330 ECAM 信息的复位程序？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在应用中搜索 ECAM 信息名称，即可看到分步复位程序、需要操作的跳开关及其面板位置照片，并可使用内置计时器。也可以按 ATA 章节浏览。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以编制结构损伤报告吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。可在一份报告中记录多处损伤（例如雷击后检查），附上照片，并导出为 PDF 或 ZIP 文件。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "没有网络也能用吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。所有数据都内置在应用中，在机坪、机库或飞机上没有信号也能正常使用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "应用界面是中文的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "应用界面和数据为英文，与 AMM、MEL、ECAM 等官方维修资料使用的语言保持一致，方便与手册对照。App Store 中的应用介绍提供中文。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何获取？是订阅制吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一次性购买，没有订阅，也没有应用内购买。iPhone 用户可在中国区 App Store 下载。Google Play 在中国大陆不可用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以代替 AMM 吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不能。A330 Tools 仅供培训和参考使用，执行任何维修或运行工作前都必须查阅最新的空客官方手册。"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 
 <body data-page-kind="product" data-page-product="a330" data-product="a330" style="background-image: linear-gradient(rgba(4, 10, 18, 0.62), rgba(4, 10, 18, 0.64)), url('/assets/products/a330/background.png');">
@@ -1304,6 +1374,19 @@
   </header>
 
   <main class="wrap">
+
+    <section class="section" id="faq">
+      <h2 class="section-title">常见问题</h2>
+      <div class="faq-list">
+        <details><summary>A330 Tools 是什么？</summary><p>A330 Tools 是面向 A330 维修技术人员的专业参考应用，包含 ECAM 复位程序、跳开关位置照片、结构损伤报告、电气触点、Alpha Callups 和常用件号。</p></details>
+        <details><summary>如何查找 A330 ECAM 信息的复位程序？</summary><p>在应用中搜索 ECAM 信息名称，即可看到分步复位程序、需要操作的跳开关及其面板位置照片，并可使用内置计时器。也可以按 ATA 章节浏览。</p></details>
+        <details><summary>可以编制结构损伤报告吗？</summary><p>可以。可在一份报告中记录多处损伤（例如雷击后检查），附上照片，并导出为 PDF 或 ZIP 文件。</p></details>
+        <details><summary>没有网络也能用吗？</summary><p>可以。所有数据都内置在应用中，在机坪、机库或飞机上没有信号也能正常使用。</p></details>
+        <details><summary>应用界面是中文的吗？</summary><p>应用界面和数据为英文，与 AMM、MEL、ECAM 等官方维修资料使用的语言保持一致，方便与手册对照。App Store 中的应用介绍提供中文。</p></details>
+        <details><summary>如何获取？是订阅制吗？</summary><p>一次性购买，没有订阅，也没有应用内购买。iPhone 用户可在中国区 App Store 下载。Google Play 在中国大陆不可用。</p></details>
+        <details><summary>可以代替 AMM 吗？</summary><p>不能。A330 Tools 仅供培训和参考使用，执行任何维修或运行工作前都必须查阅最新的空客官方手册。</p></details>
+      </div>
+    </section>
 
     <section class="section">
       <h2 class="section-title">免责声明</h2>

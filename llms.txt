@@ -1,0 +1,30 @@
+# A32X Tools
+
+> Aircraft maintenance reference apps for line and base maintenance technicians: A32X Tools (Airbus A318/A319/A320/A321), A330 Tools (Airbus A330) and 737 Tools (Boeing 737 NG). iOS and Android, one-time purchase, fully offline. For training and reference only; they do not replace official manuals.
+>
+> 面向航线和定检维修技术人员的飞机维修参考应用：A32X Tools（空客 A318/A319/A320/A321）、A330 Tools（空客 A330）和 737 Tools（波音 737 NG）。一次性购买，完全离线。在中国可通过 App Store 下载（Google Play 在中国大陆不可用）。仅供培训和参考，不能替代官方手册。
+
+## Apps / 应用
+
+- [A32X Tools · A320 ECAM Resets](https://www.a32xtools.com/a32x-tools/): ECAM reset procedures with the circuit breakers and panel photos for each message, A320neo avionics compartment photo tour, structural damage reports (PDF/ZIP), electrical contacts with ESPM references, Alpha Callups and common part numbers.
+- [A32X Tools 中文介绍](https://www.a32xtools.com/zh/a32x-tools/): A320 ECAM 复位程序、跳开关及面板照片、A320neo 电子设备舱照片导览、结构损伤报告、电气触点、Alpha Callups 和常用件号。
+- [A330 Tools](https://www.a32xtools.com/a330-tools/): ECAM reset procedures with circuit breakers and panel photos, structural damage reports, electrical contacts, Alpha Callups and common part numbers for the A330.
+- [A330 Tools 中文介绍](https://www.a32xtools.com/zh/a330-tools/): A330 ECAM 复位程序、跳开关及面板照片、结构损伤报告、电气触点、Alpha Callups 和常用件号。
+- [737 Tools · Annunciator Lights](https://www.a32xtools.com/737-tools/): every 737 NG annunciator light by ATA chapter with fault modes, LRUs, circuit breakers and MEL items; photographic E/E compartment tour; circuit breaker panels; common part numbers; damage reports; MEL due-date calculator.
+- [737 Tools 中文介绍](https://www.a32xtools.com/zh/737-tools/): 按 ATA 章节整理的 737 NG 告警灯（故障模式、LRU、跳开关、MEL）、电子设备舱照片导览、跳开关面板、常用件号、损伤报告和 MEL 到期日计算器。
+
+## Download / 下载
+
+- [A32X Tools on the App Store](https://apps.apple.com/app/id6759071028)
+- [A330 Tools on the App Store](https://apps.apple.com/app/id6761683163)
+- [737 Tools on the App Store](https://apps.apple.com/app/id6794879293)
+- [A32X Tools on Google Play](https://play.google.com/store/apps/details?id=com.a32xtools.a32xtools)
+- [A330 Tools on Google Play](https://play.google.com/store/apps/details?id=com.a330tools.a330toolspro)
+- [737 Tools on Google Play](https://play.google.com/store/apps/details?id=com.b737tools.b737tools)
+
+## Support / 支持
+
+- [A32X Tools support and FAQ](https://www.a32xtools.com/support)
+- [A330 Tools support and FAQ](https://www.a32xtools.com/support-a330)
+- [737 Tools support and FAQ](https://www.a32xtools.com/support-737)
+- Contact / 联系: info@a32xtools.com

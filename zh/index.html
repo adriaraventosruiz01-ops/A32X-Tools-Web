@@ -9,10 +9,15 @@
     /* Google Play is not available in mainland China. */
     .store-badge-wrap:has(#googlePlayLink) { display: none; }
     body { font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .faq-list { display: grid; gap: 10px; }
+    .faq-list details { background: var(--panel); border: var(--edge-soft); border-radius: var(--r-md); padding: 14px 16px; }
+    .faq-list summary { cursor: pointer; font-weight: 700; line-height: 1.5; }
+    .faq-list p { margin: 10px 0 0; color: var(--muted); line-height: 1.7; }
   </style>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>A32X Tools | 空客 A320、A330 与波音 737 维修应用</title>
   <meta name="description" content="面向空客 A320、A330 和波音 737 NG 的专业维修应用：ECAM 复位、告警灯、结构损伤报告和件号，支持 iOS 和 Android。" />
+  <meta name="keywords" content="A320,A330,737,ECAM复位,跳开关,告警灯,航线维修,机务,飞机维修应用,结构损伤报告,件号,AMM,MEL" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0B1F33" />
   <link rel="canonical" href="https://www.a32xtools.com/zh/" />
@@ -1204,6 +1209,63 @@
       .downloadJumpBtn { right: 14px; bottom: 14px; padding: 11px 16px; font-size: 13px; }
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "zh-Hans",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A32X Tools 是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A32X Tools 提供三款飞机维修参考应用：面向空客 A320 系列的 A32X Tools、面向空客 A330 的 A330 Tools，以及面向波音 737 NG 的 737 Tools。它们帮助航线和定检维修技术人员快速查到 ECAM 复位程序、告警灯、跳开关位置、结构损伤报告和常用件号。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "哪款应用适合我？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "维修 A318/A319/A320/A321 请选择 A32X Tools，维修 A330 请选择 A330 Tools，维修 737 NG（大部分内容也适用于 737 Classic 和 MAX）请选择 737 Tools。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "没有网络也能用吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。所有数据都内置在应用中，在机坪、机库或飞机上没有信号也能正常使用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "应用界面是中文的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "应用界面和数据为英文，与 AMM、MEL、ECAM 等官方维修资料使用的语言保持一致，方便与手册对照。App Store 中的应用介绍提供中文。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何获取？是订阅制吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一次性购买，没有订阅，也没有应用内购买。iPhone 用户可在中国区 App Store 下载。Google Play 在中国大陆不可用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以代替官方手册吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不能。这些应用仅供培训和参考使用，执行任何维修工作前都必须查阅最新的官方手册和程序。"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 
 <body data-page-kind="hub" data-page-product="">
@@ -1550,6 +1612,18 @@
   </header>
 
   <main class="wrap">
+
+    <section class="section" id="faq">
+      <h2 class="section-title">常见问题</h2>
+      <div class="faq-list">
+        <details><summary>A32X Tools 是什么？</summary><p>A32X Tools 提供三款飞机维修参考应用：面向空客 A320 系列的 A32X Tools、面向空客 A330 的 A330 Tools，以及面向波音 737 NG 的 737 Tools。它们帮助航线和定检维修技术人员快速查到 ECAM 复位程序、告警灯、跳开关位置、结构损伤报告和常用件号。</p></details>
+        <details><summary>哪款应用适合我？</summary><p>维修 A318/A319/A320/A321 请选择 A32X Tools，维修 A330 请选择 A330 Tools，维修 737 NG（大部分内容也适用于 737 Classic 和 MAX）请选择 737 Tools。</p></details>
+        <details><summary>没有网络也能用吗？</summary><p>可以。所有数据都内置在应用中，在机坪、机库或飞机上没有信号也能正常使用。</p></details>
+        <details><summary>应用界面是中文的吗？</summary><p>应用界面和数据为英文，与 AMM、MEL、ECAM 等官方维修资料使用的语言保持一致，方便与手册对照。App Store 中的应用介绍提供中文。</p></details>
+        <details><summary>如何获取？是订阅制吗？</summary><p>一次性购买，没有订阅，也没有应用内购买。iPhone 用户可在中国区 App Store 下载。Google Play 在中国大陆不可用。</p></details>
+        <details><summary>可以代替官方手册吗？</summary><p>不能。这些应用仅供培训和参考使用，执行任何维修工作前都必须查阅最新的官方手册和程序。</p></details>
+      </div>
+    </section>
 
     <section class="section">
       <h2 class="section-title">免责声明</h2>
