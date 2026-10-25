@@ -1,0 +1,2406 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+    <meta name="applicable-device" content="pc,mobile" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <style>
+    /* Google Play is not available in mainland China. */
+    .store-badge-wrap:has(#googlePlayLink) { display: none; }
+    body { font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A32X Tools | 空客 A320 ECAM 复位应用</title>
+  <meta name="description" content="空客 A320 系列维修应用：ECAM 排故与复位、结构损伤报告、电气触点、Alpha Callups 和常用件号。" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0B1F33" />
+  <link rel="canonical" href="https://www.a32xtools.com/zh/a32x-tools/" />
+  <link rel="alternate" hreflang="en" href="https://www.a32xtools.com/a32x-tools/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.a32xtools.com/zh/a32x-tools/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.a32xtools.com/a32x-tools/" />
+  <link rel="alternate" href="android-app://com.a32xtools.a32xtools/https/www.a32xtools.com/a32x-tools/" />
+  <meta name="google-play-app" content="app-id=com.a32xtools.a32xtools" />
+  <meta property="og:title" content="A32X Tools | 空客 A320 ECAM 复位应用" />
+  <meta property="og:description" content="空客 A320 系列维修应用：ECAM 排故与复位、结构损伤报告、电气触点、Alpha Callups 和常用件号。" />
+  <meta property="og:image" content="https://www.a32xtools.com/hero.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.a32xtools.com/zh/a32x-tools/" />
+  <meta property="og:site_name" content="A32X Tools" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A32X Tools | 空客 A320 ECAM 复位应用" />
+  <meta name="twitter:description" content="空客 A320 系列维修应用：ECAM 排故与复位、结构损伤报告、电气触点、Alpha Callups 和常用件号。" />
+  <meta name="twitter:image" content="https://www.a32xtools.com/hero.png" />
+
+  <base href="/" />
+
+  <link rel="preload" as="image" type="image/webp" href="/hero.webp" fetchpriority="high">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.a32xtools.com/#organization",
+          "name": "A32X Tools",
+          "url": "https://www.a32xtools.com/",
+          "logo": "https://www.a32xtools.com/icon.png",
+          "email": "info@a32xtools.com"
+        },
+        {
+          "@type": ["SoftwareApplication", "MobileApplication"],
+          "@id": "https://www.a32xtools.com/zh/a32x-tools/#software",
+          "name": "A32X Tools",
+          "url": "https://www.a32xtools.com/zh/a32x-tools/",
+          "description": "空客 A320 系列维修应用：ECAM 排故与复位、结构损伤报告、电气触点、Alpha Callups 和常用件号。",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Android, iOS",
+          "softwareVersion": "1.0.1",
+          "datePublished": "2025-03-08",
+          "image": "https://www.a32xtools.com/icon.png",
+          "screenshot": "https://www.a32xtools.com/01.png",
+          "featureList": "ECAM 排故, ECAM 复位, 结构损伤报告, 电气触点, Alpha Callups, 常用件号",
+          "downloadUrl": "https://play.google.com/store/apps/details?id=com.a32xtools.a32xtools",
+          "installUrl": [
+            "https://play.google.com/store/apps/details?id=com.a32xtools.a32xtools",
+            "https://apps.apple.com/cn/app/a32x-tools/id6759071028"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "9.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "42",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "sameAs": [
+            "https://apps.apple.com/cn/app/a32x-tools/id6759071028",
+            "https://play.google.com/store/apps/details?id=com.a32xtools.a32xtools&hl=es"
+          ],
+          "author": { "@id": "https://www.a32xtools.com/#organization" },
+          "publisher": { "@id": "https://www.a32xtools.com/#organization" }
+        }
+      ]
+    }
+  </script>
+
+  <link rel="preload" href="/assets/fonts/IBMPlexSans-latin-118b75.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/SpaceGrotesk-latin-a57c94.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+
+  <style>
+    :root {
+      --bg0: #061627;
+      --bg1: #0a1d33;
+      --panel: rgba(9, 27, 48, 0.96);
+      --panel2: rgba(5, 16, 28, 0.68);
+      --border: rgba(255, 255, 255, 0.18);
+      --border2: rgba(255, 255, 255, 0.14);
+      --text: rgba(255, 255, 255, 0.96);
+      --muted: rgba(255, 255, 255, 0.72);
+      --shadow: 0 20px 58px rgba(0, 0, 0, 0.42);
+      --shadow-soft: 0 14px 36px rgba(0, 0, 0, 0.32);
+      --r: 20px;
+      --r-lg: var(--r);
+      --r-md: calc(var(--r) - 4px);
+      --r-sm: calc(var(--r) - 8px);
+      --accent: #4fe3b2;
+      --accent2: #52c1ff;
+      --accent3: #f7d56b;
+      --focus-ring: 0 0 0 3px rgba(82, 193, 255, 0.22), 0 0 0 1px rgba(82, 193, 255, 0.55);
+      --edge: 1px solid rgba(255, 255, 255, 0.18);
+      --edge-soft: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    body[data-product="a330"] {
+      --bg0: #08210a;
+      --bg1: #12370c;
+      --panel: rgba(10, 44, 12, 0.92);
+      --panel2: rgba(9, 28, 8, 0.68);
+      --border: rgba(255, 239, 156, 0.18);
+      --border2: rgba(255, 234, 137, 0.14);
+      --accent: #8ded29;
+      --accent2: #ffd13f;
+      --accent3: #fff29c;
+    }
+
+    body[data-product="b737"] {
+      --bg0: #101418;
+      --bg1: #171C22;
+      --panel: rgba(28, 34, 41, 0.92);
+      --panel2: rgba(20, 25, 30, 0.68);
+      --border: rgba(154, 172, 190, 0.20);
+      --border2: rgba(154, 172, 190, 0.13);
+      --accent: #9AACBE;
+      --accent2: #FFA726;
+      --accent3: #5AA9E6;
+    }
+
+    * { box-sizing: border-box; }
+    html { height: 100%; width: 100%; margin: 0; padding: 0; overflow-x: hidden; }
+    body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; min-height: 100%; }
+
+    body {
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+      background-color: #061627;
+      background-image:
+        linear-gradient(rgba(4, 10, 18, 0.62), rgba(4, 10, 18, 0.64)),
+        url("/hero.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+    }
+    body.no-scroll { overflow: hidden; touch-action: none; }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 40px 18px; width: 100%; }
+    .section { padding: 36px 0; }
+    .section-title {
+      font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 14px;
+      letter-spacing: 0.2px;
+    }
+    .section-subtitle {
+      margin: 0 0 22px;
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+
+    .tagline { margin-top: 10px; color: var(--muted); font-size: 14px; }
+
+    .productSwitchBar {
+      display:flex;
+      justify-content:flex-end;
+      margin-bottom:16px;
+    }
+    .productSwitch {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px;
+      border-radius:999px;
+      background: linear-gradient(135deg, rgba(34, 84, 140, 0.46), rgba(17, 49, 92, 0.62));
+      border: 1px solid rgba(112, 188, 255, 0.24);
+      box-shadow: 0 16px 42px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    body[data-product="a330"] .productSwitch {
+      background: linear-gradient(135deg, rgba(43, 108, 28, 0.46), rgba(74, 86, 18, 0.58));
+      border-color: rgba(188, 233, 104, 0.24);
+    }
+    .productSwitch [data-product] {
+      appearance:none;
+      border:1px solid rgba(82, 193, 255, 0.16);
+      background: rgba(8, 24, 42, 0.42);
+      color: rgba(226, 241, 255, 0.92);
+      font: inherit;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.45px;
+      text-transform: uppercase;
+      padding: 13px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    body[data-product="a330"] .productSwitch [data-product] {
+      border-color: rgba(141, 237, 41, 0.18);
+      background: rgba(19, 45, 11, 0.42);
+      color: rgba(242, 255, 214, 0.94);
+    }
+    .productSwitchLabel {
+      padding: 10px 6px 10px 12px;
+      color: rgba(223, 241, 255, 0.60);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    body[data-product="a330"] .productSwitchLabel { color: rgba(239, 255, 208, 0.62); }
+    .productSwitch [data-product]:hover {
+      background: rgba(82, 193, 255, 0.16);
+      border-color: rgba(82, 193, 255, 0.44);
+      transform: translateY(-1px);
+    }
+    .productSwitch [data-product].active {
+      background: linear-gradient(135deg, rgba(82, 193, 255, 0.38), rgba(79, 227, 178, 0.26));
+      border-color: rgba(82, 193, 255, 0.75);
+      color: #ffffff;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16),
+                  0 0 0 1px rgba(82, 193, 255, 0.30),
+                  0 6px 18px rgba(0, 0, 0, 0.30);
+    }
+    .productSwitch [data-product].active:hover { transform: none; }
+    .productSwitch [data-product] { position: relative; overflow: visible; }
+    .tabNew {
+      position: absolute;
+      top: -10px;
+      right: -8px;
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0.4px;
+      color: #ffffff;
+      background: radial-gradient(circle at 50% 36%, #ff7a6b 0%, #ea3b30 56%, #b81d18 100%);
+      clip-path: polygon(50.0% 0.0%, 59.7% 13.8%, 75.0% 6.7%, 76.5% 23.5%, 93.3% 25.0%, 86.2% 40.3%, 100.0% 50.0%, 86.2% 59.7%, 93.3% 75.0%, 76.5% 76.5%, 75.0% 93.3%, 59.7% 86.2%, 50.0% 100.0%, 40.3% 86.2%, 25.0% 93.3%, 23.5% 76.5%, 6.7% 75.0%, 13.8% 59.7%, 0.0% 50.0%, 13.8% 40.3%, 6.7% 25.0%, 23.5% 23.5%, 25.0% 6.7%, 40.3% 13.8%);
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+      filter: drop-shadow(0 4px 10px rgba(216, 34, 27, 0.45));
+      transform: rotate(-8deg);
+      animation: tabNewPulse 2.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes tabNewPulse {
+      0%, 100% { transform: rotate(-8deg) scale(1); }
+      50% { transform: rotate(-8deg) scale(1.09); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tabNew { animation: none; }
+    }
+    body[data-product="a330"] .productSwitch [data-product]:hover {
+      background: rgba(141, 237, 41, 0.16);
+      border-color: rgba(255, 209, 63, 0.44);
+    }
+    body[data-product="a330"] .productSwitch [data-product].active {
+      background: linear-gradient(135deg, rgba(141, 237, 41, 0.36), rgba(255, 209, 63, 0.32));
+      border-color: rgba(255, 209, 63, 0.78);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16),
+                  0 0 0 1px rgba(255, 209, 63, 0.28),
+                  0 6px 18px rgba(0, 0, 0, 0.30);
+    }
+
+    body[data-product="b737"] .productSwitch {
+      background: linear-gradient(135deg, rgba(46, 56, 68, 0.52), rgba(30, 37, 45, 0.60));
+      border-color: rgba(154, 172, 190, 0.22);
+    }
+    body[data-product="b737"] .productSwitch [data-product] {
+      border-color: rgba(154, 172, 190, 0.18);
+      background: rgba(22, 27, 33, 0.52);
+      color: rgba(226, 234, 242, 0.94);
+    }
+    body[data-product="b737"] .productSwitchLabel { color: rgba(226, 234, 242, 0.62); }
+    body[data-product="b737"] .productSwitch [data-product]:hover {
+      background: rgba(154, 172, 190, 0.16);
+      border-color: rgba(90, 169, 230, 0.46);
+    }
+    body[data-product="b737"] .productSwitch [data-product].active {
+      background: linear-gradient(135deg, rgba(90, 169, 230, 0.44), rgba(154, 172, 190, 0.22));
+      border-color: rgba(90, 169, 230, 0.80);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16),
+                  0 0 0 1px rgba(90, 169, 230, 0.32),
+                  0 6px 18px rgba(0, 0, 0, 0.30);
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero > .wrap { position: relative; z-index: 1; }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .card {
+      background: var(--panel);
+      border: var(--edge);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      width: 100%;
+      min-width: 0;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .card:hover { border-color: rgba(255,255,255,0.2); box-shadow: 0 24px 72px rgba(0,0,0,0.45); }
+    .card.pad-lg { padding: 26px 24px; }
+    .card.pad-md { padding: 18px 16px; }
+
+    .titleRow { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+
+    .brand { display:flex; align-items:center; gap:14px; width:100%; }
+    .brandLink { color: inherit; text-decoration: none; }
+    .hero-layout { align-items: start; }
+    .sideCard { height: fit-content; }
+
+    .icon { width: 80px; height: 80px; border-radius: var(--r-md); flex: 0 0 auto; transform: scale(1.16); transform-origin: center; object-fit: cover; object-position: center; display:block; }
+    body[data-product="a330"] .icon {
+      transform: scale(1.16);
+      border-radius: 999px;
+      clip-path: circle(50% at 50% 50%);
+      background: transparent;
+      box-shadow: none;
+    }
+
+    body[data-product="b737"] .icon {
+      transform: scale(1.16);
+      border-radius: 999px;
+      clip-path: circle(50% at 50% 50%);
+      background: transparent;
+      box-shadow: none;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(24px, 8vw, 44px);
+      line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+
+    .subtitle { font-size: 16px; color: var(--muted); margin-top: 4px; }
+
+    .pillGroup {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .pill {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:9px 15px;
+      border-radius:999px;
+      background: linear-gradient(135deg, rgba(82, 193, 255, 0.11), rgba(79, 227, 178, 0.09));
+      border: 1px solid rgba(82, 193, 255, 0.28);
+      font-weight:800;
+      font-size:12px;
+      white-space:nowrap;
+      letter-spacing:0.45px;
+      text-transform:uppercase;
+      color:rgba(156, 245, 220, 0.96);
+      box-shadow: 0 8px 24px rgba(20, 80, 122, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .pill.pill-soft {
+      text-transform: none;
+      letter-spacing: 0.15px;
+      font-weight: 700;
+      font-size: 12px;
+      color: rgba(214, 236, 252, 0.9);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(160, 209, 238, 0.08));
+      border: 1px solid rgba(182, 219, 243, 0.24);
+      box-shadow: none;
+    }
+
+    .btnRow { margin-top:18px; display:flex; gap:44px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:var(--r-md); text-decoration:none; font-weight:900; border: 1px solid transparent; cursor:pointer; transition: all 0.3s ease; }
+    .btn-icon { width: 18px; height: 18px; display: inline-block; flex: 0 0 18px; }
+    .btn.primary { background: rgba(255,255,255,0.94); color: #061a33; }
+    .btn.primary:hover { background: rgba(255,255,255,1); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .btn.ghost { background: rgba(5, 14, 25, 0.56); border-color: rgba(255, 255, 255, 0.3); color: rgba(255,255,255,0.96); }
+    .btn.ghost:hover { background: rgba(5, 14, 25, 0.72); border-color: rgba(255,255,255,0.45); transform: translateY(-2px); }
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      height: 48px;
+      line-height: 0;
+      border-radius: 0;
+      overflow: visible;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      transition: transform 0.2s ease;
+    }
+    .store-badge img {
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .store-badge-play img {
+      width: 160px;
+      height: 48px;
+    }
+    .store-badge-wrap {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .coming-soon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: center;
+    }
+    .store-badge-apple img {
+      width: 140px;
+      height: 32px;
+    }
+    .store-badge:hover { transform: translateY(-1px); }
+    .store-badge:active { transform: translateY(0); }
+    .store-panel {
+      --store-accent: #52c1ff;
+      --store-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+      position: relative;
+      overflow: hidden;
+      margin-top: 18px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      max-width: 100%;
+      padding: 12px 18px 14px;
+      border-radius: var(--r-md);
+      background: linear-gradient(135deg, color-mix(in srgb, var(--store-accent) 20%, transparent), color-mix(in srgb, var(--store-accent) 6%, transparent));
+      border: 1px solid color-mix(in srgb, var(--store-accent) 50%, transparent);
+      box-shadow: var(--store-shadow);
+    }
+    body[data-product="a330"] .store-panel { --store-accent: #8ded29; }
+    body[data-product="b737"] .store-panel { --store-accent: #FFA726; }
+    .store-panel-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--store-accent);
+    }
+    .mainCard .store-panel .btnRow { margin-top: 0; justify-content: center; }
+    .store-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.38) 50%, transparent 70%);
+      transform: translateX(-120%);
+      pointer-events: none;
+    }
+    .store-panel.flash { animation: storePulse 0.9s ease-out 2; }
+    .store-panel.flash::after { animation: storeShine 1.1s ease-in-out 0.1s 1; }
+    @keyframes storePulse {
+      0% { box-shadow: var(--store-shadow), 0 0 0 0 color-mix(in srgb, var(--store-accent) 70%, transparent), 0 0 0 transparent; }
+      40% { box-shadow: var(--store-shadow), 0 0 0 8px color-mix(in srgb, var(--store-accent) 25%, transparent), 0 0 36px color-mix(in srgb, var(--store-accent) 60%, transparent); }
+      100% { box-shadow: var(--store-shadow), 0 0 0 16px transparent, 0 0 0 transparent; }
+    }
+    @keyframes storeShine { to { transform: translateX(120%); } }
+    @media (prefers-reduced-motion: reduce) {
+      .store-panel.flash, .store-panel.flash::after { animation: none; }
+      .store-panel.flash { outline: 2px solid var(--store-accent); outline-offset: 3px; }
+    }
+    @media (max-width: 480px) {
+      .store-panel { display: flex; padding: 10px 8px 12px; }
+      .mainCard .store-panel .btnRow { gap: 8px; }
+      .store-panel .store-badge { width: 145px; height: 44px; }
+      .store-panel .store-badge-play img { width: 145px; height: 44px; }
+      .store-panel .store-badge-apple img { width: 128px; height: 30px; }
+    }
+    @media (max-width: 820px) {
+      .store-badge { width: 160px; height: 48px; }
+      .store-badge-play img { width: 160px; height: 48px; }
+      .store-badge-apple img { width: 140px; height: 32px; }
+    }
+    .btn:focus-visible,
+    .links .link:focus-visible,
+    .screen-thumb:focus-visible,
+    .lightbox-close:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+    .btn[href="#"] {
+      background: rgba(15, 28, 42, 0.52);
+      border-color: rgba(255, 255, 255, 0.22);
+      color: rgba(255, 255, 255, 0.72);
+      cursor: not-allowed;
+      opacity: 0.82;
+      transform: none;
+      box-shadow: none;
+    }
+    .btn[href="#"]:hover { transform: none; box-shadow: none; }
+    .btn:active,
+    .links .link:active,
+    .screen-thumb:active,
+    .lightbox-close:active,
+    .lightbox-nav:active { transform: scale(0.98); }
+
+    .links .link {
+      display: block;
+      padding: 12px;
+      margin-bottom: 8px;
+      border-radius: var(--r-md);
+      background: var(--panel2);
+      border: var(--edge-soft);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+      max-width: 100%;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .links .link:hover { background: rgba(11, 24, 40, 0.78); border-color: rgba(255, 255, 255, 0.22); }
+
+    .disclaimer { background: rgba(9,27,48,0.8); border: 1px solid rgba(247, 213, 107, 0.25); border-radius:18px; padding:18px 16px; color:var(--muted); font-size:14px; line-height:1.6; }
+    .footerResources { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; padding: 14px 16px; border: 1px solid var(--border2); border-radius: var(--r-sm); background: rgba(255,255,255,0.03); color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .footerResourcesLogo { flex: none; display: block; }
+    .footerResourcesLogo img { display: block; height: 28px; width: auto; }
+    .footerResourcesText { margin: 0 0 4px; }
+    .footerResourcesLinks { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+    .footerResources a { color: var(--text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .footerResources a:hover, .footerResources a:focus-visible { color: var(--accent); }
+    @media (max-width: 640px) {
+      .footerResources { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .footerResources + .footer { margin-bottom: 64px; }
+    }
+    body[data-product="a330"] .disclaimer { background: rgba(10, 44, 12, 0.8); border-color: rgba(255, 209, 63, 0.25); }
+    body[data-product="b737"] .disclaimer { background: rgba(20, 25, 30, 0.84); border-color: rgba(154, 172, 190, 0.24); }
+
+    .screens-grid {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 4px;
+      padding: 4px 4px 20px;
+      margin: 0;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .screens-grid::-webkit-scrollbar { display: none; }
+
+    .screen-card { flex: 0 0 82%; min-width: 260px; scroll-snap-align: start; background: var(--panel); border: var(--edge-soft); border-radius: var(--r-md); box-shadow: var(--shadow-soft); padding:18px; display:flex; flex-direction:column; gap:14px; }
+    .video-filler { display: flex; }
+    .desktop-video-grid { display: none; }
+    .mobile-video-grid { display: none; }
+    .mobile-video-grid::-webkit-scrollbar { display: none; }
+    .screen-thumb { width:100%; border-radius:var(--r-sm); aspect-ratio: 9 / 16; border: 1px dashed rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:0.6px; cursor: pointer; position: relative; overflow: hidden; background: rgba(0,0,0,0.2); }
+    .screen-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    body[data-product="a330"] .screen-thumb {
+      aspect-ratio: 1284 / 2778;
+      background: transparent;
+    }
+    body[data-product="a330"] .screen-thumb img {
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    body[data-product="b737"] .screen-thumb {
+      aspect-ratio: 1284 / 2778;
+      background: transparent;
+    }
+    body[data-product="b737"] .screen-thumb img {
+      object-fit: contain;
+      object-position: center center;
+    }
+    .screen-thumb.placeholder {
+      cursor: default;
+      border-style: solid;
+      border-color: rgba(255,255,255,0.18);
+      background: linear-gradient(rgba(0,0,0,0.94), rgba(0,0,0,0.98));
+    }
+    .screen-thumb.placeholder::after { content:""; }
+    .placeholder-note {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.95);
+      font-size: 11px;
+      line-height: 1;
+      letter-spacing: 0.45px;
+      text-transform: uppercase;
+      font-weight: 800;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .demoVideo { width:100%; height:100%; object-fit:cover; display:block; border-radius: inherit; }
+    .demoVideo.framed { object-fit: contain; background: #000; }
+    .demoPlayButton {
+      position: absolute;
+      inset: auto auto 12px 12px;
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.42);
+      background: rgba(5, 15, 26, 0.7);
+      color: rgba(255,255,255,0.95);
+      font-size: 20px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+      box-shadow: 0 0 0 0 rgba(82, 193, 255, 0.42);
+      animation: demoPulse 1.7s ease-out infinite;
+      z-index: 2;
+    }
+    .demoPlayButton:hover {
+      background: rgba(5, 15, 26, 0.84);
+      border-color: rgba(255,255,255,0.6);
+      transform: translateY(-1px);
+    }
+    .demoPlayButton.is-playing {
+      background: rgba(79, 227, 178, 0.22);
+      border-color: rgba(79, 227, 178, 0.5);
+      color: rgba(220, 255, 245, 0.98);
+      animation: none;
+      box-shadow: 0 0 0 1px rgba(79, 227, 178, 0.32), 0 0 24px rgba(79, 227, 178, 0.2);
+    }
+    .screen-thumb::after { content:"点击放大"; position:absolute; bottom:8px; right:10px; font-size:10px; color:rgba(255,255,255,0.7); background: rgba(0,0,0,0.35); padding:3px 6px; border-radius:8px; letter-spacing:0.4px; }
+    .video-filler .screen-thumb::after,
+    .mobile-video-card .screen-thumb::after { content:""; }
+    .video-filler .screen-thumb,
+    .mobile-video-card .screen-thumb {
+      cursor: default;
+      border-style: solid;
+      border-color: rgba(82, 193, 255, 0.32);
+      box-shadow: inset 0 0 0 1px rgba(82, 193, 255, 0.2), 0 0 22px rgba(82, 193, 255, 0.12);
+    }
+    .video-filler .screen-thumb::before,
+    .mobile-video-card .screen-thumb::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(130deg, rgba(82, 193, 255, 0.08), rgba(79, 227, 178, 0.06), rgba(82, 193, 255, 0.08));
+      opacity: 0.7;
+      pointer-events: none;
+      animation: demoSweep 6.5s ease-in-out infinite;
+    }
+    .video-filler.is-playing .screen-thumb::before,
+    .mobile-video-card.is-playing .screen-thumb::before {
+      animation: none;
+      opacity: 0.22;
+    }
+    .video-filler video,
+    .mobile-video-card video { pointer-events: none; }
+    .demoProgress {
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      height: 3px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .demoProgressFill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(82, 193, 255, 0.95), rgba(79, 227, 178, 0.95));
+      transition: width 0.08s linear;
+    }
+    @keyframes demoPulse {
+      0% { box-shadow: 0 0 0 0 rgba(82, 193, 255, 0.42); }
+      70% { box-shadow: 0 0 0 12px rgba(82, 193, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(82, 193, 255, 0); }
+    }
+    @keyframes demoSweep {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .screen-card h3 {
+      margin: 2px 0 0;
+      font-size: clamp(13px, 2.2vw, 15px);
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      line-height: 1.35;
+      font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+    .screen-card p { margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
+    .videos-heading {
+      font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      margin: 8px 4px 10px;
+    }
+    .video-filler,
+    .mobile-video-card {
+      background: linear-gradient(160deg, rgba(15, 46, 66, 0.82), rgba(10, 57, 66, 0.78));
+      border-color: rgba(82, 193, 255, 0.42);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(82, 193, 255, 0.14);
+    }
+    body[data-product="a330"] .video-filler,
+    body[data-product="a330"] .mobile-video-card {
+      background: linear-gradient(160deg, rgba(26, 68, 16, 0.82), rgba(76, 64, 8, 0.68));
+      border-color: rgba(255, 209, 63, 0.38);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(255, 209, 63, 0.12);
+    }
+
+    body[data-product="b737"] .video-filler,
+    body[data-product="b737"] .mobile-video-card {
+      background: linear-gradient(160deg, rgba(28, 34, 41, 0.88), rgba(52, 66, 82, 0.56));
+      border-color: rgba(154, 172, 190, 0.32);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(154, 172, 190, 0.12);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .screen-card {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+      .screen-card.reveal {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .btn,
+      .card,
+      .links .link,
+      .screen-thumb,
+      .lightbox img,
+      .lightbox-close,
+      .lightbox-nav {
+        transition: none !important;
+      }
+      .demoPlayButton,
+      .video-filler .screen-thumb::before,
+    .mobile-video-card .screen-thumb::before {
+        animation: none !important;
+      }
+      .screen-card {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+        @media (max-width: 820px) {
+      .pillGroup {
+        width: 100%;
+        align-items: flex-start;
+        row-gap: 6px;
+      }
+      .pillGroup .pill {
+        width: fit-content;
+      }
+      .pillGroup .pill-soft { flex-basis: auto; width: fit-content; }
+    }
+@media (max-width: 480px) {
+      .wrap { padding: 20px 12px; }
+      .card.pad-lg { padding: 20px 15px; }
+      .brand { flex-direction: column; align-items: flex-start; }
+      .icon { width: 64px; height: 64px; }
+      body[data-product="a330"] .icon { border-radius: 999px; }
+      body[data-product="b737"] .icon { border-radius: 999px; }
+      .pill { font-size: 10px; padding: 6px 12px; }
+      .pill.pill-soft { font-size: 10px; padding: 6px 12px; }
+      .btn { width: 100%; justify-content: center; }
+      .screen-card h3 { font-size: 12px; letter-spacing: 0.3px; }
+    }
+    @media (max-width: 820px) {
+      .video-filler { display: none; }
+      .mobile-video-grid {
+        display: flex;
+        gap: 14px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 4px;
+        padding: 14px 4px 20px;
+        margin: 16px 0 0;
+        border-top: 1px solid rgba(82, 193, 255, 0.26);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .desktop-video-grid { display: none; }
+      .mainCard .btnRow { gap: 16px; flex-wrap: nowrap; }
+    }
+
+    @media (min-width: 821px) {
+      body { background-attachment: fixed; }
+      .hero-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-layout > .sideCard { display: none; }
+      .mainCard.pad-lg { padding: 22px 20px; }
+      .mainCard .section-subtitle { margin-bottom: 14px; line-height: 1.5; }
+      .mainCard .tagline { margin-top: 8px; }
+      .mainCard .btnRow { margin-top: 14px; }
+      .screens-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow: visible;
+        scroll-snap-type: none;
+        margin: 0;
+        padding-bottom: 0;
+      }
+      .screen-card { min-width: 0; flex: initial; }
+      .video-filler { display: flex; }
+      .desktop-video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 14px;
+      }
+    }
+
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.84); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 24px; }
+    .lightbox.open { display: flex; }
+    .lightbox .hint { position: absolute; top: 18px; left: 18px; font-size: 12px; color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.4); padding: 6px 10px; border-radius: 999px; letter-spacing: 0.3px; }
+    .lightbox img { max-width: 94vw; max-height: 88vh; border-radius: var(--r-sm); border: 1px solid rgba(255,255,255,0.24); box-shadow: 0 24px 64px rgba(0,0,0,0.45); object-fit: contain; cursor: default; transition: transform 0.2s ease; }
+    .lightbox img.zoomed { transform: scale(1.6); cursor: zoom-out; }
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(5, 15, 26, 0.62);
+      color: rgba(255,255,255,0.92);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .lightbox-close:hover { background: rgba(5, 15, 26, 0.84); border-color: rgba(255,255,255,0.45); }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(5, 15, 26, 0.62);
+      color: rgba(255,255,255,0.92);
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .lightbox-nav:hover { background: rgba(5, 15, 26, 0.84); border-color: rgba(255,255,255,0.45); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+    .lightbox-count {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.9);
+      background: rgba(0,0,0,0.46);
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 999px;
+      padding: 5px 10px;
+      letter-spacing: 0.2px;
+      min-width: 44px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    @media (min-width: 821px) {
+      .lightbox img { max-width: 75vw; max-height: 85vh; }
+      .lightbox img.zoomed { transform: scale(1.8); }
+      .lightbox img { cursor: zoom-in; }
+      .lightbox-nav { display: inline-flex; }
+    }
+    @media (max-width: 820px) {
+      .productSwitchBar { justify-content: stretch; }
+      .productSwitch {
+        width: 100%;
+        justify-content: stretch;
+        padding: 6px;
+        gap: 4px;
+      }
+      .productSwitch [data-product] {
+        flex: 1 1 0;
+        text-align: center;
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+      .productSwitchLabel {
+        padding: 8px 4px 8px 8px;
+        font-size: 11px;
+        letter-spacing: 0.6px;
+      }
+      .tabNew {
+        top: -8px;
+        right: -4px;
+        width: 28px;
+        height: 28px;
+        font-size: 7px;
+      }
+    }
+    .rating-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .rating-stars {
+      color: #f7d56b;
+      font-size: 15px;
+      letter-spacing: 1.5px;
+      line-height: 1;
+    }
+    .rating-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.2px;
+    }
+    .hero-photo-wrap { display: none; }
+    @media (max-width: 820px) {
+      .hero-photo-wrap:not([hidden]) {
+        display: block;
+        margin-top: 16px;
+        border-radius: var(--r-md);
+        overflow: hidden;
+      }
+      .hero-photo-wrap img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center 50%;
+      }
+    }
+    @media (min-width: 821px) {
+      .hero-photo-wrap:not([hidden]) {
+        display: block;
+        position: absolute;
+        top: 0; right: 0; bottom: 0;
+        width: 220px;
+        pointer-events: none;
+      }
+      .hero-photo-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 15%;
+        display: block;
+      }
+      .hero-photo-wrap::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, var(--panel) 0%, transparent 45%);
+        z-index: 1;
+        pointer-events: none;
+      }
+      .mainCard:has(.hero-photo-wrap:not([hidden])) {
+        padding-right: 240px !important;
+      }
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 480px) {
+      .features-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 821px) {
+      .features-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .feature-item {
+      padding: 14px 16px;
+      background: var(--panel2);
+      border: var(--edge-soft);
+      border-radius: var(--r-md);
+    }
+
+    .feature-item[data-accent] {
+      border-left: 3px solid var(--feat);
+      background: linear-gradient(90deg, color-mix(in srgb, var(--feat) 14%, transparent), var(--panel2) 46%);
+    }
+    .feature-item[data-accent] .feature-title { color: var(--feat); }
+
+    .tour-empty {
+      border: 1px dashed var(--border);
+      border-radius: var(--r-md);
+      background: var(--panel2);
+      padding: 26px 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+    .feature-title {
+      font-family: "Space Grotesk", "IBM Plex Sans", system-ui;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.45px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin: 0 0 5px;
+    }
+    .feature-text {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ── Reviews carousel ── */
+    .reviews-track-outer {
+      overflow: hidden;
+      border-radius: var(--r-lg);
+      cursor: grab;
+      max-width: 520px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .reviews-track-outer:active { cursor: grabbing; }
+    .reviews-track {
+      display: flex;
+      align-items: flex-start;
+      transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    .review-card {
+      flex: 0 0 100%;
+      box-sizing: border-box;
+      background: var(--panel);
+      border: var(--edge);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 24px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      user-select: none;
+    }
+    .review-card-header {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .review-card-stars { color: var(--accent3); font-size: 14px; letter-spacing: 1px; }
+    .review-source-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: rgba(255,255,255,0.40);
+      flex-shrink: 0;
+    }
+    .review-source-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .review-card-title {
+      font-family: "Space Grotesk", system-ui;
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.3;
+    }
+    .review-card-text {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      margin: 0;
+      flex: 1;
+    }
+    .review-card-text-en {
+      color: rgba(255,255,255,0.32);
+      font-size: 12px;
+      line-height: 1.6;
+      margin: 6px 0 0;
+      font-style: italic;
+    }
+    .review-card-meta {
+      font-size: 12px;
+      color: rgba(255,255,255,0.40);
+      margin: 0;
+    }
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .carousel-arrow-btn {
+      appearance: none;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: rgba(255,255,255,0.70);
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      padding: 0 0 1px 0;
+      flex-shrink: 0;
+    }
+    .carousel-arrow-btn:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.28);
+      color: rgba(255,255,255,0.95);
+    }
+    .carousel-dots-wrap {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 260px;
+    }
+    .carousel-dot-btn {
+      appearance: none;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.25s, width 0.25s;
+      flex-shrink: 0;
+    }
+    .carousel-dot-btn.active {
+      background: var(--accent2);
+      width: 16px;
+    }
+    .downloadJumpBtn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: var(--accent2);
+      color: #061a33;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(14px);
+      transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .downloadJumpBtn.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .downloadJumpBtn:hover { box-shadow: 0 14px 38px rgba(0,0,0,0.5); transform: translateY(-3px); }
+    .downloadJumpBtn.visible:hover { transform: translateY(-3px); }
+    @media (max-width: 640px) {
+      .downloadJumpBtn { right: 14px; bottom: 14px; padding: 11px 16px; font-size: 13px; }
+    }
+  </style>
+</head>
+
+<body data-page-kind="product" data-page-product="a32x" data-product="a32x">
+  <header class="hero">
+    <div class="wrap">
+      <div class="productSwitchBar">
+        <div class="productSwitch" role="tablist" aria-label="选择机型">
+          <span class="productSwitchLabel">选择机型：</span>
+          <a href="/zh/a32x-tools/" class="active" data-product="a32x" aria-selected="true" role="tab">Airbus A320</a>
+          <a href="/zh/a330-tools/" data-product="a330" aria-selected="false" role="tab">Airbus A330</a>
+          <a href="/zh/737-tools/" data-product="b737" aria-selected="false" role="tab">Boeing 737<span class="tabNew" aria-hidden="true">新</span></a>
+        </div>
+      </div>
+      <div class="grid hero-layout">
+
+        <section class="card pad-lg mainCard">
+          <div class="titleRow">
+            <a class="brand brandLink" id="brandHomeLink" href="/zh/">
+              <img class="icon" id="productIcon" src="icon.png" alt="A32X Tools 图标" width="80" height="80" fetchpriority="high" />
+              <div>
+                <h1 id="productTitle">A32X Tools — A320 ECAM 复位</h1>
+                <div class="subtitle" id="productSubtitle">ECAM 复位、损伤报告、电气触点与件号，离线可用。</div>
+              </div>
+            </a>
+            <div class="pillGroup" id="pillGroup"><div class="pill">一次性购买</div><div class="pill pill-soft">离线优先，无需网络。</div></div>
+          </div>
+
+          <p class="section-subtitle" id="productDescription" style="margin-top:16px;">面向 A318/A319/A320/A321 维修技术人员的专业参考应用：ECAM 复位、结构损伤报告、电气触点、Alpha Callups 和最常用件号，一个应用快速搞定。</p>
+
+          <div class="store-panel" id="storeButtons">
+          <div class="store-panel-label">立即下载</div>
+          <div class="btnRow">
+            <div class="store-badge-wrap">
+              <a class="store-badge store-badge-play" id="googlePlayLink" href="https://play.google.com/store/apps/details?id=com.a32xtools.a32xtools&hl=es" target="_blank" rel="noopener noreferrer" aria-label="Google Play 商店">
+                <img src="assets/store-badges/google-play-badge.png" alt="在 Google Play 下载" width="160" height="48">
+              </a>
+              <span class="coming-soon" id="googlePlaySoon" hidden>即将推出</span>
+              <div class="rating-display" id="ratingDisplayPlay"><span class="rating-stars">★★★★★</span><span class="rating-label">5.0 · Google Play</span></div>
+            </div>
+            <div class="store-badge-wrap">
+              <a class="store-badge store-badge-apple" id="appStoreLink" href="https://apps.apple.com/cn/app/a32x-tools/id6759071028" target="_blank" rel="noopener noreferrer" aria-label="App Store">
+                <img src="assets/store-badges/app-store-badge.svg" alt="在 App Store 下载" width="140" height="32">
+              </a>
+              <span class="coming-soon" id="appStoreSoon" hidden>即将推出</span>
+              <div class="rating-display" id="ratingDisplay"><span class="rating-stars">★★★★★</span><span class="rating-label">5.0 · App Store</span></div>
+            </div>
+          </div>
+          </div>
+          <div class="hero-photo-wrap" id="heroPhoto">
+            <img src="/assets/field.jpg" alt="夜间停机坪上的 A32X Tools" loading="lazy" />
+          </div>
+        </section>
+
+
+      </div>
+      <section class="section" style="padding-top:28px; padding-bottom:10px;">
+        <h2 class="section-title">功能一览</h2>
+        <div class="features-grid" id="featuresGrid">
+        <div class="feature-item">
+          <div class="feature-title">ECAM 复位</div>
+          <div class="feature-text">搜索任意 ECAM 信息即可获得完整复位方案：分步程序、跳开关及其面板位置和照片，并内置实时计时器。</div>
+        </div>
+      
+        <div class="feature-item">
+          <div class="feature-title">结构损伤报告</div>
+          <div class="feature-text">用手机记录多处带照片的损伤发现，几秒钟内生成可直接分享的 PDF 或 ZIP 报告。</div>
+        </div>
+      
+        <div class="feature-item">
+          <div class="feature-title">电气参考</div>
+          <div class="feature-text">即时找到任意连接器、接线管或端子的压接参考，并附精确的 ESPM 件号。</div>
+        </div>
+      
+        <div class="feature-item">
+          <div class="feature-title">AMM 与 Alpha Callups</div>
+          <div class="feature-text">所有 AMM 参考和 Alpha Callups 触手可及：从工卡号到章节参考，即时可搜。</div>
+        </div>
+      
+        <div class="feature-item">
+          <div class="feature-title">件号</div>
+          <div class="feature-text">最常用的零件附真实照片，按区域和类别整理。走到货架前就已找到所需件号。</div>
+        </div>
+      
+        <div class="feature-item">
+          <div class="feature-title">自定义项目</div>
+          <div class="feature-text">目录里缺少某个零件？自己添加照片和参考即可。你的条目会被保存，下次随时可用。</div>
+        </div>
+      </div>
+      </section>
+      <section class="section" style="padding-top:18px; padding-bottom:24px;">
+        <h2 class="section-title">应用导览</h2>
+        <p class="section-subtitle" id="tourSubtitle">七个核心界面及简要说明，另有 3 段视频演示最重要的功能。</p>
+        <div class="screens-grid" id="screensGrid">
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="01.webp" tabindex="0" role="button" aria-label="Screenshot 1">
+            <img src="01.webp" alt="首页" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>首页</h3>
+          <p>空客 A320 系列维修的一站式入口。</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="02.webp" tabindex="0" role="button" aria-label="Screenshot 2">
+            <img src="02.webp" alt="ECAM 复位详情" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>ECAM 复位详情</h3>
+          <p>分步引导复位：精确的跳开关、清晰的步骤和实时计时器。</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="03.webp" tabindex="0" role="button" aria-label="Screenshot 3">
+            <img src="03.webp" alt="损伤报告" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>损伤报告</h3>
+          <p>雷击损伤？在一份报告中记录多处发现，附照片和清晰摘要，并以 PDF/ZIP 分享。</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="04.webp" tabindex="0" role="button" aria-label="Screenshot 4">
+            <img src="04.webp" alt="触点、接线管与端子" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>触点、接线管与端子</h3>
+          <p>借助精确的 ESPM 参考，快速找到正确件号。</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="05.webp" tabindex="0" role="button" aria-label="Screenshot 5">
+            <img src="05.webp" alt="ALPHA CALLUPS 与 AMM 参考" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>ALPHA CALLUPS 与 AMM 参考</h3>
+          <p>Alpha Callups 和 AMM 参考，即时搜索。</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="06.webp" tabindex="0" role="button" aria-label="Screenshot 6">
+            <img src="06.webp" alt="常用件号" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>常用件号</h3>
+          <p>附真实照片的件号目录，按区域和类别整理。</p>
+        </div>
+      
+        <div class="screen-card reveal">
+          <div class="screen-thumb" data-full="07.webp" tabindex="0" role="button" aria-label="Screenshot 7">
+            <img src="07.webp" alt="创建自定义项目" loading="lazy" width="1080" height="1920">
+          </div>
+          <h3>创建自定义项目</h3>
+          <p>添加并分享你自己的项目，让数据库更快丰富。</p>
+        </div>
+      </div>
+        <div class="tour-empty" id="tourEmpty" hidden="">截图即将推出</div>
+        <h3 class="videos-heading" id="videosHeading">演示视频</h3>
+        <div class="desktop-video-grid" id="desktopVideoGrid" aria-label="演示视频">
+        <div class="screen-card video-filler reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo framed" muted="" playsinline="" preload="none" poster="assets/demo_poster_540x960_v2.webp">
+              <source src="assets/demo_full_540x960_v2.mp4" type="video/mp4">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="播放视频">►</button>
+          </div>
+          <h3>ECAM 信息搜索与复位</h3>
+          <p>找到 ECAM 信息，逐步完成完整的复位程序。</p>
+        </div>
+      
+        <div class="screen-card video-filler reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo framed" muted="" playsinline="" preload="none" poster="assets/commonpn_poster_540x960.webp">
+              <source src="assets/commonpn_full_540x960.mp4" type="video/mp4">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="播放视频">►</button>
+          </div>
+          <h3>件号搜索与照片核对</h3>
+          <p>快速定位零件，并在操作前通过照片核对。</p>
+        </div>
+      
+        <div class="screen-card video-filler reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo" muted="" playsinline="" preload="none" poster="assets/damage_report_poster_540x960.webp">
+              <source src="assets/damage_report_noaudio.webm" type="video/webm">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="播放视频">►</button>
+          </div>
+          <h3>损伤报告 PDF 流程</h3>
+          <p>创建损伤报告，并在应用内即时预览生成的 PDF。</p>
+        </div>
+      </div>
+        <div class="mobile-video-grid" id="mobileVideoGrid" aria-label="演示视频">
+        <div class="screen-card mobile-video-card reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo framed" muted="" playsinline="" preload="none" poster="assets/demo_poster_540x960_v2.webp">
+              <source src="assets/demo_full_540x960_v2.mp4" type="video/mp4">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="播放视频">►</button>
+          </div>
+          <h3>ECAM 信息搜索与复位</h3>
+          <p>找到 ECAM 信息，逐步完成完整的复位程序。</p>
+        </div>
+      
+        <div class="screen-card mobile-video-card reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo framed" muted="" playsinline="" preload="none" poster="assets/commonpn_poster_540x960.webp">
+              <source src="assets/commonpn_full_540x960.mp4" type="video/mp4">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="播放视频">►</button>
+          </div>
+          <h3>件号搜索与照片核对</h3>
+          <p>快速定位零件，并在操作前通过照片核对。</p>
+        </div>
+      
+        <div class="screen-card mobile-video-card reveal">
+          <div class="screen-thumb">
+            <video class="demoVideo" muted="" playsinline="" preload="none" poster="assets/damage_report_poster_540x960.webp">
+              <source src="assets/damage_report_noaudio.webm" type="video/webm">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill" style="width: 0%;"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="播放视频">►</button>
+          </div>
+          <h3>损伤报告 PDF 流程</h3>
+          <p>创建损伤报告，并在应用内即时预览生成的 PDF。</p>
+        </div>
+      </div>
+      </section>
+
+      <section class="section" id="reviewsSection" style="padding-top:40px; padding-bottom:32px;">
+        <h2 class="section-title">专业人士的评价</h2>
+        <p class="section-subtitle">来自航空维修工程师的真实评价。</p>
+        <div class="reviews-track-outer" id="reviewsTrackOuter">
+          <div class="reviews-track" id="reviewsTrack"><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Como certificador de A320, esta app es esencial en mi día a día. Lo mejor son los resets de ECAM: procedimientos precisos con fotos reales de paneles de CBs y una cuenta atrás que funciona de maravilla. Además, facilita encontrar referencias tanto de AMM/MEL como los P/N más usados. Se nota que está diseñada por alguien que entiende de verdad el mantenimiento en línea. Interfaz muy intuitiva - 100% recomendable!”</p>
+        <p class="”review-card-text-en”">”作为 A320 放行人员，这款应用是我日常工作中必不可少的。最好用的是 ECAM 复位：程序精确，配有真实的跳开关面板照片，倒计时也非常好用。查找 AMM/MEL 参考和最常用件号也很方便。看得出是真正懂航线维修的人设计的。界面非常直观——100% 推荐！”</p>
+        <p class="”review-card-meta”">Ivan Martínez · 31 mar 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Imprescindible</p>
+        <p class="”review-card-text”">”Despues de probar varias apps, sin duda la mas completa con funciones y caracteristicas que la hacen imprescindible para el dia a dia de un TMA.”</p>
+        <p class="”review-card-text-en”">”试过好几款应用后，这无疑是功能最全面的一款，它的功能和特点让它成为维修工程师日常工作中不可或缺的工具。”</p>
+        <p class="”review-card-meta”">JoScBo · 3 mar. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Funciona perfectamente. Tiene todo lo que necesitas para mantenimiento en línea en esos momentos que necesitas acceso rápido al manual del A320. Resuelve los ECAM WARNINGS con el reset/test o capitulo MEL. Descárgala sin dudarlo si trabajas en mantenimiento en linea.”</p>
+        <p class="”review-card-text-en”">”运行完美。需要快速查阅 A320 手册时，航线维修所需的一切都在这里。可通过复位/测试或 MEL 章节处理 ECAM 警告。如果你从事航线维修，请毫不犹豫地下载。”</p>
+        <p class="”review-card-meta”">Jose Luis Izquierdo · 15 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Basic tool for line maintenance</p>
+        <p class="”review-card-text”">”Really good and usefull tool for line maintenance working on A320, fast access to common CB resets and common PN. Totally worthy for aircraft maintenance engineers.”</p>
+        <p class="”review-card-text-en”">”非常好用的 A320 航线维修工具，可快速查看常见的跳开关复位和常用件号。对飞机维修工程师来说完全值得。”</p>
+        <p class="”review-card-meta”">AirMechanic777 · 23 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Buena app</p>
+        <p class="”review-card-text”">”App muy completa para el reset de sistemas y otras funciones clave del A320, como también P/N más comunes, AMM reference entre muchas otras cosas. Es intuitiva, rápida y práctica, mucho mejor y obviamente mas completa de las que he tenido hasta ahora.”</p>
+        <p class="”review-card-text-en”">”非常全面的 A320 系统复位应用，还包含最常用件号、AMM 参考等众多关键功能。直观、快速、实用——比我以前用过的任何应用都更好、更全面。”</p>
+        <p class="”review-card-meta”">Gongolf7 · 23 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”La verdad que me ha sorprendido, tiene más ECAM messages resets que otras que he usado. Poder tener una base de datos de P/N con sus fotos va muy bien. ¡Recomendada!”</p>
+        <p class="”review-card-text-en”">”真的让我很惊喜——它的 ECAM 信息复位比我用过的其他应用都多。带照片的件号数据库非常方便。推荐！”</p>
+        <p class="”review-card-meta”">Antonio · 12 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Funcional 100 %</p>
+        <p class="”review-card-text”">”Está app está muy bien estructura y pensada para todos los profesionales del sector, ha sido creada por un técnico de mantenimiento así que sin duda alguna muy funcional recomendable 100 %”</p>
+        <p class="”review-card-text-en”">”这款应用结构清晰，为业内所有专业人员而设计。它由一名维修技术人员开发，因此毫无疑问非常实用——100% 推荐。”</p>
+        <p class="”review-card-meta”">Landy Salomón · 15 mar. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Muy buena aplicación, más completa que otras aplicaciones más caras y populares, sin duda muy recomendable para TMA's.”</p>
+        <p class="”review-card-text-en”">”非常好的应用，比其他更贵、更热门的应用还要全面——强烈推荐给维修工程师。”</p>
+        <p class="”review-card-meta”">Carlos Javier Minuesa · 14 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Perfecta</p>
+        <p class="”review-card-text”">”Indispensable para trabajar en Airbus, he probado varias y esta sin duda es la más completa y resolutiva.”</p>
+        <p class="”review-card-text-en”">”维修空客飞机必备。我试过好几款，这款无疑是最全面、最高效的。”</p>
+        <p class="”review-card-meta”">A Blasco · 23 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Muy útil para el turno de noche y el mantenimiento de línea. Excelente aplicación. Permite trabajar con rapidez y precisión.”</p>
+        <p class="”review-card-text-en”">”夜班和航线维修时非常有用。出色的应用，让工作又快又准。”</p>
+        <p class="”review-card-meta”">Raúl Martín · 17 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Fantástica herramienta</p>
+        <p class="”review-card-text”">”Fantástica herramienta, para aprender, que te guiará de manera rápida a los manuales necesarios, facilitando en gran manera el trabajo diario.”</p>
+        <p class="”review-card-text-en”">”很棒的工具——能快速引导你找到所需手册，大大简化日常工作。”</p>
+        <p class="”review-card-meta”">ECJAP · 24 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Una app imprescindible si trabajas con aviones Airbus. La mejor que he probado sin duda.”</p>
+        <p class="”review-card-text-en”">”如果你维修空客飞机，这是一款必备应用。毫无疑问是我用过最好的。”</p>
+        <p class="”review-card-meta”">Pascual Brisa · 14 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Recomendable</p>
+        <p class="”review-card-text”">”Aplicación mucho más completa que otras actuales, interfaz claro, intuitiva y muy práctica. La recomiendo”</p>
+        <p class="”review-card-text-en”">”比现有的其他应用全面得多——界面简洁、直观，非常实用。推荐。”</p>
+        <p class="”review-card-meta”">fsbbxje · 27 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”Buena herramienta, una buena plataforma base. Necesita mejoras, pero creo que el equipo de desarrollo seguirá mejorando la aplicación.”</p>
+        <p class="”review-card-text-en”">”不错的工具，基础扎实。还需要改进，但我相信开发团队会不断完善这款应用。”</p>
+        <p class="”review-card-meta”">Alexandre Vale · 16 abr 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg><span class="review-source-label">App Store</span></span></div>
+        <p class="review-card-title">Espectacular</p>
+        <p class="”review-card-text”">”La mejor herramienta enfocada al A32X hasta ahora. Simplemente genial.”</p>
+        <p class="”review-card-text-en”">”目前专注于 A32X 的最佳工具。简直太棒了。”</p>
+        <p class="”review-card-meta”">PauTech · 27 feb. 2026</p>
+      </div><div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"></path></svg><span class="review-source-label">Google Play</span></span></div>
+        
+        <p class="”review-card-text”">”¡¡¡Aplicación increíble y sumamente útil para el mantenimiento en línea!!! ¡¡¡La mejor para el A320!!!”</p>
+        <p class="”review-card-text-en”">”对航线维修来说超棒、极其实用的应用！！！A320 最佳！！！”</p>
+        <p class="”review-card-meta”">Pol Salvador · 15 abr 2026</p>
+      </div></div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-arrow-btn" id="reviewsPrev" aria-label="上一条评价">&#8249;</button>
+          <div class="carousel-dots-wrap" id="reviewsDots"></div>
+          <button class="carousel-arrow-btn" id="reviewsNext" aria-label="下一条评价">&#8250;</button>
+        </div>
+      </section>
+
+        <aside class="links sideCard" style="padding: 4px 0 8px;">
+          <a class="link" id="privacyMainLink" href="/privacy">隐私政策（英文）</a>
+          <a class="link" id="supportMainLink" href="/support">支持 / 常见问题（英文）</a>
+          <a class="link" id="emailMainLink" href="mailto:info@a32xtools.com">需要帮助？给我们发邮件</a>
+          <a class="link langLink" href="/a32x-tools/?lang=en" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English version</a>
+        </aside>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="section">
+      <h2 class="section-title">免责声明</h2>
+      <div class="disclaimer" id="disclaimerText">A32X Tools 仅供培训和参考使用，不能替代空客官方文件。ECAM 信息、复位程序、结构损伤报告以及 AMM/MEL/ESPM 参考仅作为学习辅助资料。在执行任何维修或运行工作前，请务必查阅最新的空客官方手册。Airbus 和 A320 是其各自所有者的商标，与本应用无关联。</div>
+    </section>
+
+    <div style="margin-top:28px; padding-top:18px; border-top:1px solid var(--border2);">
+      <div class="footerResources">
+        <a class="footerResourcesLogo" href="https://techlogmro.com/?utm_source=a32xtools.com&amp;utm_medium=referral&amp;utm_campaign=footer&amp;utm_content=logo" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/techlogmro-logo.png" alt="" width="94" height="28" loading="lazy" /></a>
+        <div>
+          <p class="footerResourcesText">查找与你的执照和机型签署相匹配的飞机维修职位和培训。</p>
+          <div class="footerResourcesLinks">
+            <a href="https://techlogmro.com/?utm_source=a32xtools.com&amp;utm_medium=referral&amp;utm_campaign=footer&amp;utm_content=jobs" target="_blank" rel="noopener">查看职位</a>
+            <a href="https://techlogmro.com/formacion?utm_source=a32xtools.com&amp;utm_medium=referral&amp;utm_campaign=footer&amp;utm_content=training" target="_blank" rel="noopener">查看培训</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer" id="footerText">© 2026 A32X Tools — A320 ECAM 复位 版权所有。</div>
+    </div>
+  </main>
+
+  <a class="downloadJumpBtn" id="downloadJumpBtn" href="#storeButtons">下载</a>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="hint">点击任意位置关闭</div>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="上一张">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="下一张">&#8250;</button>
+    <button class="lightbox-close" id="lightboxClose" aria-label="关闭预览">&times;</button>
+    <div class="lightbox-count" id="lightboxCount">1/7</div>
+    <img id="lightboxImage" alt="截图预览" />
+  </div>
+
+  <script>
+    const PRODUCTS = {
+      a32x: {
+        name: "A32X Tools — A320 ECAM 复位",
+        pageTitle: "A32X Tools | 空客 A320 ECAM 复位应用",
+        subtitle: "ECAM 复位、损伤报告、电气触点与件号，离线可用。",
+        description: "面向 A318/A319/A320/A321 维修技术人员的专业参考应用：ECAM 复位、结构损伤报告、电气触点、Alpha Callups 和最常用件号，一个应用快速搞定。",
+        icon: "/icon.png",
+        background: "/hero.webp",
+        ogImage: "/hero.png",
+        canonicalPath: "/zh/a32x-tools/",
+        metaDescription: "空客 A320 系列维修应用：ECAM 排故与复位、结构损伤报告、电气触点、Alpha Callups 和常用件号。",
+        tourSubtitle: "七个核心界面及简要说明，另有 3 段视频演示最重要的功能。",
+        disclaimer: "A32X Tools 仅供培训和参考使用，不能替代空客官方文件。ECAM 信息、复位程序、结构损伤报告以及 AMM/MEL/ESPM 参考仅作为学习辅助资料。在执行任何维修或运行工作前，请务必查阅最新的空客官方手册。Airbus 和 A320 是其各自所有者的商标，与本应用无关联。",
+        privacyHref: "/privacy",
+        supportHref: "/support",
+        emailHref: "mailto:info@a32xtools.com",
+        playHref: "https://play.google.com/store/apps/details?id=com.a32xtools.a32xtools&hl=es",
+        appStoreHref: "https://apps.apple.com/cn/app/a32x-tools/id6759071028",
+        playComingSoon: false,
+        appStoreComingSoon: false,
+        pills: [
+          '<div class="pill">一次性购买</div><div class="pill pill-soft">离线优先，无需网络。</div>'
+        ],
+        rating: { stars: 5, label: "5.0 · App Store" },
+        fieldPhoto: true,
+        screenshots: [
+          { src: "01.webp", title: "首页", text: "空客 A320 系列维修的一站式入口。" },
+          { src: "02.webp", title: "ECAM 复位详情", text: "分步引导复位：精确的跳开关、清晰的步骤和实时计时器。" },
+          { src: "03.webp", title: "损伤报告", text: "雷击损伤？在一份报告中记录多处发现，附照片和清晰摘要，并以 PDF/ZIP 分享。" },
+          { src: "04.webp", title: "触点、接线管与端子", text: "借助精确的 ESPM 参考，快速找到正确件号。" },
+          { src: "05.webp", title: "ALPHA CALLUPS 与 AMM 参考", text: "Alpha Callups 和 AMM 参考，即时搜索。" },
+          { src: "06.webp", title: "常用件号", text: "附真实照片的件号目录，按区域和类别整理。" },
+          { src: "07.webp", title: "创建自定义项目", text: "添加并分享你自己的项目，让数据库更快丰富。" }
+        ],
+        videos: [
+          { src: "assets/demo_full_540x960_v2.mp4", type: "video/mp4", poster: "assets/demo_poster_540x960_v2.webp", title: "ECAM 信息搜索与复位", text: "找到 ECAM 信息，逐步完成完整的复位程序。", framed: true },
+          { src: "assets/commonpn_full_540x960.mp4", type: "video/mp4", poster: "assets/commonpn_poster_540x960.webp", title: "件号搜索与照片核对", text: "快速定位零件，并在操作前通过照片核对。", framed: true },
+          { src: "assets/damage_report_noaudio.webm", type: "video/webm", poster: "assets/damage_report_poster_540x960.webp", title: "损伤报告 PDF 流程", text: "创建损伤报告，并在应用内即时预览生成的 PDF。", framed: false }
+        ],
+        features: [
+          { title: "ECAM 复位", text: "搜索任意 ECAM 信息即可获得完整复位方案：分步程序、跳开关及其面板位置和照片，并内置实时计时器。" },
+          { title: "结构损伤报告", text: "用手机记录多处带照片的损伤发现，几秒钟内生成可直接分享的 PDF 或 ZIP 报告。" },
+          { title: "电气参考", text: "即时找到任意连接器、接线管或端子的压接参考，并附精确的 ESPM 件号。" },
+          { title: "AMM 与 Alpha Callups", text: "所有 AMM 参考和 Alpha Callups 触手可及：从工卡号到章节参考，即时可搜。" },
+          { title: "件号", text: "最常用的零件附真实照片，按区域和类别整理。走到货架前就已找到所需件号。" },
+          { title: "自定义项目", text: "目录里缺少某个零件？自己添加照片和参考即可。你的条目会被保存，下次随时可用。" }
+        ],
+        reviews: [
+          { author: "Ivan Martínez", date: "31 mar 2026", text: "Como certificador de A320, esta app es esencial en mi día a día. Lo mejor son los resets de ECAM: procedimientos precisos con fotos reales de paneles de CBs y una cuenta atrás que funciona de maravilla. Además, facilita encontrar referencias tanto de AMM/MEL como los P/N más usados. Se nota que está diseñada por alguien que entiende de verdad el mantenimiento en línea. Interfaz muy intuitiva - 100% recomendable!", textEn: "作为 A320 放行人员，这款应用是我日常工作中必不可少的。最好用的是 ECAM 复位：程序精确，配有真实的跳开关面板照片，倒计时也非常好用。查找 AMM/MEL 参考和最常用件号也很方便。看得出是真正懂航线维修的人设计的。界面非常直观——100% 推荐！", source: "Google Play" },
+          { title: "Imprescindible", author: "JoScBo", date: "3 mar. 2026", text: "Despues de probar varias apps, sin duda la mas completa con funciones y caracteristicas que la hacen imprescindible para el dia a dia de un TMA.", textEn: "试过好几款应用后，这无疑是功能最全面的一款，它的功能和特点让它成为维修工程师日常工作中不可或缺的工具。", source: "App Store" },
+          { author: "Jose Luis Izquierdo", date: "15 abr 2026", text: "Funciona perfectamente. Tiene todo lo que necesitas para mantenimiento en línea en esos momentos que necesitas acceso rápido al manual del A320. Resuelve los ECAM WARNINGS con el reset/test o capitulo MEL. Descárgala sin dudarlo si trabajas en mantenimiento en linea.", textEn: "运行完美。需要快速查阅 A320 手册时，航线维修所需的一切都在这里。可通过复位/测试或 MEL 章节处理 ECAM 警告。如果你从事航线维修，请毫不犹豫地下载。", source: "Google Play" },
+          { title: "Basic tool for line maintenance", author: "AirMechanic777", date: "23 feb. 2026", text: "Really good and usefull tool for line maintenance working on A320, fast access to common CB resets and common PN. Totally worthy for aircraft maintenance engineers.", textEn: "非常好用的 A320 航线维修工具，可快速查看常见的跳开关复位和常用件号。对飞机维修工程师来说完全值得。", source: "App Store" },
+          { title: "Buena app", author: "Gongolf7", date: "23 feb. 2026", text: "App muy completa para el reset de sistemas y otras funciones clave del A320, como también P/N más comunes, AMM reference entre muchas otras cosas. Es intuitiva, rápida y práctica, mucho mejor y obviamente mas completa de las que he tenido hasta ahora.", textEn: "非常全面的 A320 系统复位应用，还包含最常用件号、AMM 参考等众多关键功能。直观、快速、实用——比我以前用过的任何应用都更好、更全面。", source: "App Store" },
+          { author: "Antonio", date: "12 abr 2026", text: "La verdad que me ha sorprendido, tiene más ECAM messages resets que otras que he usado. Poder tener una base de datos de P/N con sus fotos va muy bien. ¡Recomendada!", textEn: "真的让我很惊喜——它的 ECAM 信息复位比我用过的其他应用都多。带照片的件号数据库非常方便。推荐！", source: "Google Play" },
+          { title: "Funcional 100 %", author: "Landy Salomón", date: "15 mar. 2026", text: "Está app está muy bien estructura y pensada para todos los profesionales del sector, ha sido creada por un técnico de mantenimiento así que sin duda alguna muy funcional recomendable 100 %", textEn: "这款应用结构清晰，为业内所有专业人员而设计。它由一名维修技术人员开发，因此毫无疑问非常实用——100% 推荐。", source: "App Store" },
+          { author: "Carlos Javier Minuesa", date: "14 abr 2026", text: "Muy buena aplicación, más completa que otras aplicaciones más caras y populares, sin duda muy recomendable para TMA's.", textEn: "非常好的应用，比其他更贵、更热门的应用还要全面——强烈推荐给维修工程师。", source: "Google Play" },
+          { title: "Perfecta", author: "A Blasco", date: "23 feb. 2026", text: "Indispensable para trabajar en Airbus, he probado varias y esta sin duda es la más completa y resolutiva.", textEn: "维修空客飞机必备。我试过好几款，这款无疑是最全面、最高效的。", source: "App Store" },
+          { author: "Raúl Martín", date: "17 abr 2026", text: "Muy útil para el turno de noche y el mantenimiento de línea. Excelente aplicación. Permite trabajar con rapidez y precisión.", textEn: "夜班和航线维修时非常有用。出色的应用，让工作又快又准。", source: "Google Play" },
+          { title: "Fantástica herramienta", author: "ECJAP", date: "24 feb. 2026", text: "Fantástica herramienta, para aprender, que te guiará de manera rápida a los manuales necesarios, facilitando en gran manera el trabajo diario.", textEn: "很棒的工具——能快速引导你找到所需手册，大大简化日常工作。", source: "App Store" },
+          { author: "Pascual Brisa", date: "14 abr 2026", text: "Una app imprescindible si trabajas con aviones Airbus. La mejor que he probado sin duda.", textEn: "如果你维修空客飞机，这是一款必备应用。毫无疑问是我用过最好的。", source: "Google Play" },
+          { title: "Recomendable", author: "fsbbxje", date: "27 feb. 2026", text: "Aplicación mucho más completa que otras actuales, interfaz claro, intuitiva y muy práctica. La recomiendo", textEn: "比现有的其他应用全面得多——界面简洁、直观，非常实用。推荐。", source: "App Store" },
+          { author: "Alexandre Vale", date: "16 abr 2026", text: "Buena herramienta, una buena plataforma base. Necesita mejoras, pero creo que el equipo de desarrollo seguirá mejorando la aplicación.", textEn: "不错的工具，基础扎实。还需要改进，但我相信开发团队会不断完善这款应用。", source: "Google Play" },
+          { title: "Espectacular", author: "PauTech", date: "27 feb. 2026", text: "La mejor herramienta enfocada al A32X hasta ahora. Simplemente genial.", textEn: "目前专注于 A32X 的最佳工具。简直太棒了。", source: "App Store" },
+          { author: "Pol Salvador", date: "15 abr 2026", text: "¡¡¡Aplicación increíble y sumamente útil para el mantenimiento en línea!!! ¡¡¡La mejor para el A320!!!", textEn: "对航线维修来说超棒、极其实用的应用！！！A320 最佳！！！", source: "Google Play" }
+        ]
+      },
+      a330: {
+        name: "A330 Tools — A330 ECAM 复位",
+        pageTitle: "A330 Tools | 空客 A330 ECAM 复位应用",
+        subtitle: "ECAM 复位、损伤报告、AMM Alpha Callups 与件号，离线可用。",
+        description: "面向 A330 维修技术人员的专业参考应用：ECAM 复位、结构损伤报告、电气触点、Alpha Callups 和最常用件号，一个应用快速搞定。",
+        icon: "/assets/products/a330/icon.png",
+        background: "/assets/products/a330/background.webp",
+        ogImage: "/assets/products/a330/background.png",
+        canonicalPath: "/zh/a330-tools/",
+        metaDescription: "空客 A330 维修应用：ECAM 排故与复位、结构损伤报告、电气触点、Alpha Callups 和常用件号。",
+        tourSubtitle: "七个核心界面及简要说明，另有 ECAM 搜索与复位的演示视频。",
+        disclaimer: "A330 Tools 仅供培训和参考使用，不能替代空客官方文件。ECAM 信息、复位程序、结构损伤报告以及 AMM/MEL/ESPM 参考仅作为学习辅助资料。在执行任何维修或运行工作前，请务必查阅最新的空客官方手册。Airbus 和 A330 是其各自所有者的商标，与本应用无关联。",
+        privacyHref: "/privacy-a330",
+        supportHref: "/support-a330",
+        emailHref: "mailto:info@a32xtools.com",
+        playHref: "https://play.google.com/store/apps/details?id=com.a330tools.a330toolspro",
+        appStoreHref: "https://apps.apple.com/cn/app/a330-tools/id6761683163",
+        playComingSoon: false,
+        appStoreComingSoon: false,
+        pills: [
+          '<div class="pill">一次性购买</div><div class="pill pill-soft">离线优先，无需网络。</div>'
+        ],
+        screenshots: [
+          { src: "assets/products/a330/screenshots/01.webp", title: "首页", text: "空客 A330 系列维修的一站式入口。" },
+          { src: "assets/products/a330/screenshots/02.webp", title: "ECAM 复位详情", text: "分步引导复位：精确的跳开关、清晰的步骤和实时计时器。" },
+          { src: "assets/products/a330/screenshots/03.webp", title: "损伤报告", text: "雷击损伤？在一份报告中记录多处发现，附照片和清晰摘要，并以 PDF/ZIP 分享。" },
+          { src: "assets/products/a330/screenshots/04.webp", title: "触点、接线管与端子", text: "借助精确的 ESPM 参考，快速找到正确件号。" },
+          { src: "assets/products/a330/screenshots/05.webp", title: "ALPHA CALLUPS 与 AMM 参考", text: "Alpha Callups 和 AMM 参考，即时搜索。" },
+          { src: "assets/products/a330/screenshots/06.webp", title: "常用件号", text: "附真实照片的件号目录，按区域和类别整理。" },
+          { src: "assets/products/a330/screenshots/07.webp", title: "创建自定义项目", text: "添加并分享你自己的项目，让数据库更快丰富。" }
+        ],
+        videos: [
+          { src: "assets/products/a330/videos/ecam_search_432x960.mp4", type: "video/mp4", poster: "assets/products/a330/videos/ecam_search_poster_432x960.webp", title: "ECAM 信息搜索与复位", text: "找到 ECAM 信息，逐步完成完整的复位程序。", framed: false }
+        ],
+        features: [
+          { title: "ECAM 复位", text: "搜索任意 A330 ECAM 信息即可获得完整复位方案：分步程序、跳开关及其面板位置和照片，并内置实时计时器。" },
+          { title: "结构损伤报告", text: "用手机记录多处带照片的损伤发现，几秒钟内生成可直接分享的 PDF 或 ZIP 报告。" },
+          { title: "电气参考", text: "即时找到任意连接器、接线管或端子的压接参考，并附精确的 ESPM 件号。" },
+          { title: "AMM 与 Alpha Callups", text: "所有 AMM 参考和 Alpha Callups 触手可及：从工卡号到章节参考，即时可搜。" },
+          { title: "件号", text: "最常用的零件附真实照片，按区域和类别整理。走到货架前就已找到所需件号。" },
+          { title: "自定义项目", text: "目录里缺少某个零件？自己添加照片和参考即可。你的条目会被保存，下次随时可用。" }
+        ]
+      },
+      b737: {
+        name: "737 Tools · 告警灯",
+        pageTitle: "737 Tools · 告警灯 | 波音 737 NG 维修应用",
+        subtitle: "告警灯、电子设备舱导览、跳开关与件号，离线可用。",
+        description: "在机坪上，你没有时间翻手册。737 Tools 让你从一盏告警灯直接找到准确的程序、跳开关和 LRU 照片，只需几秒——专为戴手套操作设计，完全离线，无需信号。",
+        icon: "/assets/products/b737/icon.png",
+        background: "/assets/products/b737/background.webp",
+        overlay: ["rgba(36, 22, 74, 0.58)", "rgba(10, 46, 50, 0.62)"],
+        ogImage: "/assets/products/b737/background.png",
+        canonicalPath: "/zh/737-tools/",
+        metaDescription: "波音 737 NG 维修应用：按 ATA 章节整理的告警灯、MEL 到期日计算器、电子设备舱导览、跳开关和件号，离线可用。",
+        tourSubtitle: "逐个模块了解应用，另有告警灯搜索和电子设备舱导览的演示视频。",
+        disclaimer: "仅供培训和参考。本应用用于飞机系统学习和故障模拟，信息可能不是最新的，也可能不适用于特定机队。本独立应用与任何制造商均无关联，不能替代批准的 AMM、MEL 或官方文件。",
+        privacyHref: "/privacy-737",
+        supportHref: "/support-737",
+        emailHref: "mailto:info@a32xtools.com",
+        playHref: "https://play.google.com/store/apps/details?id=com.b737tools.b737tools",
+        appStoreHref: "https://apps.apple.com/cn/app/737-tools-annunciator-lights/id6794879293",
+        playComingSoon: false,
+        appStoreComingSoon: false,
+        pills: [
+          '<div class="pill">一次性购买</div><div class="pill pill-soft">离线优先，无需网络。</div>'
+        ],
+        screenshots: [
+          { src: "assets/products/b737/screenshots/01.webp", title: "首页", text: "737 NG 维修培训与快速参考，一站搞定。" },
+          { src: "assets/products/b737/screenshots/02.webp", title: "程序、计算机与跳开关", text: "查看程序，并通过真实照片找到计算机和跳开关。" },
+          { src: "assets/products/b737/screenshots/03.webp", title: "损伤报告", text: "结构损伤报告表单，可生成 PDF。" },
+          { src: "assets/products/b737/screenshots/04.webp", title: "告警灯", text: "按 ATA 章节了解每盏灯的含义。" },
+          { src: "assets/products/b737/screenshots/05.webp", title: "常用件号", text: "你的件号，随时在手。" },
+          { src: "assets/products/b737/screenshots/06.webp", title: "电子设备舱导览", text: "通过真实飞机照片找到设备位置。" }
+        ],
+        hideScreenshotCaptions: true,
+        videos: [
+          { src: "assets/products/b737/videos/annunciator_search_432x960.mp4", type: "video/mp4", poster: "assets/products/b737/videos/annunciator_search_poster_432x960.webp", title: "告警灯搜索", text: "找到告警灯，查看其程序、相关跳开关的面板照片以及相关计算机。", framed: false },
+          { src: "assets/products/b737/videos/ee_tour_432x960.mp4", type: "video/mp4", poster: "assets/products/b737/videos/ee_tour_poster_432x960_v2.webp", title: "电子设备舱导览", text: "按区域浏览电子设备舱和驾驶舱跳开关面板，在真实飞机照片上看清每个 LRU 的准确位置。", framed: false }
+        ],
+        features: [
+          { title: "告警灯", text: "按 ATA 章节收录每一盏 737 NG 告警灯：含义、相关程序、故障模式、涉及的 LRU、相关跳开关、带 NO DISPATCH（不可放行）警告的关联 MEL 项目，以及你自己的笔记。内置按 UTC 计算的 MEL 到期日计算器。" },
+          { title: "电子设备舱导览", text: "电子电气设备舱的照片式导览。在真实的设备架照片上标出每个 LRU 的位置，跳开关面板上也标出了每个跳开关的准确位置。" },
+          { title: "跳开关", text: "搜索任意跳开关，打开面板视图即可精确定位。" },
+          { title: "常用件号", text: "常用件号按飞机区域和类别整理，每个都附照片。可添加带照片和备注的自定义条目，并导入或导出你的清单与同事分享。" },
+          { title: "损伤报告", text: "现场编制损伤报告：相机照片、标注、测量数据和损伤位置。导出为 PDF 或 ZIP，通过邮件发送。" },
+          { title: "全局搜索", text: "一个搜索框同时搜索告警灯、LRU、跳开关和件号。所有数据都内置在应用中，在机坪或机库没有信号也能使用。" }
+        ]
+      }
+    };
+
+    const SITE_URL = "https://www.a32xtools.com";
+    const HOME_PAGE = {
+      pageTitle: "A32X Tools | 空客与波音飞机维修参考应用",
+      metaDescription: "A32X Tools、A330 Tools 和 737 Tools 是专业的飞机维修参考应用，涵盖 ECAM 复位、告警灯、结构损伤报告、电气触点、Alpha Callups 和常用件号。",
+      canonicalPath: "/zh/",
+      ogImage: "/hero.png"
+    };
+
+    const body = document.body;
+    const pageKind = body.dataset.pageKind || "hub";
+    const pageProduct = body.dataset.pageProduct || "";
+    const productButtons = Array.from(document.querySelectorAll(".productSwitch [data-product]"));
+    const productIcon = document.getElementById("productIcon");
+    const productTitle = document.getElementById("productTitle");
+    const productSubtitle = document.getElementById("productSubtitle");
+    const productDescription = document.getElementById("productDescription");
+    const pillGroup = document.getElementById("pillGroup");
+    const tourSubtitle = document.getElementById("tourSubtitle");
+    const screensGrid = document.getElementById("screensGrid");
+    const desktopVideoGrid = document.getElementById("desktopVideoGrid");
+    const mobileVideoGrid = document.getElementById("mobileVideoGrid");
+    const featuresGrid = document.getElementById("featuresGrid");
+    const videosHeading = document.getElementById("videosHeading");
+    const ratingDisplay = document.getElementById("ratingDisplay");
+    const heroPhoto = document.getElementById("heroPhoto");
+    const tourEmpty = document.getElementById("tourEmpty");
+    const disclaimerText = document.getElementById("disclaimerText");
+    const footerText = document.getElementById("footerText");
+    const googlePlayLink = document.getElementById("googlePlayLink");
+    const appStoreLink = document.getElementById("appStoreLink");
+    const googlePlaySoon = document.getElementById("googlePlaySoon");
+    const appStoreSoon = document.getElementById("appStoreSoon");
+    const privacyMainLink = document.getElementById("privacyMainLink");
+    const supportMainLink = document.getElementById("supportMainLink");
+    const emailMainLink = document.getElementById("emailMainLink");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxCount = document.getElementById("lightboxCount");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const metaTitle = document.querySelector("title");
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const metaOgTitle = document.querySelector('meta[property="og:title"]');
+    const metaOgDescription = document.querySelector('meta[property="og:description"]');
+    const metaOgImage = document.querySelector('meta[property="og:image"]');
+    const metaOgUrl = document.querySelector('meta[property="og:url"]');
+    const metaTwitterTitle = document.querySelector('meta[name="twitter:title"]');
+    const metaTwitterDescription = document.querySelector('meta[name="twitter:description"]');
+    const metaTwitterImage = document.querySelector('meta[name="twitter:image"]');
+    const structuredData = document.getElementById("structuredData");
+    const requestedProduct = PRODUCTS[new URLSearchParams(window.location.search).get("product")] ? new URLSearchParams(window.location.search).get("product") : "";
+
+    const isDesktop = () => window.matchMedia("(min-width: 821px)").matches;
+    let currentThumbs = [];
+    let activeIndex = 0;
+
+    function renderScreenshotCard(item, index, product) {
+      const hideCaption = product && product.hideScreenshotCaptions;
+      const caption = hideCaption ? "" : `<h3>${item.title}</h3>\n          <p>${item.text}</p>`;
+
+      if (item.placeholder) {
+        return `
+          <div class="screen-card">
+            <div class="screen-thumb placeholder">
+              <div class="placeholder-note">即将推出</div>
+            </div>
+            ${caption}
+          </div>
+        `;
+      }
+
+      return `
+        <div class="screen-card">
+          <div class="screen-thumb" data-full="${item.src}" tabindex="0" role="button" aria-label="Screenshot ${index + 1}">
+            <img src="${item.src}" alt="${item.title}" loading="lazy" width="1080" height="1920" />
+          </div>
+          ${caption}
+        </div>
+      `;
+    }
+
+    function renderVideoCard(item, mobile) {
+      const cardClass = mobile ? "screen-card mobile-video-card" : "screen-card video-filler";
+
+      if (item.placeholder) {
+        return `
+          <div class="${cardClass}">
+            <div class="screen-thumb placeholder">
+              <div class="placeholder-note">即将推出</div>
+            </div>
+            <h3>${item.title}</h3>
+            <p>${item.text}</p>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="${cardClass}">
+          <div class="screen-thumb">
+            <video class="demoVideo${item.framed ? " framed" : ""}" muted playsinline preload="none" poster="${item.poster}">
+              <source src="${item.src}" type="${item.type}">
+            </video>
+            <div class="demoProgress" aria-hidden="true"><div class="demoProgressFill"></div></div>
+            <button class="demoPlayButton" type="button" aria-label="播放视频">&#9658;</button>
+          </div>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </div>
+      `;
+    }
+
+    function bindLightbox() {
+      currentThumbs = Array.from(document.querySelectorAll(".screens-grid .screen-thumb[data-full]"));
+      const totalImages = currentThumbs.length;
+
+      currentThumbs.forEach((thumb, index) => {
+        thumb.addEventListener("click", () => openLightbox(index));
+        thumb.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          openLightbox(index);
+        });
+      });
+
+      if (!totalImages) {
+        lightboxCount.textContent = "0/0";
+      }
+    }
+
+    function setLightboxImage(index) {
+      const totalImages = currentThumbs.length;
+      if (!totalImages) return;
+      const safeIndex = (index + totalImages) % totalImages;
+      activeIndex = safeIndex;
+      const src = currentThumbs[safeIndex]?.dataset.full || "";
+      if (!src) return;
+      lightboxImage.src = src;
+      lightboxCount.textContent = `${safeIndex + 1}/${totalImages}`;
+      if (isDesktop()) {
+        lightboxImage.classList.add("zoomed");
+      } else {
+        lightboxImage.classList.remove("zoomed");
+      }
+    }
+
+    function openLightbox(index) {
+      setLightboxImage(index);
+      if (!currentThumbs.length) return;
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      body.classList.add("no-scroll");
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.classList.remove("zoomed");
+      lightboxImage.removeAttribute("src");
+      body.classList.remove("no-scroll");
+    }
+
+    function bindReveal() {
+      const cards = document.querySelectorAll(".screen-card");
+      if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("reveal");
+            obs.unobserve(entry.target);
+          });
+        }, { threshold: 0.15 });
+
+        cards.forEach((card, index) => {
+          card.style.transitionDelay = `${Math.min(index * 40, 180)}ms`;
+          observer.observe(card);
+        });
+      } else {
+        cards.forEach((card) => card.classList.add("reveal"));
+      }
+    }
+
+    function bindVideos() {
+      document.querySelectorAll(".video-filler, .mobile-video-card").forEach((tile) => {
+        const demoVideo = tile.querySelector(".demoVideo");
+        const demoPlayButton = tile.querySelector(".demoPlayButton");
+        const demoProgressFill = tile.querySelector(".demoProgressFill");
+        if (!demoVideo || !demoPlayButton) return;
+
+        const syncDemoButton = () => {
+          const playing = !demoVideo.paused && !demoVideo.ended;
+          tile.classList.toggle("is-playing", playing);
+          demoPlayButton.classList.toggle("is-playing", playing);
+          demoPlayButton.innerHTML = playing ? "&#10074;&#10074;" : "&#9658;";
+          demoPlayButton.setAttribute("aria-label", playing ? "暂停视频" : "播放视频");
+        };
+
+        const updateProgress = () => {
+          if (!demoProgressFill) return;
+          const duration = demoVideo.duration;
+          if (!Number.isFinite(duration) || duration <= 0) {
+            demoProgressFill.style.width = "0%";
+            return;
+          }
+          const percent = Math.min(100, Math.max(0, (demoVideo.currentTime / duration) * 100));
+          demoProgressFill.style.width = `${percent}%`;
+        };
+
+        demoPlayButton.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          if (demoVideo.paused || demoVideo.ended) {
+            if (demoVideo.ended) demoVideo.currentTime = 0;
+            const playPromise = demoVideo.play();
+            if (playPromise && typeof playPromise.catch === "function") {
+              playPromise.catch(() => {});
+            }
+          } else {
+            demoVideo.pause();
+          }
+          syncDemoButton();
+        });
+
+        demoVideo.addEventListener("play", syncDemoButton);
+        demoVideo.addEventListener("pause", syncDemoButton);
+        demoVideo.addEventListener("timeupdate", updateProgress);
+        demoVideo.addEventListener("loadedmetadata", updateProgress);
+        demoVideo.addEventListener("durationchange", updateProgress);
+        demoVideo.addEventListener("ended", () => {
+          demoVideo.currentTime = 0;
+          updateProgress();
+          syncDemoButton();
+        });
+
+        updateProgress();
+        syncDemoButton();
+      });
+    }
+
+    // Seguimiento de las visitas que llegan a las tiendas desde la web.
+    // Solo añade parámetros al enlace; el destino es el mismo. Si algo falla, deja el enlace original.
+    // applePt: código de proveedor de App Store Connect (vacío = no se toca el enlace de Apple).
+    const STORE_TRACKING = { source: "a32xtools.com", medium: "website", applePt: "128544735" };
+
+    function withStoreTracking(href) {
+      try {
+        if (!href || href === "#") return href;
+        const url = new URL(href);
+        const page = location.pathname.split("/").filter(Boolean)[0] || "home";
+        if (url.hostname === "play.google.com" && !url.searchParams.has("referrer")) {
+          url.searchParams.set("referrer", "utm_source=" + STORE_TRACKING.source + "&utm_medium=" + STORE_TRACKING.medium + "&utm_campaign=" + page);
+          return url.toString();
+        }
+        if (url.hostname === "apps.apple.com" && STORE_TRACKING.applePt && !url.searchParams.has("pt")) {
+          url.searchParams.set("pt", STORE_TRACKING.applePt);
+          url.searchParams.set("ct", "web-" + page);
+          url.searchParams.set("mt", "8");
+          return url.toString();
+        }
+      } catch (e) {}
+      return href;
+    }
+
+    function setStoreLinkState(link, href, disabled) {
+      link.href = withStoreTracking(href);
+      link.dataset.disabled = disabled ? "true" : "false";
+      if (disabled) {
+        link.removeAttribute("target");
+        link.removeAttribute("rel");
+      } else {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      }
+    }
+
+    function setComingSoonVisibility(googlePlayShow, appStoreShow) {
+      googlePlaySoon.hidden = !googlePlayShow;
+      appStoreSoon.hidden = !appStoreShow;
+      googlePlaySoon.style.display = googlePlayShow ? "inline-flex" : "none";
+      appStoreSoon.style.display = appStoreShow ? "inline-flex" : "none";
+    }
+
+    function absoluteUrl(path) {
+      return new URL(path, `${SITE_URL}/`).toString();
+    }
+
+    function getNormalizedLocation(targetPath) {
+      const params = new URLSearchParams(window.location.search);
+      params.delete("product");
+      const search = params.toString();
+      return `${targetPath}${search ? `?${search}` : ""}${window.location.hash}`;
+    }
+
+    function getSeoTarget(productKey) {
+      if (pageKind === "hub" && !requestedProduct) {
+        return HOME_PAGE;
+      }
+      return PRODUCTS[productKey];
+    }
+
+    function updateStructuredData(productKey) {
+      if (!structuredData) return;
+
+      if (pageKind === "hub" && !requestedProduct) {
+        structuredData.textContent = JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
+              "name": "A32X Tools",
+              "url": `${SITE_URL}/`,
+              "logo": absoluteUrl("/icon.png"),
+              "email": "info@a32xtools.com"
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              "name": "A32X Tools",
+              "url": `${SITE_URL}/`,
+              "publisher": {
+                "@id": `${SITE_URL}/#organization`
+              }
+            }
+          ]
+        }, null, 2);
+        return;
+      }
+
+      const product = PRODUCTS[productKey];
+      const sameAs = [product.appStoreHref];
+      if (product.playHref && product.playHref !== "#") sameAs.push(product.playHref);
+
+      structuredData.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": `${SITE_URL}/#organization`,
+            "name": "A32X Tools",
+            "url": `${SITE_URL}/`,
+            "logo": absoluteUrl("/icon.png"),
+            "email": "info@a32xtools.com"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": absoluteUrl(product.canonicalPath) + "#software",
+            "name": product.name,
+            "url": absoluteUrl(product.canonicalPath),
+            "description": product.metaDescription,
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": product.playHref && !product.playComingSoon ? "Android, iOS" : "iOS",
+            "image": absoluteUrl(product.icon),
+            "sameAs": sameAs,
+            "publisher": {
+              "@id": `${SITE_URL}/#organization`
+            }
+          }
+        ]
+      }, null, 2);
+    }
+
+    function updateSeoMetadata(productKey) {
+      const seoTarget = getSeoTarget(productKey);
+      const pageTitle = seoTarget.pageTitle ?? seoTarget.name;
+      const pageDescription = seoTarget.metaDescription;
+      const canonicalPath = seoTarget.canonicalPath;
+      const imagePath = seoTarget.ogImage ?? seoTarget.background ?? "/hero.png";
+
+      metaTitle.textContent = pageTitle;
+      metaDescription.setAttribute("content", pageDescription);
+      canonicalLink.setAttribute("href", absoluteUrl(canonicalPath));
+      metaOgTitle.setAttribute("content", pageTitle);
+      metaOgDescription.setAttribute("content", pageDescription);
+      metaOgImage.setAttribute("content", absoluteUrl(imagePath));
+      metaOgUrl.setAttribute("content", absoluteUrl(canonicalPath));
+      metaTwitterTitle.setAttribute("content", pageTitle);
+      metaTwitterDescription.setAttribute("content", pageDescription);
+      metaTwitterImage.setAttribute("content", absoluteUrl(imagePath));
+
+      updateStructuredData(productKey);
+    }
+
+    let _carouselIdx = 0, _carouselTotal = 0, _carouselTimer = null, _carouselAC = null;
+    function _carouselStop() { if (_carouselTimer) { clearInterval(_carouselTimer); _carouselTimer = null; } }
+    function _carouselStart() { _carouselStop(); _carouselTimer = setInterval(() => _carouselGoto(_carouselIdx + 1), 5500); }
+    function _carouselGoto(idx) {
+      if (!_carouselTotal) return;
+      _carouselIdx = ((idx % _carouselTotal) + _carouselTotal) % _carouselTotal;
+      const outer = document.getElementById('reviewsTrackOuter');
+      const track = document.getElementById('reviewsTrack');
+      if (outer && track) {
+        track.style.transform = `translateX(-${_carouselIdx * outer.offsetWidth}px)`;
+      }
+      document.querySelectorAll('.carousel-dot-btn').forEach((d, i) => d.classList.toggle('active', i === _carouselIdx));
+    }
+    const _STORE_ICONS = {
+      'App Store': `<svg width="11" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>`,
+      'Google Play': `<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.6.34-1.12.84-1.35L13.69 12 3.84 21.85A1.5 1.5 0 0 1 3 20.5zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.7.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>`
+    };
+    function initReviewsCarousel(reviews) {
+      const section = document.getElementById('reviewsSection');
+      if (!section) return;
+      _carouselStop();
+      if (_carouselAC) _carouselAC.abort();
+      _carouselAC = new AbortController();
+      const sig = _carouselAC.signal;
+      if (!reviews || !reviews.length) { section.hidden = true; return; }
+      _carouselTotal = reviews.length;
+      _carouselIdx = 0;
+      const track = document.getElementById('reviewsTrack');
+      const dots = document.getElementById('reviewsDots');
+      const prev = document.getElementById('reviewsPrev');
+      const next = document.getElementById('reviewsNext');
+      const outer = document.getElementById('reviewsTrackOuter');
+      track.innerHTML = reviews.map(r => `<div class="review-card">
+        <div class="review-card-header"><span class="review-card-stars">★★★★★</span><span class="review-source-icon">${_STORE_ICONS[r.source] || ''}<span class="review-source-label">${r.source}</span></span></div>
+        ${r.title ? `<p class="review-card-title">${r.title}</p>` : ''}
+        <p class=”review-card-text”>”${r.text}”</p>
+        ${r.textEn ? `<p class=”review-card-text-en”>”${r.textEn}”</p>` : ''}
+        <p class=”review-card-meta”>${r.author} &middot; ${r.date}</p>
+      </div>`).join('');
+      dots.innerHTML = reviews.map((_, i) => `<button class="carousel-dot-btn${i === 0 ? ' active' : ''}" aria-label="Review ${i + 1}"></button>`).join('');
+      dots.querySelectorAll('.carousel-dot-btn').forEach((d, i) => {
+        d.addEventListener('click', () => { _carouselGoto(i); _carouselStart(); }, { signal: sig });
+      });
+      prev.addEventListener('click', () => { _carouselGoto(_carouselIdx - 1); _carouselStart(); }, { signal: sig });
+      next.addEventListener('click', () => { _carouselGoto(_carouselIdx + 1); _carouselStart(); }, { signal: sig });
+      outer.addEventListener('mouseenter', _carouselStop, { signal: sig });
+      outer.addEventListener('mouseleave', _carouselStart, { signal: sig });
+      let touchX = 0;
+      outer.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true, signal: sig });
+      outer.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) { _carouselGoto(_carouselIdx + (dx < 0 ? 1 : -1)); _carouselStart(); }
+      }, { signal: sig });
+      window.addEventListener('resize', () => _carouselGoto(_carouselIdx), { signal: sig });
+      section.hidden = false;
+      _carouselGoto(0);
+      _carouselStart();
+    }
+
+    function renderProduct(productKey) {
+      const product = PRODUCTS[productKey];
+      const normalizedPath = product.canonicalPath;
+
+      body.dataset.product = productKey;
+      const overlayTop = product.overlay ? product.overlay[0] : "rgba(4, 10, 18, 0.62)";
+      const overlayBottom = product.overlay ? product.overlay[1] : "rgba(4, 10, 18, 0.64)";
+      body.style.backgroundImage = `linear-gradient(${overlayTop}, ${overlayBottom}), url("${product.background}")`;
+      productIcon.src = product.icon;
+      productIcon.alt = `${product.name} icon`;
+      productTitle.textContent = product.name;
+      productSubtitle.textContent = product.subtitle;
+      productDescription.textContent = product.description;
+      pillGroup.innerHTML = product.pills.join("");
+      tourSubtitle.textContent = product.tourSubtitle;
+      disclaimerText.textContent = product.disclaimer;
+      footerText.innerHTML = `&copy; 2026 ${product.name} 版权所有。`;
+      updateSeoMetadata(productKey);
+
+      privacyMainLink.href = product.privacyHref;
+      supportMainLink.href = product.supportHref;
+      emailMainLink.href = product.emailHref;
+
+
+      const googlePlayDisabled = product.playComingSoon ?? product.storeComingSoon ?? false;
+      const appStoreDisabled = product.appStoreComingSoon ?? product.storeComingSoon ?? false;
+
+      setStoreLinkState(googlePlayLink, product.playHref, googlePlayDisabled);
+      setStoreLinkState(appStoreLink, product.appStoreHref, appStoreDisabled);
+      setComingSoonVisibility(googlePlayDisabled, appStoreDisabled);
+
+      const hasScreenshots = (product.screenshots || []).length > 0;
+      screensGrid.innerHTML = (product.screenshots || [])
+        .map((item, index) => renderScreenshotCard(item, index, product)).join("");
+      screensGrid.hidden = !hasScreenshots;
+      if (tourEmpty) tourEmpty.hidden = hasScreenshots;
+      desktopVideoGrid.innerHTML = product.videos.map((item) => renderVideoCard(item, false)).join("");
+      mobileVideoGrid.innerHTML = product.videos.map((item) => renderVideoCard(item, true)).join("");
+
+      if (videosHeading) videosHeading.hidden = !product.videos.some(v => !v.placeholder);
+      if (ratingDisplay) {
+        if (product.rating) {
+          ratingDisplay.innerHTML = `<span class="rating-stars">${"★".repeat(product.rating.stars)}</span><span class="rating-label">${product.rating.label}</span>`;
+          ratingDisplay.hidden = false;
+        } else {
+          ratingDisplay.hidden = true;
+        }
+      }
+      if (featuresGrid) featuresGrid.innerHTML = (product.features || []).map(f => `
+        <div class="feature-item"${f.color ? ` data-accent style="--feat:${f.color}"` : ""}>
+          <div class="feature-title">${f.title}</div>
+          <div class="feature-text">${f.text}</div>
+        </div>
+      `).join("");
+      if (heroPhoto) heroPhoto.hidden = !product.fieldPhoto;
+
+      const hasProductParam = new URLSearchParams(window.location.search).has("product");
+      if (pageKind === "hub" && requestedProduct) {
+        window.history.replaceState({}, "", getNormalizedLocation(normalizedPath));
+      } else if (pageKind === "product" && (window.location.pathname !== normalizedPath || hasProductParam)) {
+        window.history.replaceState({}, "", getNormalizedLocation(normalizedPath));
+      }
+
+      productButtons.forEach((button) => {
+        const isActive = button.dataset.product === productKey;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-selected", isActive ? "true" : "false");
+        button.setAttribute("aria-current", isActive ? "page" : "false");
+      });
+
+      bindLightbox();
+      bindReveal();
+      bindVideos();
+      initReviewsCarousel(product.reviews);
+    }
+
+    lightboxImage.addEventListener("click", (event) => {
+      event.stopPropagation();
+      if (isDesktop()) {
+        lightboxImage.classList.toggle("zoomed");
+      }
+    });
+    lightboxPrev.addEventListener("click", (event) => {
+      event.stopPropagation();
+      setLightboxImage(activeIndex - 1);
+    });
+    lightboxNext.addEventListener("click", (event) => {
+      event.stopPropagation();
+      setLightboxImage(activeIndex + 1);
+    });
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (!lightbox.classList.contains("open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") setLightboxImage(activeIndex - 1);
+      if (event.key === "ArrowRight") setLightboxImage(activeIndex + 1);
+    });
+
+    [googlePlayLink, appStoreLink].forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (link.dataset.disabled === "true") {
+          event.preventDefault();
+        }
+      });
+    });
+
+    const initialProduct = pageKind === "product" && PRODUCTS[pageProduct] ? pageProduct : (requestedProduct || "a32x");
+    renderProduct(initialProduct);
+
+    const downloadJumpBtn = document.getElementById("downloadJumpBtn");
+    const downloadTarget = document.getElementById("storeButtons");
+    if (downloadJumpBtn && downloadTarget) {
+      let downloadFlashTimer;
+      downloadTarget.addEventListener("animationend", (event) => {
+        if (event.animationName === "storePulse") downloadTarget.classList.remove("flash");
+      });
+      downloadJumpBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        downloadTarget.scrollIntoView({ behavior: "smooth", block: "center" });
+        downloadTarget.classList.remove("flash");
+        clearTimeout(downloadFlashTimer);
+        downloadFlashTimer = setTimeout(() => {
+          void downloadTarget.offsetWidth;
+          downloadTarget.classList.add("flash");
+        }, 450);
+      });
+      const downloadObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            downloadJumpBtn.classList.toggle("visible", !entry.isIntersecting);
+          });
+        },
+        { threshold: 0 }
+      );
+      downloadObserver.observe(downloadTarget);
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

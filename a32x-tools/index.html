@@ -3,12 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- lang-redirect -->
+  <script>
+    // Browsers set to Chinese open the /zh/ version unless the visitor chose English.
+    (function () {
+      try {
+        if (/[?&]lang=en\b/.test(location.search) || localStorage.getItem("lang") === "en") return;
+        var lang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+        if (!/^zh\b/i.test(lang)) return;
+        var target = { "/": "/zh/", "/a32x-tools/": "/zh/a32x-tools/", "/a330-tools/": "/zh/a330-tools/", "/737-tools/": "/zh/737-tools/" }[location.pathname];
+        if (target) location.replace(target + location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <!-- /lang-redirect -->
   <title>A32X Tools | Airbus A320 ECAM Resets App</title>
   <meta name="description" content="Airbus A320 family maintenance app: ECAM troubleshooting and resets, structural damage reports, electrical contacts, alpha callups and common part numbers." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0B1F33" />
   <link rel="canonical" href="https://www.a32xtools.com/a32x-tools/" />
   <link rel="alternate" hreflang="en" href="https://www.a32xtools.com/a32x-tools/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.a32xtools.com/zh/a32x-tools/" />
   <link rel="alternate" hreflang="x-default" href="https://www.a32xtools.com/a32x-tools/" />
   <link rel="alternate" href="android-app://com.a32xtools.a32xtools/https/www.a32xtools.com/a32x-tools/" />
   <meta name="google-play-app" content="app-id=com.a32xtools.a32xtools" />
@@ -89,9 +104,9 @@
     }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/IBMPlexSans-latin-118b75.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/SpaceGrotesk-latin-a57c94.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
 
   <style>
     :root {
@@ -1332,6 +1347,7 @@
           <a class="link" id="privacyMainLink" href="/privacy">Privacy Policy</a>
           <a class="link" id="supportMainLink" href="/support">Support / FAQ</a>
           <a class="link" id="emailMainLink" href="mailto:info@a32xtools.com">Need help? Email us</a>
+          <a class="link langLink" href="/zh/a32x-tools/" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.removeItem('lang')}catch(e){}">中文版</a>
         </aside>
     </div>
   </header>
